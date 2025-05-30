@@ -1,0 +1,15 @@
+#!/bin/sh
+# Job name
+#SBATCH --job-name=swish
+# User info
+#SBATCH --mail-user=zenalapp@lanl.gov
+#SBATCH --mail-type=NONE #END,FAIL
+#SBATCH --export=ALL
+# Number of cores, amount of memory, and walltime
+#SBATCH --nodes=1 --ntasks=1 --cpus-per-task=1 --time=192:00:00 #--mem=10mb
+
+# Job commands
+snakemake --profile slurm -s snakefile --rerun-incomplete
+
+cat output/*/simulations/*div_metric* > summaries/div_metrics.csv
+cat output/*/simulations/*tr_summary* > summaries/tr_summary_stats.csv

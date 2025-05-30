@@ -1,0 +1,304 @@
+IQ-TREE multicore version 2.3.3 COVID-edition for Linux x86 64-bit built Apr 25 2024
+Developed by Bui Quang Minh, James Barbetti, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams, Ly Trong Nhan, Thomas Wong
+
+Host:    linusblack.lanl.gov (AVX512, FMA3, 754 GB RAM)
+Command: iqtree -s mafft_subset/825+1+B.fasta -m GTR+I+R -alrt 1000 -T AUTO --prefix iqtree_subset/825+1+B --rate -redo
+Seed:    992573 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Tue Feb 11 17:59:53 2025
+Kernel:  AVX+FMA - auto-detect threads (1 CPU cores detected)
+
+Reading alignment file mafft_subset/825+1+B.fasta ... Fasta format detected
+Reading fasta file: done in 0.00121049 secs using 80.71% CPU
+Alignment most likely contains DNA/RNA sequences
+Alignment has 52 sequences with 651 columns, 208 distinct patterns
+93 parsimony-informative, 103 singleton sites, 455 constant sites
+WARNING: Some sequence names are changed as follows:
+825+7023+7637+AF138703+B+NA+NA -> 825_7023_7637_AF138703_B_NA_NA
+825+7023+7637+AF138702+B+NA+NA -> 825_7023_7637_AF138702_B_NA_NA
+825+7023+7637+AF138701+B+NA+NA -> 825_7023_7637_AF138701_B_NA_NA
+825+7023+7640+AF138700+B+NA+NA -> 825_7023_7640_AF138700_B_NA_NA
+825+7023+7637+AF138699+B+NA+NA -> 825_7023_7637_AF138699_B_NA_NA
+825+7023+7640+AF138698+B+NA+NA -> 825_7023_7640_AF138698_B_NA_NA
+825+7023+7637+AF138697+B+NA+NA -> 825_7023_7637_AF138697_B_NA_NA
+825+7023+7637+AF138696+B+NA+NA -> 825_7023_7637_AF138696_B_NA_NA
+825+7023+7637+AF138695+B+NA+NA -> 825_7023_7637_AF138695_B_NA_NA
+825+7023+7637+AF138694+B+NA+NA -> 825_7023_7637_AF138694_B_NA_NA
+825+7023+7637+AF138693+B+NA+NA -> 825_7023_7637_AF138693_B_NA_NA
+825+7023+7637+AF138692+B+NA+NA -> 825_7023_7637_AF138692_B_NA_NA
+825+7023+7637+AF138691+B+NA+NA -> 825_7023_7637_AF138691_B_NA_NA
+825+7023+7637+AF138690+B+NA+NA -> 825_7023_7637_AF138690_B_NA_NA
+825+7023+7637+AF138689+B+NA+NA -> 825_7023_7637_AF138689_B_NA_NA
+825+7023+7637+AF138688+B+NA+NA -> 825_7023_7637_AF138688_B_NA_NA
+825+7023+7637+AF138687+B+NA+NA -> 825_7023_7637_AF138687_B_NA_NA
+825+7023+7637+AF138686+B+NA+NA -> 825_7023_7637_AF138686_B_NA_NA
+825+7023+7637+AF138685+B+NA+NA -> 825_7023_7637_AF138685_B_NA_NA
+825+7023+7637+AF138684+B+NA+NA -> 825_7023_7637_AF138684_B_NA_NA
+825+7023+7637+AF138683+B+NA+NA -> 825_7023_7637_AF138683_B_NA_NA
+825+7023+7637+AF138682+B+NA+NA -> 825_7023_7637_AF138682_B_NA_NA
+825+7023+7637+AF138681+B+NA+NA -> 825_7023_7637_AF138681_B_NA_NA
+825+7023+7637+AF138680+B+NA+NA -> 825_7023_7637_AF138680_B_NA_NA
+825+7023+7637+AF138679+B+NA+NA -> 825_7023_7637_AF138679_B_NA_NA
+825+7023+7637+AF138678+B+NA+NA -> 825_7023_7637_AF138678_B_NA_NA
+825+7023+7637+AF138677+B+NA+NA -> 825_7023_7637_AF138677_B_NA_NA
+825+7023+7637+AF138676+B+NA+NA -> 825_7023_7637_AF138676_B_NA_NA
+825+7023+7637+AF138675+B+NA+NA -> 825_7023_7637_AF138675_B_NA_NA
+825+7023+7637+AF138674+B+NA+NA -> 825_7023_7637_AF138674_B_NA_NA
+825+7023+7637+AF138673+B+NA+NA -> 825_7023_7637_AF138673_B_NA_NA
+825+7023+7637+AF138672+B+NA+NA -> 825_7023_7637_AF138672_B_NA_NA
+825+7023+7637+AF138671+B+NA+NA -> 825_7023_7637_AF138671_B_NA_NA
+825+7023+7637+AF138670+B+NA+NA -> 825_7023_7637_AF138670_B_NA_NA
+825+7023+7637+AF138669+B+NA+NA -> 825_7023_7637_AF138669_B_NA_NA
+825+7023+7637+AF138668+B+NA+NA -> 825_7023_7637_AF138668_B_NA_NA
+825+7023+7637+AF138667+B+NA+NA -> 825_7023_7637_AF138667_B_NA_NA
+825+7023+7637+AF138666+B+NA+NA -> 825_7023_7637_AF138666_B_NA_NA
+825+7023+7637+AF138665+B+NA+NA -> 825_7023_7637_AF138665_B_NA_NA
+825+7023+7637+AF138664+B+NA+NA -> 825_7023_7637_AF138664_B_NA_NA
+825+7023+7637+AF138663+B+NA+NA -> 825_7023_7637_AF138663_B_NA_NA
+825+7023+7637+AF138662+B+NA+NA -> 825_7023_7637_AF138662_B_NA_NA
+825+7023+7637+AF138661+B+NA+NA -> 825_7023_7637_AF138661_B_NA_NA
+825+7023+7637+AF138660+B+NA+NA -> 825_7023_7637_AF138660_B_NA_NA
+825+7023+7637+AF138659+B+NA+NA -> 825_7023_7637_AF138659_B_NA_NA
+825+7023+7637+AF138658+B+NA+NA -> 825_7023_7637_AF138658_B_NA_NA
+825+7023+7637+AF138657+B+NA+NA -> 825_7023_7637_AF138657_B_NA_NA
+825+7023+7637+AF138656+B+NA+NA -> 825_7023_7637_AF138656_B_NA_NA
+825+7023+7637+AF138655+B+NA+NA -> 825_7023_7637_AF138655_B_NA_NA
+825+7023+7637+AF138654+B+NA+NA -> 825_7023_7637_AF138654_B_NA_NA
+825+7023+7637+AF138653+B+NA+NA -> 825_7023_7637_AF138653_B_NA_NA
+825+7023+7637+AF138652+B+NA+NA -> 825_7023_7637_AF138652_B_NA_NA
+
+                                Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 3.82401e-05 secs using 96.76% CPU
+   1  825_7023_7637_AF138703_B_NA_NA    5.07%    passed     96.88%
+   2  825_7023_7637_AF138702_B_NA_NA    7.83%    passed     73.93%
+   3  825_7023_7637_AF138701_B_NA_NA    5.07%    passed     97.72%
+   4  825_7023_7640_AF138700_B_NA_NA    4.61%    passed     98.14%
+   5  825_7023_7637_AF138699_B_NA_NA    5.07%    passed     86.81%
+   6  825_7023_7640_AF138698_B_NA_NA    4.61%    passed     93.55%
+   7  825_7023_7637_AF138697_B_NA_NA    7.83%    passed     93.56%
+   8  825_7023_7637_AF138696_B_NA_NA    8.29%    passed     91.80%
+   9  825_7023_7637_AF138695_B_NA_NA    9.22%    passed     98.24%
+  10  825_7023_7637_AF138694_B_NA_NA    7.37%    passed     99.80%
+  11  825_7023_7637_AF138693_B_NA_NA    8.29%    passed     99.74%
+  12  825_7023_7637_AF138692_B_NA_NA    7.37%    passed     99.45%
+  13  825_7023_7637_AF138691_B_NA_NA    8.29%    passed     84.05%
+  14  825_7023_7637_AF138690_B_NA_NA    7.37%    passed     99.97%
+  15  825_7023_7637_AF138689_B_NA_NA    7.37%    passed     94.75%
+  16  825_7023_7637_AF138688_B_NA_NA    7.83%    passed     98.07%
+  17  825_7023_7637_AF138687_B_NA_NA    6.45%    passed     92.26%
+  18  825_7023_7637_AF138686_B_NA_NA    6.45%    passed     96.29%
+  19  825_7023_7637_AF138685_B_NA_NA    8.29%    passed     96.55%
+  20  825_7023_7637_AF138684_B_NA_NA    8.29%    passed     99.29%
+  21  825_7023_7637_AF138683_B_NA_NA    7.83%    passed     99.98%
+  22  825_7023_7637_AF138682_B_NA_NA    8.29%    passed     97.78%
+  23  825_7023_7637_AF138681_B_NA_NA    8.29%    passed     96.46%
+  24  825_7023_7637_AF138680_B_NA_NA    7.37%    passed     93.18%
+  25  825_7023_7637_AF138679_B_NA_NA    8.29%    passed     98.81%
+  26  825_7023_7637_AF138678_B_NA_NA    8.29%    passed     93.26%
+  27  825_7023_7637_AF138677_B_NA_NA    6.45%    passed     98.88%
+  28  825_7023_7637_AF138676_B_NA_NA    8.29%    passed     99.22%
+  29  825_7023_7637_AF138675_B_NA_NA    8.29%    passed     72.02%
+  30  825_7023_7637_AF138674_B_NA_NA    8.29%    passed     97.10%
+  31  825_7023_7637_AF138673_B_NA_NA    7.37%    passed     99.97%
+  32  825_7023_7637_AF138672_B_NA_NA    8.29%    passed     99.43%
+  33  825_7023_7637_AF138671_B_NA_NA    7.37%    passed     98.64%
+  34  825_7023_7637_AF138670_B_NA_NA    6.45%    passed     99.47%
+  35  825_7023_7637_AF138669_B_NA_NA    6.45%    passed     97.68%
+  36  825_7023_7637_AF138668_B_NA_NA    6.45%    passed     98.65%
+  37  825_7023_7637_AF138667_B_NA_NA    6.45%    passed     99.47%
+  38  825_7023_7637_AF138666_B_NA_NA    6.45%    passed     98.96%
+  39  825_7023_7637_AF138665_B_NA_NA    6.45%    passed     98.83%
+  40  825_7023_7637_AF138664_B_NA_NA    6.45%    passed     99.27%
+  41  825_7023_7637_AF138663_B_NA_NA    6.45%    passed     98.83%
+  42  825_7023_7637_AF138662_B_NA_NA    6.45%    passed     99.27%
+  43  825_7023_7637_AF138661_B_NA_NA    6.45%    passed     99.22%
+  44  825_7023_7637_AF138660_B_NA_NA    6.45%    passed     99.22%
+  45  825_7023_7637_AF138659_B_NA_NA    6.45%    passed     98.17%
+  46  825_7023_7637_AF138658_B_NA_NA    6.45%    passed     98.17%
+  47  825_7023_7637_AF138657_B_NA_NA    6.45%    passed     99.47%
+  48  825_7023_7637_AF138656_B_NA_NA    6.45%    passed     98.83%
+  49  825_7023_7637_AF138655_B_NA_NA    6.45%    passed     96.05%
+  50  825_7023_7637_AF138654_B_NA_NA    6.45%    passed     97.01%
+  51  825_7023_7637_AF138653_B_NA_NA    7.83%    passed     97.92%
+  52  825_7023_7637_AF138652_B_NA_NA    6.45%    passed     97.69%
+****  TOTAL                             7.07%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: 825_7023_7637_AF138663_B_NA_NA is identical to 825_7023_7637_AF138665_B_NA_NA but kept for subsequent analysis
+NOTE: 1 identical sequences (see below) will be ignored for subsequent analysis
+NOTE: 825_7023_7637_AF138656_B_NA_NA (identical to 825_7023_7637_AF138665_B_NA_NA) is ignored but added at the end
+Alignment was printed to iqtree_subset/825+1+B.uniqueseq.phy
+
+For your convenience alignment with unique sequences printed to iqtree_subset/825+1+B.uniqueseq.phy
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.003 seconds
+
+NOTE: 1 MB RAM (0 GB) is required!
+Measuring multi-threading efficiency up to 1 CPU cores
+Increase to 10 rounds for branch lengths
+32 trees examined
+Threads: 1 / Time: 1.026 sec / Speedup: 1.000 / Efficiency: 100% / LogL: -4016
+BEST NUMBER OF THREADS: 1
+
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -3269.362
+2. Current log-likelihood: -3107.507
+3. Current log-likelihood: -3103.784
+4. Current log-likelihood: -3103.493
+Optimal log-likelihood: -3103.449
+Rate parameters:  A-C: 2.47573  A-G: 5.32547  A-T: 0.56707  C-G: 0.96613  C-T: 7.40458  G-T: 1.00000
+Base frequencies:  A: 0.411  C: 0.149  G: 0.211  T: 0.229
+Proportion of invariable sites: 0.350
+Site proportion and rates:  (0.195,0.411) (0.203,0.794) (0.180,1.198) (0.073,7.476)
+Parameters optimization took 4 rounds (0.327 sec)
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.024063 secs using 99.74% CPU
+Computing ML distances took 0.024181 sec (of wall-clock time) 0.024121 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 0.000120663 secs using 94.48% CPU
+Computing RapidNJ tree took 0.000586 sec (of wall-clock time) 0.000580 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -3106.273
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.441 second
+Computing log-likelihood of 98 initial trees ... 0.449 seconds
+Current best score: -3095.729
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -3092.774
+Iteration 10 / LogL: -3093.913 / Time: 0h:0m:3s
+Iteration 20 / LogL: -3100.615 / Time: 0h:0m:3s
+Finish initializing candidate tree set (20)
+Current best tree score: -3092.774 / CPU time: 2.360
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 22: -3091.922
+Iteration 30 / LogL: -3093.138 / Time: 0h:0m:4s (0h:0m:15s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 33: -3090.058
+Iteration 40 / LogL: -3090.059 / Time: 0h:0m:5s (0h:0m:14s left)
+Iteration 50 / LogL: -3090.059 / Time: 0h:0m:6s (0h:0m:11s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 57: -3089.991
+Iteration 60 / LogL: -3090.037 / Time: 0h:0m:8s (0h:0m:13s left)
+Iteration 70 / LogL: -3090.039 / Time: 0h:0m:9s (0h:0m:11s left)
+Iteration 80 / LogL: -3091.611 / Time: 0h:0m:10s (0h:0m:9s left)
+Iteration 90 / LogL: -3090.037 / Time: 0h:0m:11s (0h:0m:8s left)
+Iteration 100 / LogL: -3089.993 / Time: 0h:0m:12s (0h:0m:7s left)
+Iteration 110 / LogL: -3089.993 / Time: 0h:0m:13s (0h:0m:5s left)
+Iteration 120 / LogL: -3090.522 / Time: 0h:0m:14s (0h:0m:4s left)
+BETTER TREE FOUND at iteration 129: -3089.991
+Iteration 130 / LogL: -3089.993 / Time: 0h:0m:15s (0h:0m:11s left)
+Iteration 140 / LogL: -3089.991 / Time: 0h:0m:16s (0h:0m:10s left)
+Iteration 150 / LogL: -3090.038 / Time: 0h:0m:17s (0h:0m:9s left)
+BETTER TREE FOUND at iteration 152: -3089.991
+Iteration 160 / LogL: -3090.038 / Time: 0h:0m:18s (0h:0m:10s left)
+Iteration 170 / LogL: -3089.994 / Time: 0h:0m:19s (0h:0m:9s left)
+Iteration 180 / LogL: -3090.038 / Time: 0h:0m:20s (0h:0m:8s left)
+Iteration 190 / LogL: -3090.037 / Time: 0h:0m:21s (0h:0m:7s left)
+Iteration 200 / LogL: -3090.038 / Time: 0h:0m:22s (0h:0m:5s left)
+BETTER TREE FOUND at iteration 201: -3089.991
+BETTER TREE FOUND at iteration 202: -3089.991
+Iteration 210 / LogL: -3095.497 / Time: 0h:0m:23s (0h:0m:10s left)
+Iteration 220 / LogL: -3097.190 / Time: 0h:0m:24s (0h:0m:9s left)
+Iteration 230 / LogL: -3092.651 / Time: 0h:0m:25s (0h:0m:7s left)
+Iteration 240 / LogL: -3091.997 / Time: 0h:0m:26s (0h:0m:6s left)
+Iteration 250 / LogL: -3094.589 / Time: 0h:0m:27s (0h:0m:5s left)
+Iteration 260 / LogL: -3100.362 / Time: 0h:0m:28s (0h:0m:4s left)
+Iteration 270 / LogL: -3092.325 / Time: 0h:0m:29s (0h:0m:3s left)
+Iteration 280 / LogL: -3090.038 / Time: 0h:0m:30s (0h:0m:2s left)
+Iteration 290 / LogL: -3090.037 / Time: 0h:0m:31s (0h:0m:1s left)
+Iteration 300 / LogL: -3090.039 / Time: 0h:0m:32s (0h:0m:0s left)
+TREE SEARCH COMPLETED AFTER 303 ITERATIONS / Time: 0h:0m:32s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -3089.991
+2. Current log-likelihood: -3089.966
+3. Current log-likelihood: -3089.942
+4. Current log-likelihood: -3089.919
+5. Current log-likelihood: -3089.896
+6. Current log-likelihood: -3089.874
+7. Current log-likelihood: -3089.852
+8. Current log-likelihood: -3089.830
+9. Current log-likelihood: -3089.810
+10. Current log-likelihood: -3089.789
+11. Current log-likelihood: -3089.770
+12. Current log-likelihood: -3089.751
+13. Current log-likelihood: -3089.733
+14. Current log-likelihood: -3089.715
+15. Current log-likelihood: -3089.698
+16. Current log-likelihood: -3089.681
+17. Current log-likelihood: -3089.665
+18. Current log-likelihood: -3089.649
+19. Current log-likelihood: -3089.633
+20. Current log-likelihood: -3089.618
+21. Current log-likelihood: -3089.603
+22. Current log-likelihood: -3089.588
+23. Current log-likelihood: -3089.574
+24. Current log-likelihood: -3089.559
+25. Current log-likelihood: -3089.545
+26. Current log-likelihood: -3089.531
+27. Current log-likelihood: -3089.517
+28. Current log-likelihood: -3089.503
+29. Current log-likelihood: -3089.489
+30. Current log-likelihood: -3089.476
+31. Current log-likelihood: -3089.462
+32. Current log-likelihood: -3089.449
+33. Current log-likelihood: -3089.435
+34. Current log-likelihood: -3089.422
+35. Current log-likelihood: -3089.409
+36. Current log-likelihood: -3089.395
+37. Current log-likelihood: -3089.382
+38. Current log-likelihood: -3089.369
+39. Current log-likelihood: -3089.356
+40. Current log-likelihood: -3089.343
+41. Current log-likelihood: -3089.330
+42. Current log-likelihood: -3089.317
+43. Current log-likelihood: -3089.305
+44. Current log-likelihood: -3089.292
+45. Current log-likelihood: -3089.280
+46. Current log-likelihood: -3089.267
+47. Current log-likelihood: -3089.255
+48. Current log-likelihood: -3089.243
+49. Current log-likelihood: -3089.232
+50. Current log-likelihood: -3089.220
+51. Current log-likelihood: -3089.209
+52. Current log-likelihood: -3089.198
+53. Current log-likelihood: -3089.187
+54. Current log-likelihood: -3089.177
+55. Current log-likelihood: -3089.167
+Optimal log-likelihood: -3089.157
+Rate parameters:  A-C: 2.68458  A-G: 5.84448  A-T: 0.55149  C-G: 0.87875  C-T: 7.73292  G-T: 1.00000
+Base frequencies:  A: 0.411  C: 0.149  G: 0.211  T: 0.229
+Proportion of invariable sites: 0.186
+Site proportion and rates:  (0.317,0.388) (0.312,0.389) (0.126,2.106) (0.060,8.186)
+Parameters optimization took 55 rounds (2.496 sec)
+BEST SCORE FOUND : -3089.157
+Empirical proportions for each category: 0.877 0.000 0.068 0.055
+Site rates printed to iqtree_subset/825+1+B.rate
+
+Testing tree branches by SH-like aLRT with 1000 replicates...
+0.883 sec.
+Total tree length: 0.745
+
+Total number of iterations: 303
+CPU time used for tree search: 30.252 sec (0h:0m:30s)
+Wall-clock time used for tree search: 31.377 sec (0h:0m:31s)
+Total CPU time used: 35.002 sec (0h:0m:35s)
+Total wall-clock time used: 36.179 sec (0h:0m:36s)
+
+Analysis results written to: 
+  IQ-TREE report:                iqtree_subset/825+1+B.iqtree
+  Maximum-likelihood tree:       iqtree_subset/825+1+B.treefile
+  Likelihood distances:          iqtree_subset/825+1+B.mldist
+  Site-specific rates:           iqtree_subset/825+1+B.rate
+  Screen log file:               iqtree_subset/825+1+B.log
+
+Date and Time: Tue Feb 11 18:00:30 2025

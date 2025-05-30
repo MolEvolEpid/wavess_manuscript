@@ -1,0 +1,415 @@
+IQ-TREE multicore version 2.3.3 COVID-edition for Linux x86 64-bit built Apr 25 2024
+Developed by Bui Quang Minh, James Barbetti, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams, Ly Trong Nhan, Thomas Wong
+
+Host:    linusblack.lanl.gov (AVX512, FMA3, 754 GB RAM)
+Command: iqtree -s mafft_subset/10586+1+B.fasta -m GTR+I+R -alrt 1000 -T AUTO --prefix iqtree_subset/10586+1+B --rate -redo
+Seed:    539740 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Tue Feb 11 18:00:19 2025
+Kernel:  AVX+FMA - auto-detect threads (1 CPU cores detected)
+
+Reading alignment file mafft_subset/10586+1+B.fasta ... Fasta format detected
+Reading fasta file: done in 0.00160648 secs using 89.57% CPU
+Alignment most likely contains DNA/RNA sequences
+Alignment has 121 sequences with 654 columns, 319 distinct patterns
+183 parsimony-informative, 118 singleton sites, 353 constant sites
+WARNING: Some sequence names are changed as follows:
+10586+7023+7637+AF138651+B+NA+NA -> 10586_7023_7637_AF138651_B_NA_NA
+10586+7023+7637+AF138650+B+NA+NA -> 10586_7023_7637_AF138650_B_NA_NA
+10586+7023+7637+AF138649+B+NA+NA -> 10586_7023_7637_AF138649_B_NA_NA
+10586+7023+7637+AF138648+B+NA+NA -> 10586_7023_7637_AF138648_B_NA_NA
+10586+7023+7637+AF138647+B+NA+NA -> 10586_7023_7637_AF138647_B_NA_NA
+10586+7023+7637+AF138646+B+NA+NA -> 10586_7023_7637_AF138646_B_NA_NA
+10586+7023+7636+AF138645+B+NA+NA -> 10586_7023_7636_AF138645_B_NA_NA
+10586+7023+7637+AF138644+B+NA+NA -> 10586_7023_7637_AF138644_B_NA_NA
+10586+7023+7637+AF138643+B+NA+NA -> 10586_7023_7637_AF138643_B_NA_NA
+10586+7023+7637+AF138642+B+NA+NA -> 10586_7023_7637_AF138642_B_NA_NA
+10586+7023+7637+AF138641+B+NA+NA -> 10586_7023_7637_AF138641_B_NA_NA
+10586+7023+7637+AF138640+B+NA+NA -> 10586_7023_7637_AF138640_B_NA_NA
+10586+7023+7637+AF138639+B+NA+NA -> 10586_7023_7637_AF138639_B_NA_NA
+10586+7023+7637+AF138638+B+NA+NA -> 10586_7023_7637_AF138638_B_NA_NA
+10586+7023+7637+AF138637+B+NA+NA -> 10586_7023_7637_AF138637_B_NA_NA
+10586+7023+7637+AF138636+B+NA+NA -> 10586_7023_7637_AF138636_B_NA_NA
+10586+7023+7637+AF138635+B+NA+NA -> 10586_7023_7637_AF138635_B_NA_NA
+10586+7023+7637+AF138634+B+NA+NA -> 10586_7023_7637_AF138634_B_NA_NA
+10586+7023+7637+AF138633+B+NA+NA -> 10586_7023_7637_AF138633_B_NA_NA
+10586+7023+7637+AF138632+B+NA+NA -> 10586_7023_7637_AF138632_B_NA_NA
+10586+7023+7637+AF138631+B+NA+NA -> 10586_7023_7637_AF138631_B_NA_NA
+10586+7023+7637+AF138630+B+NA+NA -> 10586_7023_7637_AF138630_B_NA_NA
+10586+7023+7637+AF138629+B+NA+NA -> 10586_7023_7637_AF138629_B_NA_NA
+10586+7023+7637+AF138628+B+NA+NA -> 10586_7023_7637_AF138628_B_NA_NA
+10586+7023+7637+AF138627+B+NA+NA -> 10586_7023_7637_AF138627_B_NA_NA
+10586+7023+7637+AF138626+B+NA+NA -> 10586_7023_7637_AF138626_B_NA_NA
+10586+7023+7637+AF138625+B+NA+NA -> 10586_7023_7637_AF138625_B_NA_NA
+10586+7023+7637+AF138624+B+NA+NA -> 10586_7023_7637_AF138624_B_NA_NA
+10586+7026+7637+AF138623+B+NA+NA -> 10586_7026_7637_AF138623_B_NA_NA
+10586+7023+7637+AF138622+B+NA+NA -> 10586_7023_7637_AF138622_B_NA_NA
+10586+7023+7637+AF138621+B+NA+NA -> 10586_7023_7637_AF138621_B_NA_NA
+10586+7023+7637+AF138620+B+NA+NA -> 10586_7023_7637_AF138620_B_NA_NA
+10586+7023+7637+AF138619+B+NA+NA -> 10586_7023_7637_AF138619_B_NA_NA
+10586+7023+7637+AF138618+B+NA+NA -> 10586_7023_7637_AF138618_B_NA_NA
+10586+7023+7637+AF138617+B+NA+NA -> 10586_7023_7637_AF138617_B_NA_NA
+10586+7023+7637+AF138616+B+NA+NA -> 10586_7023_7637_AF138616_B_NA_NA
+10586+7023+7637+AF138615+B+NA+NA -> 10586_7023_7637_AF138615_B_NA_NA
+10586+7023+7637+AF138614+B+NA+NA -> 10586_7023_7637_AF138614_B_NA_NA
+10586+7023+7637+AF138613+B+NA+NA -> 10586_7023_7637_AF138613_B_NA_NA
+10586+7023+7637+AF138612+B+NA+NA -> 10586_7023_7637_AF138612_B_NA_NA
+10586+7023+7637+AF138611+B+NA+NA -> 10586_7023_7637_AF138611_B_NA_NA
+10586+7023+7637+AF138610+B+NA+NA -> 10586_7023_7637_AF138610_B_NA_NA
+10586+7023+7637+AF138609+B+NA+NA -> 10586_7023_7637_AF138609_B_NA_NA
+10586+7023+7637+AF138608+B+NA+NA -> 10586_7023_7637_AF138608_B_NA_NA
+10586+7023+7637+AF138607+B+NA+NA -> 10586_7023_7637_AF138607_B_NA_NA
+10586+7023+7637+AF138606+B+NA+NA -> 10586_7023_7637_AF138606_B_NA_NA
+10586+7023+7637+AF138605+B+NA+NA -> 10586_7023_7637_AF138605_B_NA_NA
+10586+7023+7636+AF138604+B+NA+NA -> 10586_7023_7636_AF138604_B_NA_NA
+10586+7026+7637+AF138603+B+NA+NA -> 10586_7026_7637_AF138603_B_NA_NA
+10586+7023+7637+AF138602+B+NA+NA -> 10586_7023_7637_AF138602_B_NA_NA
+10586+7023+7637+AF138601+B+NA+NA -> 10586_7023_7637_AF138601_B_NA_NA
+10586+7023+7637+AF138600+B+NA+NA -> 10586_7023_7637_AF138600_B_NA_NA
+10586+7023+7637+AF138599+B+NA+NA -> 10586_7023_7637_AF138599_B_NA_NA
+10586+7023+7637+AF138598+B+NA+NA -> 10586_7023_7637_AF138598_B_NA_NA
+10586+7023+7637+AF138597+B+NA+NA -> 10586_7023_7637_AF138597_B_NA_NA
+10586+7023+7637+AF138596+B+NA+NA -> 10586_7023_7637_AF138596_B_NA_NA
+10586+7023+7637+AF138595+B+NA+NA -> 10586_7023_7637_AF138595_B_NA_NA
+10586+7023+7636+AF138594+B+NA+NA -> 10586_7023_7636_AF138594_B_NA_NA
+10586+7023+7637+AF138593+B+NA+NA -> 10586_7023_7637_AF138593_B_NA_NA
+10586+7023+7637+AF138592+B+NA+NA -> 10586_7023_7637_AF138592_B_NA_NA
+10586+7023+7637+AF138591+B+NA+NA -> 10586_7023_7637_AF138591_B_NA_NA
+10586+7023+7637+AF138590+B+NA+NA -> 10586_7023_7637_AF138590_B_NA_NA
+10586+7023+7637+AF138589+B+NA+NA -> 10586_7023_7637_AF138589_B_NA_NA
+10586+7026+7637+AF138588+B+NA+NA -> 10586_7026_7637_AF138588_B_NA_NA
+10586+7023+7637+AF138587+B+NA+NA -> 10586_7023_7637_AF138587_B_NA_NA
+10586+7023+7637+AF138586+B+NA+NA -> 10586_7023_7637_AF138586_B_NA_NA
+10586+7023+7637+AF138585+B+NA+NA -> 10586_7023_7637_AF138585_B_NA_NA
+10586+7023+7637+AF138584+B+NA+NA -> 10586_7023_7637_AF138584_B_NA_NA
+10586+7023+7637+AF138583+B+NA+NA -> 10586_7023_7637_AF138583_B_NA_NA
+10586+7023+7637+AF138582+B+NA+NA -> 10586_7023_7637_AF138582_B_NA_NA
+10586+7023+7637+AF138581+B+NA+NA -> 10586_7023_7637_AF138581_B_NA_NA
+10586+7023+7637+AF138580+B+NA+NA -> 10586_7023_7637_AF138580_B_NA_NA
+10586+7023+7637+AF138579+B+NA+NA -> 10586_7023_7637_AF138579_B_NA_NA
+10586+7023+7637+AF138578+B+NA+NA -> 10586_7023_7637_AF138578_B_NA_NA
+10586+7023+7637+AF138577+B+NA+NA -> 10586_7023_7637_AF138577_B_NA_NA
+10586+7023+7637+AF138576+B+NA+NA -> 10586_7023_7637_AF138576_B_NA_NA
+10586+7023+7637+AF138575+B+NA+NA -> 10586_7023_7637_AF138575_B_NA_NA
+10586+7023+7637+AF138574+B+NA+NA -> 10586_7023_7637_AF138574_B_NA_NA
+10586+7023+7637+AF138573+B+NA+NA -> 10586_7023_7637_AF138573_B_NA_NA
+10586+7023+7637+AF138572+B+NA+NA -> 10586_7023_7637_AF138572_B_NA_NA
+10586+7023+7637+AF138571+B+NA+NA -> 10586_7023_7637_AF138571_B_NA_NA
+10586+7023+7637+AF138570+B+NA+NA -> 10586_7023_7637_AF138570_B_NA_NA
+10586+7023+7637+AF138569+B+NA+NA -> 10586_7023_7637_AF138569_B_NA_NA
+10586+7023+7637+AF138568+B+NA+NA -> 10586_7023_7637_AF138568_B_NA_NA
+10586+7023+7637+AF138567+B+NA+NA -> 10586_7023_7637_AF138567_B_NA_NA
+10586+7023+7637+AF138566+B+NA+NA -> 10586_7023_7637_AF138566_B_NA_NA
+10586+7023+7637+AF138565+B+NA+NA -> 10586_7023_7637_AF138565_B_NA_NA
+10586+7023+7637+AF138564+B+NA+NA -> 10586_7023_7637_AF138564_B_NA_NA
+10586+7023+7637+AF138563+B+NA+NA -> 10586_7023_7637_AF138563_B_NA_NA
+10586+7023+7637+AF138562+B+NA+NA -> 10586_7023_7637_AF138562_B_NA_NA
+10586+7023+7637+AF138561+B+NA+NA -> 10586_7023_7637_AF138561_B_NA_NA
+10586+7023+7637+AF138560+B+NA+NA -> 10586_7023_7637_AF138560_B_NA_NA
+10586+7023+7637+AF138559+B+NA+NA -> 10586_7023_7637_AF138559_B_NA_NA
+10586+7023+7637+AF138558+B+NA+NA -> 10586_7023_7637_AF138558_B_NA_NA
+10586+7023+7637+AF138557+B+NA+NA -> 10586_7023_7637_AF138557_B_NA_NA
+10586+7023+7637+AF138556+B+NA+NA -> 10586_7023_7637_AF138556_B_NA_NA
+10586+7023+7637+AF138555+B+NA+NA -> 10586_7023_7637_AF138555_B_NA_NA
+10586+7023+7637+AF138554+B+NA+NA -> 10586_7023_7637_AF138554_B_NA_NA
+10586+7023+7637+AF138553+B+NA+NA -> 10586_7023_7637_AF138553_B_NA_NA
+10586+7023+7637+AF138552+B+NA+NA -> 10586_7023_7637_AF138552_B_NA_NA
+10586+7023+7637+AF138551+B+NA+NA -> 10586_7023_7637_AF138551_B_NA_NA
+10586+7023+7637+AF138550+B+NA+NA -> 10586_7023_7637_AF138550_B_NA_NA
+10586+7023+7637+AF138549+B+NA+NA -> 10586_7023_7637_AF138549_B_NA_NA
+10586+7023+7637+AF138548+B+NA+NA -> 10586_7023_7637_AF138548_B_NA_NA
+10586+7023+7637+AF138547+B+NA+NA -> 10586_7023_7637_AF138547_B_NA_NA
+10586+7023+7637+AF138546+B+NA+NA -> 10586_7023_7637_AF138546_B_NA_NA
+10586+7023+7637+AF138545+B+NA+NA -> 10586_7023_7637_AF138545_B_NA_NA
+10586+7023+7637+AF138544+B+NA+NA -> 10586_7023_7637_AF138544_B_NA_NA
+10586+7023+7637+AF138543+B+NA+NA -> 10586_7023_7637_AF138543_B_NA_NA
+10586+7023+7637+AF138542+B+NA+NA -> 10586_7023_7637_AF138542_B_NA_NA
+10586+7023+7637+AF138541+B+NA+NA -> 10586_7023_7637_AF138541_B_NA_NA
+10586+7026+7637+AF138540+B+NA+NA -> 10586_7026_7637_AF138540_B_NA_NA
+10586+7026+7637+AF138539+B+NA+NA -> 10586_7026_7637_AF138539_B_NA_NA
+10586+7023+7637+AF138538+B+NA+NA -> 10586_7023_7637_AF138538_B_NA_NA
+10586+7023+7637+AF138537+B+NA+NA -> 10586_7023_7637_AF138537_B_NA_NA
+10586+7023+7637+AF138536+B+NA+NA -> 10586_7023_7637_AF138536_B_NA_NA
+10586+7023+7637+AF138535+B+NA+NA -> 10586_7023_7637_AF138535_B_NA_NA
+10586+7023+7637+AF138534+B+NA+NA -> 10586_7023_7637_AF138534_B_NA_NA
+10586+7023+7637+AF138533+B+NA+NA -> 10586_7023_7637_AF138533_B_NA_NA
+10586+7023+7637+AF138532+B+NA+NA -> 10586_7023_7637_AF138532_B_NA_NA
+10586+7023+7637+AF138531+B+NA+NA -> 10586_7023_7637_AF138531_B_NA_NA
+
+                                  Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 0.00010232 secs using 99.69% CPU
+   1  10586_7023_7637_AF138651_B_NA_NA    7.49%    passed     98.96%
+   2  10586_7023_7637_AF138650_B_NA_NA    8.87%    passed     99.90%
+   3  10586_7023_7637_AF138649_B_NA_NA    5.20%    passed     94.41%
+   4  10586_7023_7637_AF138648_B_NA_NA    6.57%    passed     99.78%
+   5  10586_7023_7637_AF138647_B_NA_NA    6.57%    passed     99.45%
+   6  10586_7023_7637_AF138646_B_NA_NA    7.03%    passed     99.95%
+   7  10586_7023_7636_AF138645_B_NA_NA    8.87%    passed     99.22%
+   8  10586_7023_7637_AF138644_B_NA_NA    8.87%    passed     99.71%
+   9  10586_7023_7637_AF138643_B_NA_NA    4.13%    passed     88.22%
+  10  10586_7023_7637_AF138642_B_NA_NA    6.88%    passed     93.18%
+  11  10586_7023_7637_AF138641_B_NA_NA    6.88%    passed     95.30%
+  12  10586_7023_7637_AF138640_B_NA_NA    8.26%    passed     97.83%
+  13  10586_7023_7637_AF138639_B_NA_NA    7.34%    passed     98.77%
+  14  10586_7023_7637_AF138638_B_NA_NA    7.80%    passed     99.96%
+  15  10586_7023_7637_AF138637_B_NA_NA    7.80%    passed     95.49%
+  16  10586_7023_7637_AF138636_B_NA_NA    7.34%    passed     88.77%
+  17  10586_7023_7637_AF138635_B_NA_NA    5.05%    passed     95.02%
+  18  10586_7023_7637_AF138634_B_NA_NA    7.80%    passed     98.96%
+  19  10586_7023_7637_AF138633_B_NA_NA    7.80%    passed     97.49%
+  20  10586_7023_7637_AF138632_B_NA_NA    7.80%    passed     97.49%
+  21  10586_7023_7637_AF138631_B_NA_NA    7.80%    passed     98.41%
+  22  10586_7023_7637_AF138630_B_NA_NA    8.26%    passed     99.55%
+  23  10586_7023_7637_AF138629_B_NA_NA    4.59%    passed     94.92%
+  24  10586_7023_7637_AF138628_B_NA_NA    7.80%    passed     97.81%
+  25  10586_7023_7637_AF138627_B_NA_NA    5.05%    passed     98.26%
+  26  10586_7023_7637_AF138626_B_NA_NA    7.80%    passed     97.49%
+  27  10586_7023_7637_AF138625_B_NA_NA    8.26%    passed     98.49%
+  28  10586_7023_7637_AF138624_B_NA_NA    5.05%    passed     98.40%
+  29  10586_7026_7637_AF138623_B_NA_NA    7.80%    passed     96.82%
+  30  10586_7023_7637_AF138622_B_NA_NA    7.80%    passed     97.95%
+  31  10586_7023_7637_AF138621_B_NA_NA    6.88%    passed     97.14%
+  32  10586_7023_7637_AF138620_B_NA_NA    6.88%    passed     99.75%
+  33  10586_7023_7637_AF138619_B_NA_NA    6.88%    passed     99.38%
+  34  10586_7023_7637_AF138618_B_NA_NA    6.88%    passed     95.62%
+  35  10586_7023_7637_AF138617_B_NA_NA    7.80%    passed     96.05%
+  36  10586_7023_7637_AF138616_B_NA_NA    7.34%    passed     98.44%
+  37  10586_7023_7637_AF138615_B_NA_NA    7.80%    passed     97.49%
+  38  10586_7023_7637_AF138614_B_NA_NA    6.88%    passed     99.43%
+  39  10586_7023_7637_AF138613_B_NA_NA    6.88%    passed     99.77%
+  40  10586_7023_7637_AF138612_B_NA_NA    6.88%    passed     99.74%
+  41  10586_7023_7637_AF138611_B_NA_NA    9.17%    passed     99.76%
+  42  10586_7023_7637_AF138610_B_NA_NA    7.34%    passed     87.00%
+  43  10586_7023_7637_AF138609_B_NA_NA    7.34%    passed     99.52%
+  44  10586_7023_7637_AF138608_B_NA_NA    6.88%    passed     98.78%
+  45  10586_7023_7637_AF138607_B_NA_NA    7.80%    passed     95.21%
+  46  10586_7023_7637_AF138606_B_NA_NA    8.72%    passed     99.33%
+  47  10586_7023_7637_AF138605_B_NA_NA    6.88%    passed     99.02%
+  48  10586_7023_7636_AF138604_B_NA_NA    7.34%    passed     95.53%
+  49  10586_7026_7637_AF138603_B_NA_NA    5.96%    passed     92.46%
+  50  10586_7023_7637_AF138602_B_NA_NA    7.80%    passed     84.81%
+  51  10586_7023_7637_AF138601_B_NA_NA    6.42%    passed     99.35%
+  52  10586_7023_7637_AF138600_B_NA_NA    6.42%    passed     92.82%
+  53  10586_7023_7637_AF138599_B_NA_NA    7.80%    passed     99.66%
+  54  10586_7023_7637_AF138598_B_NA_NA    6.42%    passed     95.83%
+  55  10586_7023_7637_AF138597_B_NA_NA    5.96%    passed     92.94%
+  56  10586_7023_7637_AF138596_B_NA_NA    5.50%    passed     98.03%
+  57  10586_7023_7637_AF138595_B_NA_NA    7.34%    passed     82.46%
+  58  10586_7023_7636_AF138594_B_NA_NA    5.96%    passed     97.33%
+  59  10586_7023_7637_AF138593_B_NA_NA    7.34%    passed     99.23%
+  60  10586_7023_7637_AF138592_B_NA_NA    7.80%    passed     95.77%
+  61  10586_7023_7637_AF138591_B_NA_NA    6.88%    passed     98.12%
+  62  10586_7023_7637_AF138590_B_NA_NA    6.88%    passed     95.73%
+  63  10586_7023_7637_AF138589_B_NA_NA    7.34%    passed     99.29%
+  64  10586_7026_7637_AF138588_B_NA_NA    9.17%    passed     98.20%
+  65  10586_7023_7637_AF138587_B_NA_NA    3.67%    passed     99.00%
+  66  10586_7023_7637_AF138586_B_NA_NA    8.72%    passed     98.52%
+  67  10586_7023_7637_AF138585_B_NA_NA    8.72%    passed     98.40%
+  68  10586_7023_7637_AF138584_B_NA_NA    6.88%    passed     99.56%
+  69  10586_7023_7637_AF138583_B_NA_NA    5.50%    passed     98.30%
+  70  10586_7023_7637_AF138582_B_NA_NA    6.42%    passed     98.46%
+  71  10586_7023_7637_AF138581_B_NA_NA    9.63%    passed     90.76%
+  72  10586_7023_7637_AF138580_B_NA_NA    9.17%    passed     99.53%
+  73  10586_7023_7637_AF138579_B_NA_NA    6.88%    passed     97.59%
+  74  10586_7023_7637_AF138578_B_NA_NA    5.50%    passed     97.84%
+  75  10586_7023_7637_AF138577_B_NA_NA    6.42%    passed     98.87%
+  76  10586_7023_7637_AF138576_B_NA_NA    5.96%    passed     98.09%
+  77  10586_7023_7637_AF138575_B_NA_NA    5.50%    passed     99.11%
+  78  10586_7023_7637_AF138574_B_NA_NA    9.17%    passed     99.73%
+  79  10586_7023_7637_AF138573_B_NA_NA    6.42%    passed     99.76%
+  80  10586_7023_7637_AF138572_B_NA_NA    5.96%    passed     96.58%
+  81  10586_7023_7637_AF138571_B_NA_NA    6.42%    passed     89.49%
+  82  10586_7023_7637_AF138570_B_NA_NA    8.72%    passed     99.85%
+  83  10586_7023_7637_AF138569_B_NA_NA    7.80%    passed     98.60%
+  84  10586_7023_7637_AF138568_B_NA_NA    9.17%    passed     94.63%
+  85  10586_7023_7637_AF138567_B_NA_NA    6.88%    passed     99.24%
+  86  10586_7023_7637_AF138566_B_NA_NA    6.42%    passed     86.90%
+  87  10586_7023_7637_AF138565_B_NA_NA    6.88%    passed     96.11%
+  88  10586_7023_7637_AF138564_B_NA_NA    6.42%    passed     95.50%
+  89  10586_7023_7637_AF138563_B_NA_NA    7.34%    passed     99.22%
+  90  10586_7023_7637_AF138562_B_NA_NA    6.42%    passed     91.08%
+  91  10586_7023_7637_AF138561_B_NA_NA    6.88%    passed     99.18%
+  92  10586_7023_7637_AF138560_B_NA_NA    5.05%    passed     96.36%
+  93  10586_7023_7637_AF138559_B_NA_NA    6.88%    passed     99.67%
+  94  10586_7023_7637_AF138558_B_NA_NA   10.09%    passed     99.67%
+  95  10586_7023_7637_AF138557_B_NA_NA   10.09%    passed     99.67%
+  96  10586_7023_7637_AF138556_B_NA_NA   10.09%    passed     99.95%
+  97  10586_7023_7637_AF138555_B_NA_NA   10.09%    passed     99.67%
+  98  10586_7023_7637_AF138554_B_NA_NA   10.09%    passed     99.49%
+  99  10586_7023_7637_AF138553_B_NA_NA   10.09%    passed     99.91%
+ 100  10586_7023_7637_AF138552_B_NA_NA    9.17%    passed     96.57%
+ 101  10586_7023_7637_AF138551_B_NA_NA    9.17%    passed     99.14%
+ 102  10586_7023_7637_AF138550_B_NA_NA    7.34%    passed     99.13%
+ 103  10586_7023_7637_AF138549_B_NA_NA    7.34%    passed     99.55%
+ 104  10586_7023_7637_AF138548_B_NA_NA    7.34%    passed     99.18%
+ 105  10586_7023_7637_AF138547_B_NA_NA   10.09%    passed     99.67%
+ 106  10586_7023_7637_AF138546_B_NA_NA    7.34%    passed     99.22%
+ 107  10586_7023_7637_AF138545_B_NA_NA    7.34%    passed     99.22%
+ 108  10586_7023_7637_AF138544_B_NA_NA    9.17%    passed     99.57%
+ 109  10586_7023_7637_AF138543_B_NA_NA    9.17%    passed     96.86%
+ 110  10586_7023_7637_AF138542_B_NA_NA   10.09%    passed     98.19%
+ 111  10586_7023_7637_AF138541_B_NA_NA   10.09%    passed     99.96%
+ 112  10586_7026_7637_AF138540_B_NA_NA    9.63%    passed     98.16%
+ 113  10586_7026_7637_AF138539_B_NA_NA    9.63%    passed     98.47%
+ 114  10586_7023_7637_AF138538_B_NA_NA    9.17%    passed     98.29%
+ 115  10586_7023_7637_AF138537_B_NA_NA   10.09%    passed     99.67%
+ 116  10586_7023_7637_AF138536_B_NA_NA    9.17%    passed     96.86%
+ 117  10586_7023_7637_AF138535_B_NA_NA   10.09%    passed     99.91%
+ 118  10586_7023_7637_AF138534_B_NA_NA    9.17%    passed     96.86%
+ 119  10586_7023_7637_AF138533_B_NA_NA    9.17%    passed     98.03%
+ 120  10586_7023_7637_AF138532_B_NA_NA   10.09%    passed     99.53%
+ 121  10586_7023_7637_AF138531_B_NA_NA    9.17%    passed     99.14%
+****  TOTAL                               7.60%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: 10586_7023_7637_AF138632_B_NA_NA is identical to 10586_7023_7637_AF138633_B_NA_NA but kept for subsequent analysis
+NOTE: 10586_7023_7637_AF138545_B_NA_NA is identical to 10586_7023_7637_AF138546_B_NA_NA but kept for subsequent analysis
+NOTE: 10586_7023_7637_AF138536_B_NA_NA is identical to 10586_7023_7637_AF138543_B_NA_NA but kept for subsequent analysis
+NOTE: 1 identical sequences (see below) will be ignored for subsequent analysis
+NOTE: 10586_7023_7637_AF138534_B_NA_NA (identical to 10586_7023_7637_AF138543_B_NA_NA) is ignored but added at the end
+Alignment was printed to iqtree_subset/10586+1+B.uniqueseq.phy
+
+For your convenience alignment with unique sequences printed to iqtree_subset/10586+1+B.uniqueseq.phy
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.010 seconds
+
+NOTE: 5 MB RAM (0 GB) is required!
+Measuring multi-threading efficiency up to 1 CPU cores
+Increase to 10 rounds for branch lengths
+13 trees examined
+Threads: 1 / Time: 1.032 sec / Speedup: 1.000 / Efficiency: 100% / LogL: -12454
+BEST NUMBER OF THREADS: 1
+
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -6468.658
+2. Current log-likelihood: -6089.242
+3. Current log-likelihood: -6086.005
+4. Current log-likelihood: -6084.341
+5. Current log-likelihood: -6081.931
+6. Current log-likelihood: -6078.539
+7. Current log-likelihood: -6074.740
+8. Current log-likelihood: -6072.527
+9. Current log-likelihood: -6071.618
+10. Current log-likelihood: -6071.050
+11. Current log-likelihood: -6070.636
+12. Current log-likelihood: -6070.492
+Optimal log-likelihood: -6070.461
+Rate parameters:  A-C: 2.25958  A-G: 7.57921  A-T: 0.54196  C-G: 1.18498  C-T: 5.23777  G-T: 1.00000
+Base frequencies:  A: 0.402  C: 0.150  G: 0.217  T: 0.231
+Proportion of invariable sites: 0.260
+Site proportion and rates:  (0.286,0.367) (0.246,0.497) (0.194,3.155) (0.013,11.884)
+Parameters optimization took 12 rounds (1.593 sec)
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.0518088 secs using 99.79% CPU
+Computing ML distances took 0.051986 sec (of wall-clock time) 0.051852 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 0.000356755 secs using 97.55% CPU
+Computing RapidNJ tree took 0.001330 sec (of wall-clock time) 0.001317 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -6057.467
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 1.054 second
+Computing log-likelihood of 98 initial trees ... 1.033 seconds
+Current best score: -5981.336
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -5973.575
+Iteration 10 / LogL: -5993.029 / Time: 0h:0m:7s
+Iteration 20 / LogL: -6013.295 / Time: 0h:0m:9s
+Finish initializing candidate tree set (20)
+Current best tree score: -5973.575 / CPU time: 6.248
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 28: -5971.698
+Iteration 30 / LogL: -5979.750 / Time: 0h:0m:12s (0h:0m:40s left)
+Iteration 40 / LogL: -5975.200 / Time: 0h:0m:14s (0h:0m:33s left)
+Iteration 50 / LogL: -5973.959 / Time: 0h:0m:17s (0h:0m:27s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 55: -5968.444
+Iteration 60 / LogL: -5973.321 / Time: 0h:0m:20s (0h:0m:32s left)
+Iteration 70 / LogL: -5977.461 / Time: 0h:0m:22s (0h:0m:28s left)
+Iteration 80 / LogL: -5974.682 / Time: 0h:0m:25s (0h:0m:24s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 85: -5966.714
+Iteration 90 / LogL: -5970.003 / Time: 0h:0m:28s (0h:0m:30s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 92: -5965.535
+Iteration 100 / LogL: -5971.000 / Time: 0h:0m:31s (0h:0m:29s left)
+BETTER TREE FOUND at iteration 109: -5965.534
+Iteration 110 / LogL: -5976.100 / Time: 0h:0m:34s (0h:0m:30s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 111: -5964.997
+Iteration 120 / LogL: -5965.582 / Time: 0h:0m:37s (0h:0m:28s left)
+Iteration 130 / LogL: -5965.149 / Time: 0h:0m:39s (0h:0m:25s left)
+Iteration 140 / LogL: -5965.145 / Time: 0h:0m:42s (0h:0m:21s left)
+Iteration 150 / LogL: -5965.581 / Time: 0h:0m:45s (0h:0m:18s left)
+Iteration 160 / LogL: -5967.977 / Time: 0h:0m:47s (0h:0m:15s left)
+BETTER TREE FOUND at iteration 165: -5964.997
+Iteration 170 / LogL: -5967.070 / Time: 0h:0m:50s (0h:0m:28s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 178: -5964.924
+Iteration 180 / LogL: -5965.001 / Time: 0h:0m:53s (0h:0m:29s left)
+Iteration 190 / LogL: -5999.777 / Time: 0h:0m:55s (0h:0m:26s left)
+Iteration 200 / LogL: -5966.203 / Time: 0h:0m:58s (0h:0m:22s left)
+Iteration 210 / LogL: -5965.383 / Time: 0h:1m:1s (0h:0m:19s left)
+Iteration 220 / LogL: -5970.502 / Time: 0h:1m:3s (0h:0m:16s left)
+BETTER TREE FOUND at iteration 227: -5964.923
+Iteration 230 / LogL: -5981.405 / Time: 0h:1m:6s (0h:0m:28s left)
+Iteration 240 / LogL: -5964.925 / Time: 0h:1m:8s (0h:0m:25s left)
+Iteration 250 / LogL: -5964.925 / Time: 0h:1m:11s (0h:0m:22s left)
+Iteration 260 / LogL: -5971.403 / Time: 0h:1m:14s (0h:0m:19s left)
+BETTER TREE FOUND at iteration 267: -5964.923
+Iteration 270 / LogL: -5965.001 / Time: 0h:1m:16s (0h:0m:27s left)
+Iteration 280 / LogL: -5968.882 / Time: 0h:1m:19s (0h:0m:24s left)
+BETTER TREE FOUND at iteration 285: -5964.923
+BETTER TREE FOUND at iteration 289: -5964.923
+Iteration 290 / LogL: -6003.777 / Time: 0h:1m:22s (0h:0m:28s left)
+Iteration 300 / LogL: -5998.910 / Time: 0h:1m:25s (0h:0m:25s left)
+Iteration 310 / LogL: -5973.459 / Time: 0h:1m:27s (0h:0m:22s left)
+Iteration 320 / LogL: -5975.426 / Time: 0h:1m:30s (0h:0m:19s left)
+Iteration 330 / LogL: -5965.003 / Time: 0h:1m:33s (0h:0m:16s left)
+Iteration 340 / LogL: -5969.469 / Time: 0h:1m:35s (0h:0m:13s left)
+Iteration 350 / LogL: -5964.923 / Time: 0h:1m:38s (0h:0m:11s left)
+Iteration 360 / LogL: -5964.924 / Time: 0h:1m:41s (0h:0m:8s left)
+Iteration 370 / LogL: -5973.100 / Time: 0h:1m:43s (0h:0m:5s left)
+Iteration 380 / LogL: -5965.001 / Time: 0h:1m:46s (0h:0m:2s left)
+Iteration 390 / LogL: -5973.022 / Time: 0h:1m:49s (0h:0m:-1s left)
+TREE SEARCH COMPLETED AFTER 390 ITERATIONS / Time: 0h:1m:49s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -5964.923
+Optimal log-likelihood: -5964.922
+Rate parameters:  A-C: 2.52157  A-G: 8.09580  A-T: 0.54115  C-G: 1.04959  C-T: 5.11554  G-T: 1.00000
+Base frequencies:  A: 0.402  C: 0.150  G: 0.217  T: 0.231
+Proportion of invariable sites: 0.242
+Site proportion and rates:  (0.297,0.357) (0.253,0.467) (0.194,3.114) (0.013,13.349)
+Parameters optimization took 1 rounds (0.061 sec)
+BEST SCORE FOUND : -5964.922
+Empirical proportions for each category: 0.685 0.128 0.174 0.012
+Site rates printed to iqtree_subset/10586+1+B.rate
+
+Testing tree branches by SH-like aLRT with 1000 replicates...
+1.502 sec.
+Total tree length: 1.730
+
+Total number of iterations: 390
+CPU time used for tree search: 104.163 sec (0h:1m:44s)
+Wall-clock time used for tree search: 106.829 sec (0h:1m:46s)
+Total CPU time used: 108.472 sec (0h:1m:48s)
+Total wall-clock time used: 111.185 sec (0h:1m:51s)
+
+Analysis results written to: 
+  IQ-TREE report:                iqtree_subset/10586+1+B.iqtree
+  Maximum-likelihood tree:       iqtree_subset/10586+1+B.treefile
+  Likelihood distances:          iqtree_subset/10586+1+B.mldist
+  Site-specific rates:           iqtree_subset/10586+1+B.rate
+  Screen log file:               iqtree_subset/10586+1+B.log
+
+Date and Time: Tue Feb 11 18:02:10 2025

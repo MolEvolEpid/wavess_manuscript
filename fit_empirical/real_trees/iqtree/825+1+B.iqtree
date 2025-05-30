@@ -1,0 +1,213 @@
+IQ-TREE 2.3.3 COVID-edition built Apr 25 2024
+
+Input file name: mafft_subset/825+1+B.fasta
+Type of analysis: tree reconstruction
+Random seed number: 992573
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Bui Quang Minh, Heiko A. Schmidt, Olga Chernomor, Dominik Schrempf,
+Michael D. Woodhams, Arndt von Haeseler, and Robert Lanfear (2020)
+IQ-TREE 2: New models and efficient methods for phylogenetic inference
+in the genomic era. Mol. Biol. Evol., in press.
+https://doi.org/10.1093/molbev/msaa015
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 52 sequences with 651 nucleotide sites
+Number of constant sites: 455 (= 69.8925% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 455 (= 69.8925% of all sites)
+Number of parsimony informative sites: 93
+Number of distinct site patterns: 208
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: GTR+F+I+R4
+
+Rate parameter R:
+
+  A-C: 2.6846
+  A-G: 5.8445
+  A-T: 0.5515
+  C-G: 0.8787
+  C-T: 7.7329
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.4115
+  pi(C) = 0.149
+  pi(G) = 0.211
+  pi(T) = 0.2285
+
+Rate matrix Q:
+
+  A   -0.8275    0.1881    0.5801   0.05928
+  C    0.5196    -1.438   0.08723    0.8313
+  G     1.131   0.06157      -1.3    0.1075
+  T    0.1067    0.5418   0.09926   -0.7478
+
+Model of rate heterogeneity: Invar+FreeRate with 4 categories
+Proportion of invariable sites: 0.1859
+Site proportion and rates:  (0.3167,0.3879) (0.3117,0.3888) (0.1258,2.106) (0.05999,8.186)
+
+ Category  Relative_rate  Proportion
+  0         0              0.1859
+  1         0.3879         0.3167
+  2         0.3888         0.3117
+  3         2.106          0.1258
+  4         8.186          0.05999
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -3089.1566 (s.e. 153.4602)
+Unconstrained log-likelihood (without tree): -2273.2796
+Number of free parameters (#branches + #model parameters): 114
+Akaike information criterion (AIC) score: 6406.3132
+Corrected Akaike information criterion (AICc) score: 6455.2311
+Bayesian information criterion (BIC) score: 6916.8633
+
+Total tree length (sum of branch lengths): 0.7454
+Sum of internal branch lengths: 0.2245 (30.1248% of tree length)
+
+WARNING: 17 near-zero internal branches (<0.0015) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon '825_7023_7637_AF138703_B_NA_NA' is drawn at root
+Numbers in parentheses are SH-aLRT support (%)
+
++--825_7023_7637_AF138703_B_NA_NA
+|
+|                 +------------825_7023_7637_AF138702_B_NA_NA
+|           +-----| (93.2)
+|           |     |  +---------825_7023_7637_AF138699_B_NA_NA
+|           |     +--| (77.2)
+|           |        +-----------825_7023_7637_AF138697_B_NA_NA
++-----------| (98.5)
+|           |                       +----825_7023_7640_AF138700_B_NA_NA
+|           |  +--------------------| (100)
+|           |  |                    +----------825_7023_7640_AF138698_B_NA_NA
+|           +--| (86.1)
+|              |    +------------------825_7023_7637_AF138696_B_NA_NA
+|              +----| (32.6)
+|                   |                       +---------------825_7023_7637_AF138695_B_NA_NA
+|                   |                   +---| (87.8)
+|                   |                   |   |  +--825_7023_7637_AF138688_B_NA_NA
+|                   |                   |   +--| (80.5)
+|                   |                   |      +-------825_7023_7637_AF138683_B_NA_NA
+|                   |                +--| (51.5)
+|                   |                |  |  +**825_7023_7637_AF138679_B_NA_NA
+|                   |                |  +--| (84.1)
+|                   |                |     +--825_7023_7637_AF138676_B_NA_NA
+|                   |             +--| (90.7)
+|                   |             |  |                                   +----825_7023_7637_AF138693_B_NA_NA
+|                   |             |  |                                +--| (85.4)
+|                   |             |  |                                |  +--825_7023_7637_AF138685_B_NA_NA
+|                   |             |  |                             +--| (88.4)
+|                   |             |  |                             |  +---825_7023_7637_AF138684_B_NA_NA
+|                   |             |  |                          +--| (89.3)
+|                   |             |  |                          |  +-----825_7023_7637_AF138682_B_NA_NA
+|                   |             |  |                       +--| (78.2)
+|                   |             |  |                       |  |     +--825_7023_7637_AF138670_B_NA_NA
+|                   |             |  |                       |  |  +**| (73.9)
+|                   |             |  |                       |  |  |  |  +--825_7023_7637_AF138669_B_NA_NA
+|                   |             |  |                       |  |  |  +--| (77.6)
+|                   |             |  |                       |  |  |     +--825_7023_7637_AF138668_B_NA_NA
+|                   |             |  |                       |  +--| (75.9)
+|                   |             |  |                       |     +--825_7023_7637_AF138667_B_NA_NA
+|                   |             |  |                    +**| (73.7)
+|                   |             |  |                    |  +--825_7023_7637_AF138673_B_NA_NA
+|                   |             |  |                 +**| (0)
+|                   |             |  |                 |  +--825_7023_7637_AF138662_B_NA_NA
+|                   |             |  |              +**| (0)
+|                   |             |  |              |  |        +----825_7023_7637_AF138677_B_NA_NA
+|                   |             |  |              |  |     +--| (83.9)
+|                   |             |  |              |  |     |  +--825_7023_7637_AF138666_B_NA_NA
+|                   |             |  |              |  |  +**| (0)
+|                   |             |  |              |  |  |  +--825_7023_7637_AF138660_B_NA_NA
+|                   |             |  |              |  +**| (0)
+|                   |             |  |              |     |     +--825_7023_7637_AF138659_B_NA_NA
+|                   |             |  |              |     |  +--| (88.6)
+|                   |             |  |              |     |  |  +--825_7023_7637_AF138658_B_NA_NA
+|                   |             |  |              |     +**| (0)
+|                   |             |  |              |        |     +--825_7023_7637_AF138655_B_NA_NA
+|                   |             |  |              |        |  +**| (0)
+|                   |             |  |              |        |  |  +--825_7023_7637_AF138653_B_NA_NA
+|                   |             |  |              |        +--| (88.7)
+|                   |             |  |              |           |  +--825_7023_7637_AF138654_B_NA_NA
+|                   |             |  |              |           +**| (0)
+|                   |             |  |              |              +--825_7023_7637_AF138652_B_NA_NA
+|                   |             |  |           +**| (0)
+|                   |             |  |           |  |  +**825_7023_7637_AF138665_B_NA_NA
+|                   |             |  |           |  +**| (0)
+|                   |             |  |           |     +**825_7023_7637_AF138663_B_NA_NA
+|                   |             |  |        +--| (83.2)
+|                   |             |  |        |  |  +--825_7023_7637_AF138661_B_NA_NA
+|                   |             |  |        |  +**| (0)
+|                   |             |  |        |     +--825_7023_7637_AF138657_B_NA_NA
+|                   |             |  |     +--| (95)
+|                   |             |  |     |  +**825_7023_7637_AF138664_B_NA_NA
+|                   |             |  |  +--| (92.4)
+|                   |             |  |  |  |  +--825_7023_7637_AF138672_B_NA_NA
+|                   |             |  |  |  +**| (0)
+|                   |             |  |  |     +--825_7023_7637_AF138671_B_NA_NA
+|                   |             |  +**| (72.8)
+|                   |             |     |        +------825_7023_7637_AF138689_B_NA_NA
+|                   |             |     |     +--| (63.2)
+|                   |             |     |     |  +--825_7023_7637_AF138687_B_NA_NA
+|                   |             |     |  +--| (71.2)
+|                   |             |     |  |  +---------825_7023_7637_AF138686_B_NA_NA
+|                   |             |     +**| (62.9)
+|                   |             |        |     +--825_7023_7637_AF138678_B_NA_NA
+|                   |             |        |  +--| (78.8)
+|                   |             |        |  |  +-----825_7023_7637_AF138674_B_NA_NA
+|                   |             |        +--| (74.5)
+|                   |             |           +------825_7023_7637_AF138675_B_NA_NA
+|                   |          +--| (46.5)
+|                   |          |  |  +---------825_7023_7637_AF138681_B_NA_NA
+|                   |          |  +**| (0)
+|                   |          |     +---------825_7023_7637_AF138680_B_NA_NA
+|                   |     +----| (65.6)
+|                   |     |    +-----------------825_7023_7637_AF138691_B_NA_NA
+|                   |  +--| (78.4)
+|                   |  |  +---------825_7023_7637_AF138692_B_NA_NA
+|                   +**| (0)
+|                      |  +--825_7023_7637_AF138694_B_NA_NA
+|                      +--| (84.4)
+|                         +-------------825_7023_7637_AF138690_B_NA_NA
+|
++**825_7023_7637_AF138701_B_NA_NA
+
+Tree in newick format:
+
+(825_7023_7637_AF138703_B_NA_NA:0.0033878145,((825_7023_7637_AF138702_B_NA_NA:0.0265404371,(825_7023_7637_AF138699_B_NA_NA:0.0217121128,825_7023_7637_AF138697_B_NA_NA:0.0255469655)77.2:0.0076244826)93.2:0.0135736253,((825_7023_7640_AF138700_B_NA_NA:0.0117851755,825_7023_7640_AF138698_B_NA_NA:0.0231547060)100:0.0422491433,(825_7023_7637_AF138696_B_NA_NA:0.0393813735,(((((((825_7023_7637_AF138695_B_NA_NA:0.0333482115,(825_7023_7637_AF138688_B_NA_NA:0.0068110481,825_7023_7637_AF138683_B_NA_NA:0.0174709372)80.5:0.0060817484)87.8:0.0080101529,(825_7023_7637_AF138679_B_NA_NA:0.0000009894,825_7023_7637_AF138676_B_NA_NA:0.0017147278)84.1:0.0039529254)51.5:0.0051926376,((((((((((((825_7023_7637_AF138693_B_NA_NA:0.0105297821,825_7023_7637_AF138685_B_NA_NA:0.0039664252)85.4:0.0041987736,825_7023_7637_AF138684_B_NA_NA:0.0088386440)88.4:0.0052399290,825_7023_7637_AF138682_B_NA_NA:0.0121594397)89.3:0.0064439505,((825_7023_7637_AF138670_B_NA_NA:0.0017495998,(825_7023_7637_AF138669_B_NA_NA:0.0018248788,825_7023_7637_AF138668_B_NA_NA:0.0017756162)77.6:0.0017666182)73.9:0.0015169934,825_7023_7637_AF138667_B_NA_NA:0.0037372774)75.9:0.0017432327)78.2:0.0017966933,825_7023_7637_AF138673_B_NA_NA:0.0055251024)73.7:0.0014899624,825_7023_7637_AF138662_B_NA_NA:0.0070210719)0:0.0000020544,(((825_7023_7637_AF138677_B_NA_NA:0.0106814010,825_7023_7637_AF138666_B_NA_NA:0.0052876390)83.9:0.0034513009,825_7023_7637_AF138660_B_NA_NA:0.0017298145)0:0.0000024393,((825_7023_7637_AF138659_B_NA_NA:0.0035621613,825_7023_7637_AF138658_B_NA_NA:0.0035828338)88.6:0.0034736193,((825_7023_7637_AF138655_B_NA_NA:0.0052712346,825_7023_7637_AF138653_B_NA_NA:0.0037888729)0:0.0000023472,(825_7023_7637_AF138654_B_NA_NA:0.0034899750,825_7023_7637_AF138652_B_NA_NA:0.0034909179)0:0.0000025773)88.7:0.0017355664)0:0.0000009894)0:0.0000026396)0:0.0000009894,(825_7023_7637_AF138665_B_NA_NA:0.0000009894,825_7023_7637_AF138663_B_NA_NA:0.0000009894)0:0.0000009894)0:0.0000009894,(825_7023_7637_AF138661_B_NA_NA:0.0017279612,825_7023_7637_AF138657_B_NA_NA:0.0017341992)0:0.0000009894)83.2:0.0017361210,825_7023_7637_AF138664_B_NA_NA:0.0000021898)95:0.0052775742,(825_7023_7637_AF138672_B_NA_NA:0.0052366176,825_7023_7637_AF138671_B_NA_NA:0.0016722204)0:0.0000020204)92.4:0.0036718416,(((825_7023_7637_AF138689_B_NA_NA:0.0152214368,825_7023_7637_AF138687_B_NA_NA:0.0077736213)63.2:0.0044826022,825_7023_7637_AF138686_B_NA_NA:0.0207740099)71.2:0.0056709953,((825_7023_7637_AF138678_B_NA_NA:0.0018769511,825_7023_7637_AF138674_B_NA_NA:0.0122030640)78.8:0.0018119717,825_7023_7637_AF138675_B_NA_NA:0.0142193782)74.5:0.0017660972)62.9:0.0010276501)72.8:0.0015280773)90.7:0.0066344374,(825_7023_7637_AF138681_B_NA_NA:0.0212133988,825_7023_7637_AF138680_B_NA_NA:0.0207237617)0:0.0000020424)46.5:0.0073051725,825_7023_7637_AF138691_B_NA_NA:0.0362797676)65.6:0.0100262334,825_7023_7637_AF138692_B_NA_NA:0.0212651237)78.4:0.0043712033,(825_7023_7637_AF138694_B_NA_NA:0.0018879778,825_7023_7637_AF138690_B_NA_NA:0.0281604938)84.4:0.0049026348)0:0.0002433788)32.6:0.0118252773)86.1:0.0074633691)98.5:0.0252409665,825_7023_7637_AF138701_B_NA_NA:0.0000009894);
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t iqtree_subset/825+1+B.treefile -m "GTR{2.68458,5.84448,0.55149,0.87875,7.73292}+F{0.411488,0.148951,0.211028,0.228533}+I{0.185884}+R4{0.316684,0.387916,0.311669,0.388812,0.125778,2.10637,0.0599851,8.186}" --length 651
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s mafft_subset/825+1+B.fasta --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s mafft_subset/825+1+B.fasta --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Tue Feb 11 18:00:30 2025
+Total CPU time used: 35.0022 seconds (0h:0m:35s)
+Total wall-clock time used: 36.1806 seconds (0h:0m:36s)
+

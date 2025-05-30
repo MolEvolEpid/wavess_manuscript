@@ -1,0 +1,33 @@
+import glob
+import re
+
+samps = [x.removeprefix('data/fasta/').removesuffix('.fasta') for x in glob.glob("data/fasta/*")]
+
+rule all:
+  input:
+    expand('iqtree/{samp}.treefile', samp = samps)
+
+rule subset_alignments:
+  input:
+    metadat='data/metadata/25_mullins_sample_info.csv',
+    alns='data/fasta/{samp}.fasta'
+  output:
+    unaligned_subset='unaligned_subset/{samp}.fasta'
+  script:
+    'scripts/subset_alignment.R'
+
+rule align:
+  input:
+    unaligned='unaligned_subset/{samp}.fasta'
+  output: 
+    aligned='mafft/{samp}.fasta'
+  shell:
+    'linsi {input.unaligned} > {output.aligned}' # linsi is short for mafft --localpair --maxiterate 1000
+
+rule build_tree:
+  input:
+    alignment='mafft/{samp}.fasta'
+  output:
+    tree='iqtree/{samp}.treefile'
+  shell:
+    "iqtree -s {input.alignment} -m GTR+I+R -alrt 1000 -T AUTO --prefix iqtree/{wildcards.samp} --rate -redo"

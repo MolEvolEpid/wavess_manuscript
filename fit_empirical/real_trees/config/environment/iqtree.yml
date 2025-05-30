@@ -1,0 +1,11 @@
+name: iqtree
+
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  - mafft
+  - iqtree
+  - snakemake=7.32.4

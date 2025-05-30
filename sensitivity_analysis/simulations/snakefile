@@ -1,0 +1,67 @@
+import numpy as np
+import sys
+import random
+
+n = list(range(10))
+#random.seed(1234)
+#seeds = [random.randrange(sys.maxsize) for x in m]
+
+path_prefix = "output/traj{traj}_set{i}_rep{n}_"
+
+rule all:
+  input:
+    #expand("input/config_files/config_traj{traj}_set{i}.yaml", traj=range(1,3*14+1), i=range(0,14+1))
+    expand(path_prefix + "tr_summary_stats.csv", traj=range(1,3*14+1), i=range(0,14+1), n=n),
+
+rule create_input_files:
+  input:
+    "input/parameter_sets.csv",
+    "input/founder_n1.fasta",
+    #"input/epitope_locations.csv",
+  output:
+    expand("input/epitopes/traj{traj}_set{i}.csv", traj=range(1,3*14+1), i=range(0,14+1)),
+    expand("input/growth_curves/traj{traj}_set{i}.csv", traj=range(1,3*14+1), i=range(0,14+1)),
+    expand("input/founders/traj{traj}_set{i}.csv", traj=range(1,3*14+1), i=range(0,14+1))
+  script:
+    "scripts/create_input_files.R"
+ 
+rule create_config_files:
+  input:
+    "input/parameter_sets.csv",
+    "input/config.yaml",
+    "input/growth_curves/traj{traj}_set{i}.csv",
+    "input/founders/traj{traj}_set{i}.csv",
+    "input/epitopes/traj{traj}_set{i}.csv"
+  output:
+    "input/config_files/config_traj{traj}_set{i}.yaml"
+  script:
+    "scripts/create_config_file.py"
+
+rule run_wavess:
+  input:
+    "input/config_files/config_traj{traj}_set{i}.yaml"
+  output:
+    path_prefix + "counts.csv",
+    path_prefix + "viral_seqs_active_CD4.fasta"
+  shell:
+    "python run_wavess.py {input[0]} output/traj{wildcards.traj}_set{wildcards.i}_rep{wildcards.n}_"
+
+rule make_tree:
+  input:
+    path_prefix + "viral_seqs_active_CD4.fasta",
+  output:
+    path_prefix + "iqtree.treefile"
+  shell:
+    "iqtree -s {input[0]} -m GTR+I+R -alrt 1000 --prefix output/traj{wildcards.traj}_set{wildcards.i}_rep{wildcards.n}_iqtree -redo"
+
+rule calc_summary_stats:
+  input:
+    #rules.run_wavess.output[1],
+     path_prefix + "iqtree.treefile"
+  output:
+    #path_prefix + "div_metrics.csv",
+    path_prefix + "tr_summary_stats.csv",
+    #path_prefix + "tr.png"
+  script:
+    "scripts/calc_summary_stats.R"
+

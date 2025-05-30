@@ -1,0 +1,7 @@
+.Rhistory
+.Rproj.user/
+sensitivity_analysis/simulations/input
+sensitivity_analysis/simulations/output
+fit_empirical/simulations/output/
+fit_empirical/simulations.zip
+sensitivity_analysis/simulations.zip

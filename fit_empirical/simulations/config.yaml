@@ -1,0 +1,32 @@
+# Input file paths
+input_files:
+    # Required input files
+    inf_pop_size: data/inf_pop_size.csv
+    samp_scheme: data/samp_scheme.csv
+    founder_seqs: data/founder.fasta
+    q: data/hiv_q_mat.csv
+    # Optional input files related to selection ("", i.e. empty string, = not modeled)
+    conserved_sites: data/founder_conserved_sites.csv
+    ref_seq: data/ref.fasta
+    epitope_locations: data/epitope_locations.csv
+
+# Parameters
+parameters:
+    generation_time: 1 # Generation time in days
+    # Diversity-generating mechanisms
+    mut_rate: 3.0e-5 # Mutation rate per site per generation
+    recomb_rate: 1.5e-5 # Recombination rate per site per generation
+    # Latent cell dynamics
+    act_to_lat: 0.001 # Per-day rate that an infected cell will become latent
+    lat_to_act: 0.01 # Per-day rate that a latent cell will become active
+    lat_prolif: 0.01 # Per-day rate that a latent cell will proliferate (based on central memory cells)
+    lat_die: 0.01 # Per-day rate that a latent cell will die
+    # Parameters related to fitness
+    # Conserved sites
+    conserved_cost: 0.99 # Fitness cost per mutation in a conserved site
+    # Replicative
+    replicative_cost: 0.001 # Fitness cost per difference from reference
+    # Immune
+    immune_start_day: 0 # Immunity considered only at this day onward
+    n_for_imm: 100 # Number new viral antigen must reach to initiate immune response against corresponding epitope
+    time_to_full_potency: 90 # Number of days for a new immune response to reach full potency

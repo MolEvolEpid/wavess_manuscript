@@ -1,0 +1,614 @@
+IQ-TREE multicore version 2.3.3 COVID-edition for Linux x86 64-bit built Apr 25 2024
+Developed by Bui Quang Minh, James Barbetti, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams, Ly Trong Nhan, Thomas Wong
+
+Host:    linusblack.lanl.gov (AVX512, FMA3, 754 GB RAM)
+Command: iqtree -s mafft_subset/13654+8+B.fasta -m GTR+I+R -alrt 1000 -T AUTO --prefix iqtree_subset/13654+8+B --rate -redo
+Seed:    494417 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Tue Feb 11 18:06:33 2025
+Kernel:  AVX+FMA - auto-detect threads (1 CPU cores detected)
+
+Reading alignment file mafft_subset/13654+8+B.fasta ... Fasta format detected
+Reading fasta file: done in 0.0356353 secs using 91.04% CPU
+Alignment most likely contains DNA/RNA sequences
+Alignment has 125 sequences with 8680 columns, 360 distinct patterns
+190 parsimony-informative, 406 singleton sites, 8084 constant sites
+WARNING: Some sequence names are changed as follows:
+13654+818+1207+DQ854068+B+NA+NA -> 13654_818_1207_DQ854068_B_NA_NA
+13654+818+1207+DQ854067+B+NA+NA -> 13654_818_1207_DQ854067_B_NA_NA
+13654+818+1207+DQ854066+B+NA+NA -> 13654_818_1207_DQ854066_B_NA_NA
+13654+818+1207+DQ854065+B+NA+NA -> 13654_818_1207_DQ854065_B_NA_NA
+13654+818+1207+DQ854064+B+NA+NA -> 13654_818_1207_DQ854064_B_NA_NA
+13654+818+1207+DQ854063+B+NA+NA -> 13654_818_1207_DQ854063_B_NA_NA
+13654+818+1207+DQ854062+B+NA+NA -> 13654_818_1207_DQ854062_B_NA_NA
+13654+818+1207+DQ854061+B+NA+NA -> 13654_818_1207_DQ854061_B_NA_NA
+13654+818+1207+DQ854060+B+NA+NA -> 13654_818_1207_DQ854060_B_NA_NA
+13654+818+1207+DQ854059+B+NA+NA -> 13654_818_1207_DQ854059_B_NA_NA
+13654+818+1207+DQ854058+B+NA+NA -> 13654_818_1207_DQ854058_B_NA_NA
+13654+818+1207+DQ854057+B+NA+NA -> 13654_818_1207_DQ854057_B_NA_NA
+13654+818+1207+DQ854056+B+NA+NA -> 13654_818_1207_DQ854056_B_NA_NA
+13654+818+1207+DQ854055+B+NA+NA -> 13654_818_1207_DQ854055_B_NA_NA
+13654+818+1207+DQ854054+B+NA+NA -> 13654_818_1207_DQ854054_B_NA_NA
+13654+818+1207+DQ854053+B+NA+NA -> 13654_818_1207_DQ854053_B_NA_NA
+13654+818+1207+DQ854052+B+NA+NA -> 13654_818_1207_DQ854052_B_NA_NA
+13654+818+1207+DQ854051+B+NA+NA -> 13654_818_1207_DQ854051_B_NA_NA
+13654+818+1207+DQ854050+B+NA+NA -> 13654_818_1207_DQ854050_B_NA_NA
+13654+818+1207+DQ854049+B+NA+NA -> 13654_818_1207_DQ854049_B_NA_NA
+13654+818+1207+DQ854048+B+NA+NA -> 13654_818_1207_DQ854048_B_NA_NA
+13654+818+1207+DQ854047+B+NA+NA -> 13654_818_1207_DQ854047_B_NA_NA
+13654+818+1207+DQ854046+B+NA+NA -> 13654_818_1207_DQ854046_B_NA_NA
+13654+818+1207+DQ854045+B+NA+NA -> 13654_818_1207_DQ854045_B_NA_NA
+13654+818+1207+DQ854044+B+NA+NA -> 13654_818_1207_DQ854044_B_NA_NA
+13654+818+1207+DQ854043+B+NA+NA -> 13654_818_1207_DQ854043_B_NA_NA
+13654+818+1207+DQ854042+B+NA+NA -> 13654_818_1207_DQ854042_B_NA_NA
+13654+818+1207+DQ854041+B+NA+NA -> 13654_818_1207_DQ854041_B_NA_NA
+13654+818+1207+DQ854040+B+NA+NA -> 13654_818_1207_DQ854040_B_NA_NA
+13654+818+1207+DQ854039+B+NA+NA -> 13654_818_1207_DQ854039_B_NA_NA
+13654+818+1207+DQ854038+B+NA+NA -> 13654_818_1207_DQ854038_B_NA_NA
+13654+818+1207+DQ854037+B+NA+NA -> 13654_818_1207_DQ854037_B_NA_NA
+13654+818+1207+DQ854036+B+NA+NA -> 13654_818_1207_DQ854036_B_NA_NA
+13654+818+1207+DQ854035+B+NA+NA -> 13654_818_1207_DQ854035_B_NA_NA
+13654+818+1207+DQ854034+B+NA+NA -> 13654_818_1207_DQ854034_B_NA_NA
+13654+818+1207+DQ854033+B+NA+NA -> 13654_818_1207_DQ854033_B_NA_NA
+13654+818+1207+DQ854032+B+NA+NA -> 13654_818_1207_DQ854032_B_NA_NA
+13654+818+1207+DQ854031+B+NA+NA -> 13654_818_1207_DQ854031_B_NA_NA
+13654+818+1207+DQ854030+B+NA+NA -> 13654_818_1207_DQ854030_B_NA_NA
+13654+818+1207+DQ854029+B+NA+NA -> 13654_818_1207_DQ854029_B_NA_NA
+13654+818+1207+DQ854028+B+NA+NA -> 13654_818_1207_DQ854028_B_NA_NA
+13654+818+1207+DQ854027+B+NA+NA -> 13654_818_1207_DQ854027_B_NA_NA
+13654+818+1207+DQ854026+B+NA+NA -> 13654_818_1207_DQ854026_B_NA_NA
+13654+818+1207+DQ854025+B+NA+NA -> 13654_818_1207_DQ854025_B_NA_NA
+13654+818+1207+DQ854024+B+NA+NA -> 13654_818_1207_DQ854024_B_NA_NA
+13654+818+1207+DQ854023+B+NA+NA -> 13654_818_1207_DQ854023_B_NA_NA
+13654+818+1207+DQ854022+B+NA+NA -> 13654_818_1207_DQ854022_B_NA_NA
+13654+818+1207+DQ854021+B+NA+NA -> 13654_818_1207_DQ854021_B_NA_NA
+13654+818+1207+DQ854020+B+NA+NA -> 13654_818_1207_DQ854020_B_NA_NA
+13654+818+1207+DQ854019+B+NA+NA -> 13654_818_1207_DQ854019_B_NA_NA
+13654+818+1207+DQ854018+B+NA+NA -> 13654_818_1207_DQ854018_B_NA_NA
+13654+818+1207+DQ854017+B+NA+NA -> 13654_818_1207_DQ854017_B_NA_NA
+13654+818+1207+DQ854016+B+NA+NA -> 13654_818_1207_DQ854016_B_NA_NA
+13654+818+1207+DQ854015+B+NA+NA -> 13654_818_1207_DQ854015_B_NA_NA
+13654+818+1207+DQ854014+B+NA+NA -> 13654_818_1207_DQ854014_B_NA_NA
+13654+818+1207+DQ854013+B+NA+NA -> 13654_818_1207_DQ854013_B_NA_NA
+13654+818+1207+DQ854012+B+NA+NA -> 13654_818_1207_DQ854012_B_NA_NA
+13654+818+1207+DQ854011+B+NA+NA -> 13654_818_1207_DQ854011_B_NA_NA
+13654+818+1207+DQ854010+B+NA+NA -> 13654_818_1207_DQ854010_B_NA_NA
+13654+818+1207+DQ854009+B+NA+NA -> 13654_818_1207_DQ854009_B_NA_NA
+13654+818+1207+DQ854008+B+NA+NA -> 13654_818_1207_DQ854008_B_NA_NA
+13654+818+1207+DQ854007+B+NA+NA -> 13654_818_1207_DQ854007_B_NA_NA
+13654+818+1207+DQ854006+B+NA+NA -> 13654_818_1207_DQ854006_B_NA_NA
+13654+818+1207+DQ854005+B+NA+NA -> 13654_818_1207_DQ854005_B_NA_NA
+13654+818+1207+DQ854004+B+NA+NA -> 13654_818_1207_DQ854004_B_NA_NA
+13654+818+1207+DQ854003+B+NA+NA -> 13654_818_1207_DQ854003_B_NA_NA
+13654+818+1207+DQ854002+B+NA+NA -> 13654_818_1207_DQ854002_B_NA_NA
+13654+818+1207+DQ854001+B+NA+NA -> 13654_818_1207_DQ854001_B_NA_NA
+13654+818+1207+DQ854000+B+NA+NA -> 13654_818_1207_DQ854000_B_NA_NA
+13654+818+1207+DQ853999+B+NA+NA -> 13654_818_1207_DQ853999_B_NA_NA
+13654+818+1207+DQ853998+B+NA+NA -> 13654_818_1207_DQ853998_B_NA_NA
+13654+818+1207+DQ853997+B+NA+NA -> 13654_818_1207_DQ853997_B_NA_NA
+13654+818+1207+DQ853996+B+NA+NA -> 13654_818_1207_DQ853996_B_NA_NA
+13654+818+1207+DQ853995+B+NA+NA -> 13654_818_1207_DQ853995_B_NA_NA
+13654+818+1207+DQ853994+B+NA+NA -> 13654_818_1207_DQ853994_B_NA_NA
+13654+818+1207+DQ853993+B+NA+NA -> 13654_818_1207_DQ853993_B_NA_NA
+13654+818+1207+DQ853992+B+NA+NA -> 13654_818_1207_DQ853992_B_NA_NA
+13654+818+1207+DQ853991+B+NA+NA -> 13654_818_1207_DQ853991_B_NA_NA
+13654+818+1207+DQ853990+B+NA+NA -> 13654_818_1207_DQ853990_B_NA_NA
+13654+818+1207+DQ853989+B+NA+NA -> 13654_818_1207_DQ853989_B_NA_NA
+13654+818+1207+DQ853988+B+NA+NA -> 13654_818_1207_DQ853988_B_NA_NA
+13654+818+1207+DQ853987+B+NA+NA -> 13654_818_1207_DQ853987_B_NA_NA
+13654+818+1207+DQ853986+B+NA+NA -> 13654_818_1207_DQ853986_B_NA_NA
+13654+818+1207+DQ853985+B+NA+NA -> 13654_818_1207_DQ853985_B_NA_NA
+13654+818+1207+DQ853984+B+NA+NA -> 13654_818_1207_DQ853984_B_NA_NA
+13654+818+1207+DQ853983+B+NA+NA -> 13654_818_1207_DQ853983_B_NA_NA
+13654+818+1207+DQ853982+B+NA+NA -> 13654_818_1207_DQ853982_B_NA_NA
+13654+818+1207+DQ853981+B+NA+NA -> 13654_818_1207_DQ853981_B_NA_NA
+13654+818+1207+DQ853980+B+NA+NA -> 13654_818_1207_DQ853980_B_NA_NA
+13654+818+1207+DQ853979+B+NA+NA -> 13654_818_1207_DQ853979_B_NA_NA
+13654+818+1207+DQ853978+B+NA+NA -> 13654_818_1207_DQ853978_B_NA_NA
+13654+818+1207+DQ853977+B+NA+NA -> 13654_818_1207_DQ853977_B_NA_NA
+13654+818+1207+DQ853976+B+NA+NA -> 13654_818_1207_DQ853976_B_NA_NA
+13654+818+1207+DQ853975+B+NA+NA -> 13654_818_1207_DQ853975_B_NA_NA
+13654+818+1207+DQ853974+B+NA+NA -> 13654_818_1207_DQ853974_B_NA_NA
+13654+818+1207+DQ853973+B+NA+NA -> 13654_818_1207_DQ853973_B_NA_NA
+13654+818+1207+DQ853972+B+NA+NA -> 13654_818_1207_DQ853972_B_NA_NA
+13654+818+1207+DQ853971+B+NA+NA -> 13654_818_1207_DQ853971_B_NA_NA
+13654+818+1207+DQ853970+B+NA+NA -> 13654_818_1207_DQ853970_B_NA_NA
+13654+818+1207+DQ853969+B+NA+NA -> 13654_818_1207_DQ853969_B_NA_NA
+13654+818+1207+DQ853968+B+NA+NA -> 13654_818_1207_DQ853968_B_NA_NA
+13654+818+1207+DQ853967+B+NA+NA -> 13654_818_1207_DQ853967_B_NA_NA
+13654+818+1207+DQ853966+B+NA+NA -> 13654_818_1207_DQ853966_B_NA_NA
+13654+818+1207+DQ853965+B+NA+NA -> 13654_818_1207_DQ853965_B_NA_NA
+13654+818+1207+DQ853964+B+NA+NA -> 13654_818_1207_DQ853964_B_NA_NA
+13654+818+1207+DQ853963+B+NA+NA -> 13654_818_1207_DQ853963_B_NA_NA
+13654+818+1207+DQ853962+B+NA+NA -> 13654_818_1207_DQ853962_B_NA_NA
+13654+818+1207+DQ853961+B+NA+NA -> 13654_818_1207_DQ853961_B_NA_NA
+13654+818+1207+DQ853960+B+NA+NA -> 13654_818_1207_DQ853960_B_NA_NA
+13654+818+1207+DQ853959+B+NA+NA -> 13654_818_1207_DQ853959_B_NA_NA
+13654+818+1207+DQ853958+B+NA+NA -> 13654_818_1207_DQ853958_B_NA_NA
+13654+818+1207+DQ853957+B+NA+NA -> 13654_818_1207_DQ853957_B_NA_NA
+13654+818+1207+DQ853956+B+NA+NA -> 13654_818_1207_DQ853956_B_NA_NA
+13654+818+1207+DQ853955+B+NA+NA -> 13654_818_1207_DQ853955_B_NA_NA
+13654+818+1207+DQ853954+B+NA+NA -> 13654_818_1207_DQ853954_B_NA_NA
+13654+790+9417+DQ853448+B+NA+NA -> 13654_790_9417_DQ853448_B_NA_NA
+13654+790+9417+DQ853447+B+NA+NA -> 13654_790_9417_DQ853447_B_NA_NA
+13654+790+9417+DQ853446+B+NA+NA -> 13654_790_9417_DQ853446_B_NA_NA
+13654+790+9417+DQ853445+B+NA+NA -> 13654_790_9417_DQ853445_B_NA_NA
+13654+790+9417+DQ853444+B+NA+NA -> 13654_790_9417_DQ853444_B_NA_NA
+13654+790+9417+DQ853443+B+NA+NA -> 13654_790_9417_DQ853443_B_NA_NA
+13654+790+9417+DQ853442+B+NA+NA -> 13654_790_9417_DQ853442_B_NA_NA
+13654+790+9417+DQ853441+B+NA+NA -> 13654_790_9417_DQ853441_B_NA_NA
+13654+790+9417+DQ853440+B+NA+NA -> 13654_790_9417_DQ853440_B_NA_NA
+13654+790+9417+DQ853439+B+NA+NA -> 13654_790_9417_DQ853439_B_NA_NA
+
+                                 Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 0.000160011 secs using 99.37% CPU
+   1  13654_818_1207_DQ854068_B_NA_NA   95.40%    failed      1.72%
+   2  13654_818_1207_DQ854067_B_NA_NA   95.51%    failed      2.70%
+   3  13654_818_1207_DQ854066_B_NA_NA   95.51%    failed      3.25%
+   4  13654_818_1207_DQ854065_B_NA_NA   95.30%    failed      1.78%
+   5  13654_818_1207_DQ854064_B_NA_NA   95.30%    failed      2.55%
+   6  13654_818_1207_DQ854063_B_NA_NA   95.30%    failed      1.39%
+   7  13654_818_1207_DQ854062_B_NA_NA   95.30%    failed      2.03%
+   8  13654_818_1207_DQ854061_B_NA_NA   95.30%    failed      1.55%
+   9  13654_818_1207_DQ854060_B_NA_NA   95.30%    failed      0.84%
+  10  13654_818_1207_DQ854059_B_NA_NA   95.30%    failed      1.47%
+  11  13654_818_1207_DQ854058_B_NA_NA   95.51%    failed      2.52%
+  12  13654_818_1207_DQ854057_B_NA_NA   95.40%    failed      1.46%
+  13  13654_818_1207_DQ854056_B_NA_NA   95.40%    failed      4.11%
+  14  13654_818_1207_DQ854055_B_NA_NA   95.30%    failed      1.50%
+  15  13654_818_1207_DQ854054_B_NA_NA   95.51%    failed      2.00%
+  16  13654_818_1207_DQ854053_B_NA_NA   95.30%    failed      0.76%
+  17  13654_818_1207_DQ854052_B_NA_NA   95.40%    failed      2.60%
+  18  13654_818_1207_DQ854051_B_NA_NA   95.40%    failed      2.26%
+  19  13654_818_1207_DQ854050_B_NA_NA   95.30%    failed      2.03%
+  20  13654_818_1207_DQ854049_B_NA_NA   95.30%    failed      1.13%
+  21  13654_818_1207_DQ854048_B_NA_NA   95.30%    failed      2.03%
+  22  13654_818_1207_DQ854047_B_NA_NA   95.52%    failed      3.81%
+  23  13654_818_1207_DQ854046_B_NA_NA   95.51%    passed      5.63%
+  24  13654_818_1207_DQ854045_B_NA_NA   95.52%    failed      4.22%
+  25  13654_818_1207_DQ854044_B_NA_NA   95.51%    failed      4.60%
+  26  13654_818_1207_DQ854043_B_NA_NA   95.51%    failed      1.52%
+  27  13654_818_1207_DQ854042_B_NA_NA   95.30%    failed      0.94%
+  28  13654_818_1207_DQ854041_B_NA_NA   95.30%    failed      1.56%
+  29  13654_818_1207_DQ854040_B_NA_NA   95.30%    failed      1.47%
+  30  13654_818_1207_DQ854039_B_NA_NA   95.30%    failed      1.13%
+  31  13654_818_1207_DQ854038_B_NA_NA   95.40%    failed      1.78%
+  32  13654_818_1207_DQ854037_B_NA_NA   95.40%    failed      1.26%
+  33  13654_818_1207_DQ854036_B_NA_NA   95.40%    failed      2.91%
+  34  13654_818_1207_DQ854035_B_NA_NA   95.40%    failed      3.58%
+  35  13654_818_1207_DQ854034_B_NA_NA   95.40%    failed      1.93%
+  36  13654_818_1207_DQ854033_B_NA_NA   95.51%    failed      4.60%
+  37  13654_818_1207_DQ854032_B_NA_NA   95.51%    failed      3.28%
+  38  13654_818_1207_DQ854031_B_NA_NA   95.51%    failed      1.28%
+  39  13654_818_1207_DQ854030_B_NA_NA   95.51%    failed      1.78%
+  40  13654_818_1207_DQ854029_B_NA_NA   95.51%    failed      4.18%
+  41  13654_818_1207_DQ854028_B_NA_NA   95.51%    failed      2.95%
+  42  13654_818_1207_DQ854027_B_NA_NA   95.51%    failed      1.78%
+  43  13654_818_1207_DQ854026_B_NA_NA   95.51%    failed      1.36%
+  44  13654_818_1207_DQ854025_B_NA_NA   95.50%    failed      1.95%
+  45  13654_818_1207_DQ854024_B_NA_NA   95.51%    failed      2.86%
+  46  13654_818_1207_DQ854023_B_NA_NA   95.40%    failed      1.72%
+  47  13654_818_1207_DQ854022_B_NA_NA   95.51%    failed      2.00%
+  48  13654_818_1207_DQ854021_B_NA_NA   95.51%    failed      2.29%
+  49  13654_818_1207_DQ854020_B_NA_NA   95.40%    failed      2.01%
+  50  13654_818_1207_DQ854019_B_NA_NA   95.51%    failed      2.00%
+  51  13654_818_1207_DQ854018_B_NA_NA   95.51%    failed      1.44%
+  52  13654_818_1207_DQ854017_B_NA_NA   95.51%    failed      1.89%
+  53  13654_818_1207_DQ854016_B_NA_NA   95.51%    failed      1.96%
+  54  13654_818_1207_DQ854015_B_NA_NA   95.51%    failed      1.51%
+  55  13654_818_1207_DQ854014_B_NA_NA   95.51%    failed      2.28%
+  56  13654_818_1207_DQ854013_B_NA_NA   95.51%    failed      1.71%
+  57  13654_818_1207_DQ854012_B_NA_NA   95.51%    failed      1.71%
+  58  13654_818_1207_DQ854011_B_NA_NA   95.51%    failed      1.51%
+  59  13654_818_1207_DQ854010_B_NA_NA   95.51%    failed      1.89%
+  60  13654_818_1207_DQ854009_B_NA_NA   95.51%    failed      1.71%
+  61  13654_818_1207_DQ854008_B_NA_NA   95.51%    failed      2.00%
+  62  13654_818_1207_DQ854007_B_NA_NA   95.51%    failed      3.73%
+  63  13654_818_1207_DQ854006_B_NA_NA   95.51%    failed      2.00%
+  64  13654_818_1207_DQ854005_B_NA_NA   95.51%    failed      2.23%
+  65  13654_818_1207_DQ854004_B_NA_NA   95.51%    failed      1.52%
+  66  13654_818_1207_DQ854003_B_NA_NA   95.52%    failed      3.02%
+  67  13654_818_1207_DQ854002_B_NA_NA   95.51%    failed      2.59%
+  68  13654_818_1207_DQ854001_B_NA_NA   95.51%    failed      3.29%
+  69  13654_818_1207_DQ854000_B_NA_NA   95.51%    failed      2.28%
+  70  13654_818_1207_DQ853999_B_NA_NA   95.51%    failed      2.59%
+  71  13654_818_1207_DQ853998_B_NA_NA   95.51%    failed      1.44%
+  72  13654_818_1207_DQ853997_B_NA_NA   95.51%    failed      1.96%
+  73  13654_818_1207_DQ853996_B_NA_NA   95.51%    failed      2.23%
+  74  13654_818_1207_DQ853995_B_NA_NA   95.51%    failed      2.23%
+  75  13654_818_1207_DQ853994_B_NA_NA   95.51%    failed      2.00%
+  76  13654_818_1207_DQ853993_B_NA_NA   95.51%    failed      2.28%
+  77  13654_818_1207_DQ853992_B_NA_NA   95.51%    failed      1.96%
+  78  13654_818_1207_DQ853991_B_NA_NA   95.53%    failed      2.32%
+  79  13654_818_1207_DQ853990_B_NA_NA   95.51%    failed      2.28%
+  80  13654_818_1207_DQ853989_B_NA_NA   95.51%    failed      2.28%
+  81  13654_818_1207_DQ853988_B_NA_NA   95.51%    failed      2.48%
+  82  13654_818_1207_DQ853987_B_NA_NA   95.51%    failed      2.23%
+  83  13654_818_1207_DQ853986_B_NA_NA   95.51%    failed      2.23%
+  84  13654_818_1207_DQ853985_B_NA_NA   95.51%    failed      2.28%
+  85  13654_818_1207_DQ853984_B_NA_NA   95.51%    failed      2.23%
+  86  13654_818_1207_DQ853983_B_NA_NA   95.51%    failed      2.23%
+  87  13654_818_1207_DQ853982_B_NA_NA   95.51%    failed      2.59%
+  88  13654_818_1207_DQ853981_B_NA_NA   95.51%    failed      2.59%
+  89  13654_818_1207_DQ853980_B_NA_NA   95.51%    failed      2.23%
+  90  13654_818_1207_DQ853979_B_NA_NA   95.51%    failed      2.95%
+  91  13654_818_1207_DQ853978_B_NA_NA   95.51%    failed      3.31%
+  92  13654_818_1207_DQ853977_B_NA_NA   95.51%    failed      2.59%
+  93  13654_818_1207_DQ853976_B_NA_NA   95.51%    failed      2.48%
+  94  13654_818_1207_DQ853975_B_NA_NA   95.51%    failed      2.95%
+  95  13654_818_1207_DQ853974_B_NA_NA   95.51%    failed      3.22%
+  96  13654_818_1207_DQ853973_B_NA_NA   95.51%    failed      2.48%
+  97  13654_818_1207_DQ853972_B_NA_NA   95.51%    failed      2.23%
+  98  13654_818_1207_DQ853971_B_NA_NA   95.51%    failed      2.23%
+  99  13654_818_1207_DQ853970_B_NA_NA   95.51%    failed      1.89%
+ 100  13654_818_1207_DQ853969_B_NA_NA   95.51%    failed      1.96%
+ 101  13654_818_1207_DQ853968_B_NA_NA   95.51%    failed      2.23%
+ 102  13654_818_1207_DQ853967_B_NA_NA   95.51%    failed      2.23%
+ 103  13654_818_1207_DQ853966_B_NA_NA   95.51%    failed      2.59%
+ 104  13654_818_1207_DQ853965_B_NA_NA   95.51%    failed      2.23%
+ 105  13654_818_1207_DQ853964_B_NA_NA   95.51%    failed      2.23%
+ 106  13654_818_1207_DQ853963_B_NA_NA   95.51%    failed      2.95%
+ 107  13654_818_1207_DQ853962_B_NA_NA   95.51%    failed      2.59%
+ 108  13654_818_1207_DQ853961_B_NA_NA   95.51%    failed      1.96%
+ 109  13654_818_1207_DQ853960_B_NA_NA   95.51%    failed      2.23%
+ 110  13654_818_1207_DQ853959_B_NA_NA   95.51%    failed      2.23%
+ 111  13654_818_1207_DQ853958_B_NA_NA   95.51%    failed      2.45%
+ 112  13654_818_1207_DQ853957_B_NA_NA   95.51%    failed      2.23%
+ 113  13654_818_1207_DQ853956_B_NA_NA   95.51%    failed      1.89%
+ 114  13654_818_1207_DQ853955_B_NA_NA   95.51%    failed      2.23%
+ 115  13654_818_1207_DQ853954_B_NA_NA   95.51%    failed      2.59%
+ 116  13654_790_9417_DQ853448_B_NA_NA    0.33%    failed      0.00%
+ 117  13654_790_9417_DQ853447_B_NA_NA    0.16%    failed      0.00%
+ 118  13654_790_9417_DQ853446_B_NA_NA    0.37%    failed      0.00%
+ 119  13654_790_9417_DQ853445_B_NA_NA    0.51%    failed      0.00%
+ 120  13654_790_9417_DQ853444_B_NA_NA    0.40%    failed      0.00%
+ 121  13654_790_9417_DQ853443_B_NA_NA    0.44%    failed      0.00%
+ 122  13654_790_9417_DQ853442_B_NA_NA    0.37%    failed      0.00%
+ 123  13654_790_9417_DQ853441_B_NA_NA    0.44%    failed      0.00%
+ 124  13654_790_9417_DQ853440_B_NA_NA    0.44%    failed      0.00%
+ 125  13654_790_9417_DQ853439_B_NA_NA    0.41%    failed      0.00%
+WARNING: 115 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                             87.86%  124 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: 13654_818_1207_DQ854006_B_NA_NA is identical to 13654_818_1207_DQ854008_B_NA_NA but kept for subsequent analysis
+NOTE: 13654_818_1207_DQ853996_B_NA_NA is identical to 13654_818_1207_DQ854005_B_NA_NA but kept for subsequent analysis
+NOTE: 13654_818_1207_DQ853992_B_NA_NA is identical to 13654_818_1207_DQ853997_B_NA_NA but kept for subsequent analysis
+NOTE: 13654_818_1207_DQ853985_B_NA_NA is identical to 13654_818_1207_DQ853990_B_NA_NA but kept for subsequent analysis
+NOTE: 13 identical sequences (see below) will be ignored for subsequent analysis
+NOTE: 13654_818_1207_DQ853995_B_NA_NA (identical to 13654_818_1207_DQ854005_B_NA_NA) is ignored but added at the end
+NOTE: 13654_818_1207_DQ853987_B_NA_NA (identical to 13654_818_1207_DQ854005_B_NA_NA) is ignored but added at the end
+NOTE: 13654_818_1207_DQ853983_B_NA_NA (identical to 13654_818_1207_DQ854005_B_NA_NA) is ignored but added at the end
+NOTE: 13654_818_1207_DQ853972_B_NA_NA (identical to 13654_818_1207_DQ854005_B_NA_NA) is ignored but added at the end
+NOTE: 13654_818_1207_DQ853971_B_NA_NA (identical to 13654_818_1207_DQ854005_B_NA_NA) is ignored but added at the end
+NOTE: 13654_818_1207_DQ853968_B_NA_NA (identical to 13654_818_1207_DQ854005_B_NA_NA) is ignored but added at the end
+NOTE: 13654_818_1207_DQ853967_B_NA_NA (identical to 13654_818_1207_DQ854005_B_NA_NA) is ignored but added at the end
+NOTE: 13654_818_1207_DQ853965_B_NA_NA (identical to 13654_818_1207_DQ854005_B_NA_NA) is ignored but added at the end
+NOTE: 13654_818_1207_DQ853964_B_NA_NA (identical to 13654_818_1207_DQ854005_B_NA_NA) is ignored but added at the end
+NOTE: 13654_818_1207_DQ853960_B_NA_NA (identical to 13654_818_1207_DQ854005_B_NA_NA) is ignored but added at the end
+NOTE: 13654_818_1207_DQ853959_B_NA_NA (identical to 13654_818_1207_DQ854005_B_NA_NA) is ignored but added at the end
+NOTE: 13654_818_1207_DQ853957_B_NA_NA (identical to 13654_818_1207_DQ854005_B_NA_NA) is ignored but added at the end
+NOTE: 13654_818_1207_DQ853955_B_NA_NA (identical to 13654_818_1207_DQ854005_B_NA_NA) is ignored but added at the end
+Alignment was printed to iqtree_subset/13654+8+B.uniqueseq.phy
+
+For your convenience alignment with unique sequences printed to iqtree_subset/13654+8+B.uniqueseq.phy
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.010 seconds
+
+NOTE: 5 MB RAM (0 GB) is required!
+Measuring multi-threading efficiency up to 1 CPU cores
+Increase to 10 rounds for branch lengths
+9 trees examined
+Threads: 1 / Time: 1.113 sec / Speedup: 1.000 / Efficiency: 100% / LogL: -18512
+BEST NUMBER OF THREADS: 1
+
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -18107.209
+2. Current log-likelihood: -17270.731
+3. Current log-likelihood: -17250.966
+4. Current log-likelihood: -17234.954
+5. Current log-likelihood: -17223.057
+6. Current log-likelihood: -17215.377
+7. Current log-likelihood: -17210.543
+8. Current log-likelihood: -17207.857
+9. Current log-likelihood: -17206.563
+10. Current log-likelihood: -17205.960
+11. Current log-likelihood: -17205.674
+12. Current log-likelihood: -17205.547
+Optimal log-likelihood: -17205.484
+Rate parameters:  A-C: 2.27731  A-G: 13.08581  A-T: 1.47391  C-G: 0.98995  C-T: 12.26420  G-T: 1.00000
+Base frequencies:  A: 0.335  C: 0.201  G: 0.244  T: 0.220
+Proportion of invariable sites: 0.502
+Site proportion and rates:  (0.159,0.869) (0.159,1.087) (0.153,1.258) (0.027,18.094)
+Parameters optimization took 12 rounds (2.332 sec)
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.0922017 secs using 99.73% CPU
+Computing ML distances took 0.092482 sec (of wall-clock time) 0.092236 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 0.000369923 secs using 98.67% CPU
+Computing RapidNJ tree took 0.002105 sec (of wall-clock time) 0.002089 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -17202.702
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 1.623 second
+Computing log-likelihood of 98 initial trees ... 1.740 seconds
+Current best score: -17194.044
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -17144.773
+Iteration 10 / LogL: -17166.169 / Time: 0h:0m:16s
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 15: -17139.304
+Iteration 20 / LogL: -17151.263 / Time: 0h:0m:23s
+Finish initializing candidate tree set (20)
+Current best tree score: -17139.304 / CPU time: 19.965
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 30: -17138.779
+Iteration 30 / LogL: -17138.779 / Time: 0h:0m:30s (0h:1m:45s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 32: -17136.527
+Iteration 40 / LogL: -17141.972 / Time: 0h:0m:36s (0h:1m:25s left)
+Iteration 50 / LogL: -17140.026 / Time: 0h:0m:41s (0h:1m:9s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 51: -17136.417
+Iteration 60 / LogL: -17137.023 / Time: 0h:0m:47s (0h:1m:12s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 66: -17135.951
+Iteration 70 / LogL: -17136.348 / Time: 0h:0m:53s (0h:1m:14s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 80: -17135.578
+Iteration 80 / LogL: -17135.578 / Time: 0h:1m:0s (0h:1m:15s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 86: -17134.748
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 90: -17134.665
+Iteration 90 / LogL: -17134.665 / Time: 0h:1m:5s (0h:1m:13s left)
+Iteration 100 / LogL: -17139.975 / Time: 0h:1m:11s (0h:1m:4s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 101: -17133.941
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 105: -17133.207
+Iteration 110 / LogL: -17140.831 / Time: 0h:1m:17s (0h:1m:7s left)
+Iteration 120 / LogL: -17136.267 / Time: 0h:1m:22s (0h:0m:58s left)
+Iteration 130 / LogL: -17133.663 / Time: 0h:1m:27s (0h:0m:50s left)
+Iteration 140 / LogL: -17139.587 / Time: 0h:1m:32s (0h:0m:43s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 141: -17128.776
+Iteration 150 / LogL: -17136.715 / Time: 0h:1m:37s (0h:0m:59s left)
+BETTER TREE FOUND at iteration 153: -17128.771
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 157: -17128.030
+Iteration 160 / LogL: -17140.680 / Time: 0h:1m:43s (0h:1m:3s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 162: -17126.204
+Iteration 170 / LogL: -17128.679 / Time: 0h:1m:49s (0h:0m:59s left)
+Iteration 180 / LogL: -17132.306 / Time: 0h:1m:55s (0h:0m:52s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 185: -17125.648
+Iteration 190 / LogL: -17129.514 / Time: 0h:2m:2s (0h:1m:1s left)
+Iteration 200 / LogL: -17144.123 / Time: 0h:2m:7s (0h:0m:54s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 208: -17123.817
+Iteration 210 / LogL: -17132.213 / Time: 0h:2m:13s (0h:1m:2s left)
+Iteration 220 / LogL: -17131.936 / Time: 0h:2m:19s (0h:0m:55s left)
+BETTER TREE FOUND at iteration 225: -17123.816
+Iteration 230 / LogL: -17128.326 / Time: 0h:2m:25s (0h:1m:0s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 236: -17123.519
+Iteration 240 / LogL: -17128.118 / Time: 0h:2m:31s (0h:1m:0s left)
+BETTER TREE FOUND at iteration 247: -17123.516
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 250: -17123.441
+Iteration 250 / LogL: -17123.441 / Time: 0h:2m:37s (0h:1m:3s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 255: -17123.082
+Iteration 260 / LogL: -17126.207 / Time: 0h:2m:41s (0h:0m:59s left)
+Iteration 270 / LogL: -17130.313 / Time: 0h:2m:47s (0h:0m:52s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 271: -17122.999
+Iteration 280 / LogL: -17123.285 / Time: 0h:2m:53s (0h:0m:56s left)
+Iteration 290 / LogL: -17130.885 / Time: 0h:2m:58s (0h:0m:49s left)
+Iteration 300 / LogL: -17124.860 / Time: 0h:3m:4s (0h:0m:43s left)
+Iteration 310 / LogL: -17128.536 / Time: 0h:3m:10s (0h:0m:37s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 317: -17122.934
+Iteration 320 / LogL: -17125.037 / Time: 0h:3m:16s (0h:0m:59s left)
+Iteration 330 / LogL: -17122.971 / Time: 0h:3m:21s (0h:0m:53s left)
+Iteration 340 / LogL: -17123.225 / Time: 0h:3m:26s (0h:0m:46s left)
+Iteration 350 / LogL: -17122.992 / Time: 0h:3m:33s (0h:0m:40s left)
+Iteration 360 / LogL: -17124.745 / Time: 0h:3m:38s (0h:0m:34s left)
+Iteration 370 / LogL: -17128.105 / Time: 0h:3m:45s (0h:0m:28s left)
+Iteration 380 / LogL: -17137.937 / Time: 0h:3m:50s (0h:0m:22s left)
+Iteration 390 / LogL: -17123.784 / Time: 0h:3m:55s (0h:0m:16s left)
+Iteration 400 / LogL: -17125.813 / Time: 0h:4m:0s (0h:0m:10s left)
+Iteration 410 / LogL: -17126.107 / Time: 0h:4m:7s (0h:0m:4s left)
+BETTER TREE FOUND at iteration 414: -17122.927
+Iteration 420 / LogL: -17126.387 / Time: 0h:4m:12s (0h:0m:56s left)
+Iteration 430 / LogL: -17124.089 / Time: 0h:4m:17s (0h:0m:50s left)
+Iteration 440 / LogL: -17122.928 / Time: 0h:4m:22s (0h:0m:44s left)
+BETTER TREE FOUND at iteration 446: -17122.925
+Iteration 450 / LogL: -17123.567 / Time: 0h:4m:29s (0h:0m:57s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 460: -17122.861
+Iteration 460 / LogL: -17122.861 / Time: 0h:4m:36s (0h:1m:0s left)
+Iteration 470 / LogL: -17132.080 / Time: 0h:4m:41s (0h:0m:54s left)
+Iteration 480 / LogL: -17125.508 / Time: 0h:4m:47s (0h:0m:48s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 485: -17122.791
+Iteration 490 / LogL: -17126.325 / Time: 0h:4m:52s (0h:0m:56s left)
+Iteration 500 / LogL: -17129.764 / Time: 0h:4m:59s (0h:0m:50s left)
+Iteration 510 / LogL: -17122.850 / Time: 0h:5m:5s (0h:0m:44s left)
+Iteration 520 / LogL: -17122.881 / Time: 0h:5m:10s (0h:0m:38s left)
+Iteration 530 / LogL: -17123.084 / Time: 0h:5m:15s (0h:0m:32s left)
+Iteration 540 / LogL: -17123.887 / Time: 0h:5m:22s (0h:0m:26s left)
+Iteration 550 / LogL: -17122.801 / Time: 0h:5m:27s (0h:0m:20s left)
+Iteration 560 / LogL: -17122.947 / Time: 0h:5m:32s (0h:0m:14s left)
+Iteration 570 / LogL: -17135.573 / Time: 0h:5m:39s (0h:0m:8s left)
+BETTER TREE FOUND at iteration 578: -17122.786
+Iteration 580 / LogL: -17122.790 / Time: 0h:5m:46s (0h:0m:58s left)
+Iteration 590 / LogL: -17124.642 / Time: 0h:5m:52s (0h:0m:52s left)
+Iteration 600 / LogL: -17124.736 / Time: 0h:5m:58s (0h:0m:46s left)
+Iteration 610 / LogL: -17126.047 / Time: 0h:6m:5s (0h:0m:40s left)
+Iteration 620 / LogL: -17132.652 / Time: 0h:6m:10s (0h:0m:34s left)
+BETTER TREE FOUND at iteration 625: -17122.785
+Iteration 630 / LogL: -17131.493 / Time: 0h:6m:16s (0h:0m:56s left)
+Iteration 640 / LogL: -17123.233 / Time: 0h:6m:22s (0h:0m:50s left)
+Iteration 650 / LogL: -17123.093 / Time: 0h:6m:27s (0h:0m:44s left)
+Iteration 660 / LogL: -17123.041 / Time: 0h:6m:34s (0h:0m:38s left)
+Iteration 670 / LogL: -17127.624 / Time: 0h:6m:38s (0h:0m:32s left)
+BETTER TREE FOUND at iteration 675: -17122.779
+Iteration 680 / LogL: -17123.544 / Time: 0h:6m:45s (0h:0m:56s left)
+Iteration 690 / LogL: -17129.533 / Time: 0h:6m:51s (0h:0m:50s left)
+Iteration 700 / LogL: -17133.393 / Time: 0h:6m:56s (0h:0m:44s left)
+Iteration 710 / LogL: -17127.163 / Time: 0h:7m:1s (0h:0m:38s left)
+Iteration 720 / LogL: -17122.944 / Time: 0h:7m:4s (0h:0m:32s left)
+Iteration 730 / LogL: -17125.879 / Time: 0h:7m:7s (0h:0m:26s left)
+BETTER TREE FOUND at iteration 732: -17122.778
+Iteration 740 / LogL: -17124.626 / Time: 0h:7m:10s (0h:0m:53s left)
+Iteration 750 / LogL: -17122.936 / Time: 0h:7m:13s (0h:0m:47s left)
+Iteration 760 / LogL: -17126.995 / Time: 0h:7m:17s (0h:0m:41s left)
+Iteration 770 / LogL: -17123.091 / Time: 0h:7m:20s (0h:0m:35s left)
+Iteration 780 / LogL: -17129.206 / Time: 0h:7m:23s (0h:0m:29s left)
+Iteration 790 / LogL: -17125.014 / Time: 0h:7m:27s (0h:0m:23s left)
+Iteration 800 / LogL: -17133.340 / Time: 0h:7m:32s (0h:0m:18s left)
+Iteration 810 / LogL: -17122.832 / Time: 0h:7m:37s (0h:0m:12s left)
+Iteration 820 / LogL: -17123.041 / Time: 0h:7m:44s (0h:0m:6s left)
+Iteration 830 / LogL: -17123.055 / Time: 0h:7m:49s (0h:0m:1s left)
+TREE SEARCH COMPLETED AFTER 833 ITERATIONS / Time: 0h:7m:51s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -17122.778
+2. Current log-likelihood: -17122.728
+3. Current log-likelihood: -17122.679
+4. Current log-likelihood: -17122.630
+5. Current log-likelihood: -17122.581
+6. Current log-likelihood: -17122.533
+7. Current log-likelihood: -17122.484
+8. Current log-likelihood: -17122.437
+9. Current log-likelihood: -17122.389
+10. Current log-likelihood: -17122.342
+11. Current log-likelihood: -17122.296
+12. Current log-likelihood: -17122.249
+13. Current log-likelihood: -17122.202
+14. Current log-likelihood: -17122.155
+15. Current log-likelihood: -17122.109
+16. Current log-likelihood: -17122.062
+17. Current log-likelihood: -17122.016
+18. Current log-likelihood: -17121.970
+19. Current log-likelihood: -17121.923
+20. Current log-likelihood: -17121.877
+21. Current log-likelihood: -17121.831
+22. Current log-likelihood: -17121.785
+23. Current log-likelihood: -17121.739
+24. Current log-likelihood: -17121.693
+25. Current log-likelihood: -17121.646
+26. Current log-likelihood: -17121.600
+27. Current log-likelihood: -17121.553
+28. Current log-likelihood: -17121.506
+29. Current log-likelihood: -17121.459
+30. Current log-likelihood: -17121.412
+31. Current log-likelihood: -17121.366
+32. Current log-likelihood: -17121.319
+33. Current log-likelihood: -17121.271
+34. Current log-likelihood: -17121.224
+35. Current log-likelihood: -17121.177
+36. Current log-likelihood: -17121.129
+37. Current log-likelihood: -17121.081
+38. Current log-likelihood: -17121.033
+39. Current log-likelihood: -17120.985
+40. Current log-likelihood: -17120.937
+41. Current log-likelihood: -17120.889
+42. Current log-likelihood: -17120.840
+43. Current log-likelihood: -17120.792
+44. Current log-likelihood: -17120.743
+45. Current log-likelihood: -17120.694
+46. Current log-likelihood: -17120.645
+47. Current log-likelihood: -17120.596
+48. Current log-likelihood: -17120.547
+49. Current log-likelihood: -17120.497
+50. Current log-likelihood: -17120.448
+51. Current log-likelihood: -17120.398
+52. Current log-likelihood: -17120.348
+53. Current log-likelihood: -17120.298
+54. Current log-likelihood: -17120.248
+55. Current log-likelihood: -17120.198
+56. Current log-likelihood: -17120.147
+57. Current log-likelihood: -17120.097
+58. Current log-likelihood: -17120.046
+59. Current log-likelihood: -17119.996
+60. Current log-likelihood: -17119.945
+61. Current log-likelihood: -17119.895
+62. Current log-likelihood: -17119.844
+63. Current log-likelihood: -17119.793
+64. Current log-likelihood: -17119.743
+65. Current log-likelihood: -17119.692
+66. Current log-likelihood: -17119.641
+67. Current log-likelihood: -17119.591
+68. Current log-likelihood: -17119.540
+69. Current log-likelihood: -17119.490
+70. Current log-likelihood: -17119.440
+71. Current log-likelihood: -17119.390
+72. Current log-likelihood: -17119.340
+73. Current log-likelihood: -17119.290
+74. Current log-likelihood: -17119.240
+75. Current log-likelihood: -17119.191
+76. Current log-likelihood: -17119.142
+77. Current log-likelihood: -17119.093
+78. Current log-likelihood: -17119.045
+79. Current log-likelihood: -17118.997
+80. Current log-likelihood: -17118.949
+81. Current log-likelihood: -17118.902
+82. Current log-likelihood: -17118.855
+83. Current log-likelihood: -17118.809
+84. Current log-likelihood: -17118.763
+85. Current log-likelihood: -17118.718
+86. Current log-likelihood: -17118.673
+87. Current log-likelihood: -17118.629
+88. Current log-likelihood: -17118.585
+89. Current log-likelihood: -17118.542
+90. Current log-likelihood: -17118.500
+91. Current log-likelihood: -17118.459
+92. Current log-likelihood: -17118.418
+93. Current log-likelihood: -17118.377
+94. Current log-likelihood: -17118.338
+95. Current log-likelihood: -17118.300
+96. Current log-likelihood: -17118.262
+97. Current log-likelihood: -17118.225
+98. Current log-likelihood: -17118.189
+99. Current log-likelihood: -17118.154
+Optimal log-likelihood: -17118.154
+Rate parameters:  A-C: 2.14704  A-G: 13.12387  A-T: 1.35398  C-G: 0.90545  C-T: 12.26377  G-T: 1.00000
+Base frequencies:  A: 0.335  C: 0.201  G: 0.244  T: 0.220
+Proportion of invariable sites: 0.322
+Site proportion and rates:  (0.302,0.576) (0.299,0.576) (0.059,3.286) (0.018,26.053)
+Parameters optimization took 99 rounds (12.705 sec)
+BEST SCORE FOUND : -17118.154
+Empirical proportions for each category: 0.985 0.000 0.002 0.013
+Site rates printed to iqtree_subset/13654+8+B.rate
+
+Testing tree branches by SH-like aLRT with 1000 replicates...
+3.210 sec.
+Total tree length: 0.773
+
+Total number of iterations: 833
+CPU time used for tree search: 457.735 sec (0h:7m:37s)
+Wall-clock time used for tree search: 467.929 sec (0h:7m:47s)
+Total CPU time used: 477.390 sec (0h:7m:57s)
+Total wall-clock time used: 487.714 sec (0h:8m:7s)
+
+Analysis results written to: 
+  IQ-TREE report:                iqtree_subset/13654+8+B.iqtree
+  Maximum-likelihood tree:       iqtree_subset/13654+8+B.treefile
+  Likelihood distances:          iqtree_subset/13654+8+B.mldist
+  Site-specific rates:           iqtree_subset/13654+8+B.rate
+  Screen log file:               iqtree_subset/13654+8+B.log
+
+Date and Time: Tue Feb 11 18:14:41 2025

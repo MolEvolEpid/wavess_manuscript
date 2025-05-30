@@ -1,0 +1,15 @@
+#!/bin/sh
+# Job name
+#SBATCH --job-name=make_trees
+# User info
+#SBATCH --mail-user=zenalapp@lanl.gov
+#SBATCH --mail-type=NONE #END,FAIL
+#SBATCH --export=ALL
+# Number of cores, amount of memory, and walltime
+#SBATCH --nodes=1 --ntasks=1 --cpus-per-task=1 --time=10:00:00 #--mem=10mb
+#  Change to the directory you submitted from
+cd $SLURM_SUBMIT_DIR
+echo $SLURM_SUBMIT_DIR
+
+# Job commands
+snakemake --profile config/slurm

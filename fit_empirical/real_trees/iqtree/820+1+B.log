@@ -1,0 +1,484 @@
+IQ-TREE multicore version 2.3.3 COVID-edition for Linux x86 64-bit built Apr 25 2024
+Developed by Bui Quang Minh, James Barbetti, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams, Ly Trong Nhan, Thomas Wong
+
+Host:    linusblack.lanl.gov (AVX512, FMA3, 754 GB RAM)
+Command: iqtree -s mafft_subset/820+1+B.fasta -m GTR+I+R -alrt 1000 -T AUTO --prefix iqtree_subset/820+1+B --rate -redo
+Seed:    89849 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Tue Feb 11 18:00:45 2025
+Kernel:  AVX+FMA - auto-detect threads (1 CPU cores detected)
+
+Reading alignment file mafft_subset/820+1+B.fasta ... Fasta format detected
+Reading fasta file: done in 0.00313669 secs using 99.15% CPU
+Alignment most likely contains DNA/RNA sequences
+Alignment has 137 sequences with 648 columns, 275 distinct patterns
+136 parsimony-informative, 121 singleton sites, 391 constant sites
+WARNING: Some sequence names are changed as follows:
+820+7023+7637+AF137765+B+NA+NA -> 820_7023_7637_AF137765_B_NA_NA
+820+7023+7637+AF137764+B+NA+NA -> 820_7023_7637_AF137764_B_NA_NA
+820+7023+7637+AF137763+B+NA+NA -> 820_7023_7637_AF137763_B_NA_NA
+820+7023+7637+AF137762+B+NA+NA -> 820_7023_7637_AF137762_B_NA_NA
+820+7023+7637+AF137761+B+NA+NA -> 820_7023_7637_AF137761_B_NA_NA
+820+7023+7637+AF137760+B+NA+NA -> 820_7023_7637_AF137760_B_NA_NA
+820+7023+7637+AF137759+B+NA+NA -> 820_7023_7637_AF137759_B_NA_NA
+820+7023+7637+AF137758+B+NA+NA -> 820_7023_7637_AF137758_B_NA_NA
+820+7023+7637+AF137757+B+NA+NA -> 820_7023_7637_AF137757_B_NA_NA
+820+7023+7637+AF137756+B+NA+NA -> 820_7023_7637_AF137756_B_NA_NA
+820+7023+7637+AF137755+B+NA+NA -> 820_7023_7637_AF137755_B_NA_NA
+820+7023+7637+AF137754+B+NA+NA -> 820_7023_7637_AF137754_B_NA_NA
+820+7023+7637+AF137753+B+NA+NA -> 820_7023_7637_AF137753_B_NA_NA
+820+7023+7637+AF137752+B+NA+NA -> 820_7023_7637_AF137752_B_NA_NA
+820+7023+7637+AF137751+B+NA+NA -> 820_7023_7637_AF137751_B_NA_NA
+820+7023+7637+AF137750+B+NA+NA -> 820_7023_7637_AF137750_B_NA_NA
+820+7023+7637+AF137749+B+NA+NA -> 820_7023_7637_AF137749_B_NA_NA
+820+7023+7637+AF137748+B+NA+NA -> 820_7023_7637_AF137748_B_NA_NA
+820+7023+7637+AF137747+B+NA+NA -> 820_7023_7637_AF137747_B_NA_NA
+820+7023+7637+AF137746+B+NA+NA -> 820_7023_7637_AF137746_B_NA_NA
+820+7023+7637+AF137745+B+NA+NA -> 820_7023_7637_AF137745_B_NA_NA
+820+7023+7637+AF137744+B+NA+NA -> 820_7023_7637_AF137744_B_NA_NA
+820+7023+7637+AF137743+B+NA+NA -> 820_7023_7637_AF137743_B_NA_NA
+820+7023+7637+AF137742+B+NA+NA -> 820_7023_7637_AF137742_B_NA_NA
+820+7023+7637+AF137741+B+NA+NA -> 820_7023_7637_AF137741_B_NA_NA
+820+7023+7637+AF137740+B+NA+NA -> 820_7023_7637_AF137740_B_NA_NA
+820+7023+7637+AF137739+B+NA+NA -> 820_7023_7637_AF137739_B_NA_NA
+820+7023+7637+AF137738+B+NA+NA -> 820_7023_7637_AF137738_B_NA_NA
+820+7023+7637+AF137737+B+NA+NA -> 820_7023_7637_AF137737_B_NA_NA
+820+7023+7637+AF137736+B+NA+NA -> 820_7023_7637_AF137736_B_NA_NA
+820+7023+7637+AF137735+B+NA+NA -> 820_7023_7637_AF137735_B_NA_NA
+820+7023+7637+AF137734+B+NA+NA -> 820_7023_7637_AF137734_B_NA_NA
+820+7023+7637+AF137733+B+NA+NA -> 820_7023_7637_AF137733_B_NA_NA
+820+7023+7637+AF137732+B+NA+NA -> 820_7023_7637_AF137732_B_NA_NA
+820+7023+7637+AF137731+B+NA+NA -> 820_7023_7637_AF137731_B_NA_NA
+820+7023+7637+AF137730+B+NA+NA -> 820_7023_7637_AF137730_B_NA_NA
+820+7023+7637+AF137729+B+NA+NA -> 820_7023_7637_AF137729_B_NA_NA
+820+7023+7637+AF137728+B+NA+NA -> 820_7023_7637_AF137728_B_NA_NA
+820+7023+7637+AF137727+B+NA+NA -> 820_7023_7637_AF137727_B_NA_NA
+820+7023+7637+AF137726+B+NA+NA -> 820_7023_7637_AF137726_B_NA_NA
+820+7023+7637+AF137725+B+NA+NA -> 820_7023_7637_AF137725_B_NA_NA
+820+7023+7637+AF137724+B+NA+NA -> 820_7023_7637_AF137724_B_NA_NA
+820+7023+7637+AF137723+B+NA+NA -> 820_7023_7637_AF137723_B_NA_NA
+820+7023+7637+AF137722+B+NA+NA -> 820_7023_7637_AF137722_B_NA_NA
+820+7023+7637+AF137721+B+NA+NA -> 820_7023_7637_AF137721_B_NA_NA
+820+7023+7637+AF137720+B+NA+NA -> 820_7023_7637_AF137720_B_NA_NA
+820+7023+7637+AF137719+B+NA+NA -> 820_7023_7637_AF137719_B_NA_NA
+820+7023+7637+AF137718+B+NA+NA -> 820_7023_7637_AF137718_B_NA_NA
+820+7023+7637+AF137717+B+NA+NA -> 820_7023_7637_AF137717_B_NA_NA
+820+7023+7637+AF137716+B+NA+NA -> 820_7023_7637_AF137716_B_NA_NA
+820+7023+7637+AF137715+B+NA+NA -> 820_7023_7637_AF137715_B_NA_NA
+820+7023+7637+AF137714+B+NA+NA -> 820_7023_7637_AF137714_B_NA_NA
+820+7023+7637+AF137713+B+NA+NA -> 820_7023_7637_AF137713_B_NA_NA
+820+7023+7637+AF137712+B+NA+NA -> 820_7023_7637_AF137712_B_NA_NA
+820+7023+7637+AF137711+B+NA+NA -> 820_7023_7637_AF137711_B_NA_NA
+820+7023+7637+AF137710+B+NA+NA -> 820_7023_7637_AF137710_B_NA_NA
+820+7023+7637+AF137709+B+NA+NA -> 820_7023_7637_AF137709_B_NA_NA
+820+7023+7637+AF137708+B+NA+NA -> 820_7023_7637_AF137708_B_NA_NA
+820+7023+7637+AF137707+B+NA+NA -> 820_7023_7637_AF137707_B_NA_NA
+820+7023+7637+AF137706+B+NA+NA -> 820_7023_7637_AF137706_B_NA_NA
+820+7023+7637+AF137705+B+NA+NA -> 820_7023_7637_AF137705_B_NA_NA
+820+7023+7637+AF137704+B+NA+NA -> 820_7023_7637_AF137704_B_NA_NA
+820+7023+7637+AF137703+B+NA+NA -> 820_7023_7637_AF137703_B_NA_NA
+820+7023+7637+AF137702+B+NA+NA -> 820_7023_7637_AF137702_B_NA_NA
+820+7023+7637+AF137701+B+NA+NA -> 820_7023_7637_AF137701_B_NA_NA
+820+7023+7637+AF137700+B+NA+NA -> 820_7023_7637_AF137700_B_NA_NA
+820+7023+7637+AF137699+B+NA+NA -> 820_7023_7637_AF137699_B_NA_NA
+820+7023+7637+AF137698+B+NA+NA -> 820_7023_7637_AF137698_B_NA_NA
+820+7023+7637+AF137697+B+NA+NA -> 820_7023_7637_AF137697_B_NA_NA
+820+7023+7637+AF137696+B+NA+NA -> 820_7023_7637_AF137696_B_NA_NA
+820+7023+7637+AF137695+B+NA+NA -> 820_7023_7637_AF137695_B_NA_NA
+820+7023+7637+AF137694+B+NA+NA -> 820_7023_7637_AF137694_B_NA_NA
+820+7023+7637+AF137693+B+NA+NA -> 820_7023_7637_AF137693_B_NA_NA
+820+7023+7637+AF137692+B+NA+NA -> 820_7023_7637_AF137692_B_NA_NA
+820+7023+7637+AF137691+B+NA+NA -> 820_7023_7637_AF137691_B_NA_NA
+820+7023+7637+AF137690+B+NA+NA -> 820_7023_7637_AF137690_B_NA_NA
+820+7023+7637+AF137689+B+NA+NA -> 820_7023_7637_AF137689_B_NA_NA
+820+7023+7637+AF137688+B+NA+NA -> 820_7023_7637_AF137688_B_NA_NA
+820+7023+7637+AF137687+B+NA+NA -> 820_7023_7637_AF137687_B_NA_NA
+820+7023+7637+AF137686+B+NA+NA -> 820_7023_7637_AF137686_B_NA_NA
+820+7023+7637+AF137685+B+NA+NA -> 820_7023_7637_AF137685_B_NA_NA
+820+7023+7637+AF137684+B+NA+NA -> 820_7023_7637_AF137684_B_NA_NA
+820+7023+7637+AF137683+B+NA+NA -> 820_7023_7637_AF137683_B_NA_NA
+820+7023+7637+AF137682+B+NA+NA -> 820_7023_7637_AF137682_B_NA_NA
+820+7023+7637+AF137681+B+NA+NA -> 820_7023_7637_AF137681_B_NA_NA
+820+7023+7637+AF137680+B+NA+NA -> 820_7023_7637_AF137680_B_NA_NA
+820+7023+7637+AF137679+B+NA+NA -> 820_7023_7637_AF137679_B_NA_NA
+820+7023+7637+AF137678+B+NA+NA -> 820_7023_7637_AF137678_B_NA_NA
+820+7023+7637+AF137677+B+NA+NA -> 820_7023_7637_AF137677_B_NA_NA
+820+7023+7637+AF137676+B+NA+NA -> 820_7023_7637_AF137676_B_NA_NA
+820+7023+7637+AF137675+B+NA+NA -> 820_7023_7637_AF137675_B_NA_NA
+820+7023+7637+AF137674+B+NA+NA -> 820_7023_7637_AF137674_B_NA_NA
+820+7023+7637+AF137673+B+NA+NA -> 820_7023_7637_AF137673_B_NA_NA
+820+7023+7637+AF137672+B+NA+NA -> 820_7023_7637_AF137672_B_NA_NA
+820+7023+7637+AF137671+B+NA+NA -> 820_7023_7637_AF137671_B_NA_NA
+820+7023+7637+AF137670+B+NA+NA -> 820_7023_7637_AF137670_B_NA_NA
+820+7023+7637+AF137669+B+NA+NA -> 820_7023_7637_AF137669_B_NA_NA
+820+7023+7637+AF137668+B+NA+NA -> 820_7023_7637_AF137668_B_NA_NA
+820+7023+7637+AF137667+B+NA+NA -> 820_7023_7637_AF137667_B_NA_NA
+820+7023+7637+AF137666+B+NA+NA -> 820_7023_7637_AF137666_B_NA_NA
+820+7023+7637+AF137665+B+NA+NA -> 820_7023_7637_AF137665_B_NA_NA
+820+7023+7637+AF137664+B+NA+NA -> 820_7023_7637_AF137664_B_NA_NA
+820+7023+7637+AF137663+B+NA+NA -> 820_7023_7637_AF137663_B_NA_NA
+820+7026+7637+AF137662+B+NA+NA -> 820_7026_7637_AF137662_B_NA_NA
+820+7023+7637+AF137661+B+NA+NA -> 820_7023_7637_AF137661_B_NA_NA
+820+7023+7637+AF137660+B+NA+NA -> 820_7023_7637_AF137660_B_NA_NA
+820+7023+7637+AF137659+B+NA+NA -> 820_7023_7637_AF137659_B_NA_NA
+820+7023+7637+AF137658+B+NA+NA -> 820_7023_7637_AF137658_B_NA_NA
+820+7023+7637+AF137657+B+NA+NA -> 820_7023_7637_AF137657_B_NA_NA
+820+7023+7637+AF137656+B+NA+NA -> 820_7023_7637_AF137656_B_NA_NA
+820+7023+7637+AF137655+B+NA+NA -> 820_7023_7637_AF137655_B_NA_NA
+820+7023+7637+AF137654+B+NA+NA -> 820_7023_7637_AF137654_B_NA_NA
+820+7023+7637+AF137653+B+NA+NA -> 820_7023_7637_AF137653_B_NA_NA
+820+7023+7637+AF137652+B+NA+NA -> 820_7023_7637_AF137652_B_NA_NA
+820+7023+7637+AF137651+B+NA+NA -> 820_7023_7637_AF137651_B_NA_NA
+820+7023+7637+AF137650+B+NA+NA -> 820_7023_7637_AF137650_B_NA_NA
+820+7023+7637+AF137649+B+NA+NA -> 820_7023_7637_AF137649_B_NA_NA
+820+7023+7637+AF137648+B+NA+NA -> 820_7023_7637_AF137648_B_NA_NA
+820+7023+7637+AF137647+B+NA+NA -> 820_7023_7637_AF137647_B_NA_NA
+820+7023+7637+AF137646+B+NA+NA -> 820_7023_7637_AF137646_B_NA_NA
+820+7023+7637+AF137645+B+NA+NA -> 820_7023_7637_AF137645_B_NA_NA
+820+7023+7637+AF137644+B+NA+NA -> 820_7023_7637_AF137644_B_NA_NA
+820+7023+7637+AF137643+B+NA+NA -> 820_7023_7637_AF137643_B_NA_NA
+820+7023+7637+AF137642+B+NA+NA -> 820_7023_7637_AF137642_B_NA_NA
+820+7023+7637+AF137641+B+NA+NA -> 820_7023_7637_AF137641_B_NA_NA
+820+7023+7637+AF137640+B+NA+NA -> 820_7023_7637_AF137640_B_NA_NA
+820+7023+7637+AF137639+B+NA+NA -> 820_7023_7637_AF137639_B_NA_NA
+820+7023+7637+AF137638+B+NA+NA -> 820_7023_7637_AF137638_B_NA_NA
+820+7023+7637+AF137637+B+NA+NA -> 820_7023_7637_AF137637_B_NA_NA
+820+7023+7637+AF137636+B+NA+NA -> 820_7023_7637_AF137636_B_NA_NA
+820+7023+7637+AF137635+B+NA+NA -> 820_7023_7637_AF137635_B_NA_NA
+820+7023+7637+AF137634+B+NA+NA -> 820_7023_7637_AF137634_B_NA_NA
+820+7023+7637+AF137633+B+NA+NA -> 820_7023_7637_AF137633_B_NA_NA
+820+7023+7637+AF137632+B+NA+NA -> 820_7023_7637_AF137632_B_NA_NA
+820+7023+7637+AF137631+B+NA+NA -> 820_7023_7637_AF137631_B_NA_NA
+820+7023+7637+AF137630+B+NA+NA -> 820_7023_7637_AF137630_B_NA_NA
+820+7023+7637+AF137629+B+NA+NA -> 820_7023_7637_AF137629_B_NA_NA
+
+                                Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 0.00013058 secs using 97.26% CPU
+   1  820_7023_7637_AF137765_B_NA_NA    5.56%    passed     98.47%
+   2  820_7023_7637_AF137764_B_NA_NA    6.48%    passed     98.08%
+   3  820_7023_7637_AF137763_B_NA_NA    8.33%    passed     99.12%
+   4  820_7023_7637_AF137762_B_NA_NA    7.87%    passed     96.38%
+   5  820_7023_7637_AF137761_B_NA_NA    7.87%    passed     96.38%
+   6  820_7023_7637_AF137760_B_NA_NA    7.87%    passed     99.84%
+   7  820_7023_7637_AF137759_B_NA_NA    6.02%    passed     89.42%
+   8  820_7023_7637_AF137758_B_NA_NA    5.56%    passed     98.47%
+   9  820_7023_7637_AF137757_B_NA_NA    8.80%    passed     99.83%
+  10  820_7023_7637_AF137756_B_NA_NA    8.80%    passed     94.11%
+  11  820_7023_7637_AF137755_B_NA_NA    7.87%    passed     98.10%
+  12  820_7023_7637_AF137754_B_NA_NA    7.87%    passed     97.97%
+  13  820_7023_7637_AF137753_B_NA_NA    7.87%    passed     98.82%
+  14  820_7023_7637_AF137752_B_NA_NA    7.87%    passed     99.81%
+  15  820_7023_7637_AF137751_B_NA_NA    7.87%    passed     99.74%
+  16  820_7023_7637_AF137750_B_NA_NA    7.87%    passed     96.05%
+  17  820_7023_7637_AF137749_B_NA_NA    7.87%    passed     96.05%
+  18  820_7023_7637_AF137748_B_NA_NA    7.87%    passed     99.41%
+  19  820_7023_7637_AF137747_B_NA_NA    8.80%    passed     99.39%
+  20  820_7023_7637_AF137746_B_NA_NA    7.87%    passed     99.81%
+  21  820_7023_7637_AF137745_B_NA_NA    7.87%    passed     99.02%
+  22  820_7023_7637_AF137744_B_NA_NA    6.94%    passed     95.48%
+  23  820_7023_7637_AF137743_B_NA_NA    8.80%    passed     99.47%
+  24  820_7023_7637_AF137742_B_NA_NA    6.94%    passed     97.65%
+  25  820_7023_7637_AF137741_B_NA_NA    6.48%    passed     98.40%
+  26  820_7023_7637_AF137740_B_NA_NA    6.94%    passed     98.18%
+  27  820_7023_7637_AF137739_B_NA_NA    7.87%    passed     99.41%
+  28  820_7023_7637_AF137738_B_NA_NA    6.94%    passed     97.12%
+  29  820_7023_7637_AF137737_B_NA_NA    6.94%    passed     95.99%
+  30  820_7023_7637_AF137736_B_NA_NA    6.94%    passed     97.65%
+  31  820_7023_7637_AF137735_B_NA_NA    7.41%    passed     97.93%
+  32  820_7023_7637_AF137734_B_NA_NA    7.41%    passed     92.62%
+  33  820_7023_7637_AF137733_B_NA_NA    7.87%    passed     98.97%
+  34  820_7023_7637_AF137732_B_NA_NA    7.41%    passed     97.26%
+  35  820_7023_7637_AF137731_B_NA_NA    6.02%    passed     98.41%
+  36  820_7023_7637_AF137730_B_NA_NA    6.48%    passed     97.39%
+  37  820_7023_7637_AF137729_B_NA_NA    6.02%    passed     98.10%
+  38  820_7023_7637_AF137728_B_NA_NA    6.48%    passed     99.18%
+  39  820_7023_7637_AF137727_B_NA_NA    6.48%    passed     99.18%
+  40  820_7023_7637_AF137726_B_NA_NA    7.87%    passed     97.88%
+  41  820_7023_7637_AF137725_B_NA_NA    7.87%    passed     95.40%
+  42  820_7023_7637_AF137724_B_NA_NA    8.80%    passed     99.74%
+  43  820_7023_7637_AF137723_B_NA_NA    7.87%    passed     99.77%
+  44  820_7023_7637_AF137722_B_NA_NA    8.80%    passed     99.96%
+  45  820_7023_7637_AF137721_B_NA_NA    8.80%    passed     99.79%
+  46  820_7023_7637_AF137720_B_NA_NA    8.80%    passed     99.79%
+  47  820_7023_7637_AF137719_B_NA_NA    2.78%    passed     82.41%
+  48  820_7023_7637_AF137718_B_NA_NA    8.80%    passed     99.21%
+  49  820_7023_7637_AF137717_B_NA_NA    6.94%    passed     97.49%
+  50  820_7023_7637_AF137716_B_NA_NA    7.87%    passed     98.35%
+  51  820_7023_7637_AF137715_B_NA_NA    7.87%    passed     97.72%
+  52  820_7023_7637_AF137714_B_NA_NA    7.87%    passed     98.69%
+  53  820_7023_7637_AF137713_B_NA_NA    7.87%    passed     95.74%
+  54  820_7023_7637_AF137712_B_NA_NA    7.87%    passed     98.06%
+  55  820_7023_7637_AF137711_B_NA_NA    7.87%    passed     98.71%
+  56  820_7023_7637_AF137710_B_NA_NA    7.87%    passed     98.36%
+  57  820_7023_7637_AF137709_B_NA_NA    7.87%    passed     99.22%
+  58  820_7023_7637_AF137708_B_NA_NA    7.87%    passed     99.62%
+  59  820_7023_7637_AF137707_B_NA_NA    2.78%    passed     86.04%
+  60  820_7023_7637_AF137706_B_NA_NA    7.87%    passed     99.95%
+  61  820_7023_7637_AF137705_B_NA_NA    7.41%    passed     99.66%
+  62  820_7023_7637_AF137704_B_NA_NA    7.87%    passed     95.80%
+  63  820_7023_7637_AF137703_B_NA_NA    7.87%    passed     99.22%
+  64  820_7023_7637_AF137702_B_NA_NA    7.87%    passed     99.97%
+  65  820_7023_7637_AF137701_B_NA_NA    7.41%    passed     94.24%
+  66  820_7023_7637_AF137700_B_NA_NA    7.87%    passed     99.22%
+  67  820_7023_7637_AF137699_B_NA_NA    7.41%    passed     99.97%
+  68  820_7023_7637_AF137698_B_NA_NA    7.41%    passed     99.86%
+  69  820_7023_7637_AF137697_B_NA_NA    7.87%    passed     97.67%
+  70  820_7023_7637_AF137696_B_NA_NA    7.87%    passed     99.50%
+  71  820_7023_7637_AF137695_B_NA_NA    5.09%    passed     95.68%
+  72  820_7023_7637_AF137694_B_NA_NA    7.87%    passed     99.80%
+  73  820_7023_7637_AF137693_B_NA_NA    5.56%    passed     98.24%
+  74  820_7023_7637_AF137692_B_NA_NA    5.56%    passed     99.02%
+  75  820_7023_7637_AF137691_B_NA_NA    6.48%    passed     96.72%
+  76  820_7023_7637_AF137690_B_NA_NA    7.87%    passed     99.72%
+  77  820_7023_7637_AF137689_B_NA_NA    6.48%    passed     96.63%
+  78  820_7023_7637_AF137688_B_NA_NA    6.48%    passed     97.93%
+  79  820_7023_7637_AF137687_B_NA_NA    6.48%    passed     99.82%
+  80  820_7023_7637_AF137686_B_NA_NA    5.09%    passed     99.02%
+  81  820_7023_7637_AF137685_B_NA_NA    6.02%    passed     99.02%
+  82  820_7023_7637_AF137684_B_NA_NA    6.48%    passed     99.21%
+  83  820_7023_7637_AF137683_B_NA_NA    6.48%    passed     88.06%
+  84  820_7023_7637_AF137682_B_NA_NA    6.02%    passed     98.16%
+  85  820_7023_7637_AF137681_B_NA_NA    6.48%    passed     94.88%
+  86  820_7023_7637_AF137680_B_NA_NA    6.48%    passed     91.88%
+  87  820_7023_7637_AF137679_B_NA_NA    6.48%    passed     93.26%
+  88  820_7023_7637_AF137678_B_NA_NA    5.56%    passed     88.33%
+  89  820_7023_7637_AF137677_B_NA_NA    5.09%    passed     95.81%
+  90  820_7023_7637_AF137676_B_NA_NA    7.87%    passed     99.80%
+  91  820_7023_7637_AF137675_B_NA_NA    5.56%    passed     99.02%
+  92  820_7023_7637_AF137674_B_NA_NA    6.48%    passed     96.72%
+  93  820_7023_7637_AF137673_B_NA_NA    7.87%    passed     99.44%
+  94  820_7023_7637_AF137672_B_NA_NA    5.09%    passed     99.34%
+  95  820_7023_7637_AF137671_B_NA_NA    5.56%    passed     96.10%
+  96  820_7023_7637_AF137670_B_NA_NA    7.87%    passed    100.00%
+  97  820_7023_7637_AF137669_B_NA_NA    6.02%    passed     99.07%
+  98  820_7023_7637_AF137668_B_NA_NA    7.41%    passed     95.32%
+  99  820_7023_7637_AF137667_B_NA_NA    5.56%    passed     98.64%
+ 100  820_7023_7637_AF137666_B_NA_NA    6.02%    passed     99.94%
+ 101  820_7023_7637_AF137665_B_NA_NA    7.87%    passed     99.88%
+ 102  820_7023_7637_AF137664_B_NA_NA    5.56%    passed     97.65%
+ 103  820_7023_7637_AF137663_B_NA_NA    6.02%    passed     93.19%
+ 104  820_7026_7637_AF137662_B_NA_NA    6.48%    passed     99.18%
+ 105  820_7023_7637_AF137661_B_NA_NA    6.02%    passed     99.64%
+ 106  820_7023_7637_AF137660_B_NA_NA    6.94%    passed     87.48%
+ 107  820_7023_7637_AF137659_B_NA_NA    6.94%    passed     96.71%
+ 108  820_7023_7637_AF137658_B_NA_NA    6.48%    passed     98.79%
+ 109  820_7023_7637_AF137657_B_NA_NA    6.94%    passed     98.19%
+ 110  820_7023_7637_AF137656_B_NA_NA    6.94%    passed     98.54%
+ 111  820_7023_7637_AF137655_B_NA_NA    6.48%    passed     96.01%
+ 112  820_7023_7637_AF137654_B_NA_NA    6.02%    passed     98.28%
+ 113  820_7023_7637_AF137653_B_NA_NA    5.56%    passed     99.41%
+ 114  820_7023_7637_AF137652_B_NA_NA    5.56%    passed     98.89%
+ 115  820_7023_7637_AF137651_B_NA_NA    6.02%    passed     99.91%
+ 116  820_7023_7637_AF137650_B_NA_NA    6.02%    passed     66.83%
+ 117  820_7023_7637_AF137649_B_NA_NA    6.48%    passed     97.74%
+ 118  820_7023_7637_AF137648_B_NA_NA    6.02%    passed     99.83%
+ 119  820_7023_7637_AF137647_B_NA_NA    6.02%    passed     99.37%
+ 120  820_7023_7637_AF137646_B_NA_NA    6.02%    passed     99.85%
+ 121  820_7023_7637_AF137645_B_NA_NA    5.56%    passed     97.64%
+ 122  820_7023_7637_AF137644_B_NA_NA    6.48%    passed     97.92%
+ 123  820_7023_7637_AF137643_B_NA_NA    6.02%    passed     98.68%
+ 124  820_7023_7637_AF137642_B_NA_NA    6.02%    passed     98.82%
+ 125  820_7023_7637_AF137641_B_NA_NA    6.48%    passed     97.80%
+ 126  820_7023_7637_AF137640_B_NA_NA    6.02%    passed     99.22%
+ 127  820_7023_7637_AF137639_B_NA_NA    6.02%    passed     99.45%
+ 128  820_7023_7637_AF137638_B_NA_NA    6.02%    passed     98.02%
+ 129  820_7023_7637_AF137637_B_NA_NA    6.02%    passed     98.02%
+ 130  820_7023_7637_AF137636_B_NA_NA    6.02%    passed     98.61%
+ 131  820_7023_7637_AF137635_B_NA_NA    6.02%    passed     98.96%
+ 132  820_7023_7637_AF137634_B_NA_NA    6.02%    passed     98.68%
+ 133  820_7023_7637_AF137633_B_NA_NA    6.02%    passed     98.68%
+ 134  820_7023_7637_AF137632_B_NA_NA    6.02%    passed     98.68%
+ 135  820_7023_7637_AF137631_B_NA_NA    6.02%    passed     99.41%
+ 136  820_7023_7637_AF137630_B_NA_NA    6.02%    passed     98.96%
+ 137  820_7023_7637_AF137629_B_NA_NA    6.02%    passed     98.68%
+****  TOTAL                             6.87%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: 820_7023_7637_AF137758_B_NA_NA is identical to 820_7023_7637_AF137765_B_NA_NA but kept for subsequent analysis
+NOTE: 820_7023_7637_AF137746_B_NA_NA is identical to 820_7023_7637_AF137752_B_NA_NA but kept for subsequent analysis
+NOTE: 820_7023_7637_AF137749_B_NA_NA is identical to 820_7023_7637_AF137750_B_NA_NA but kept for subsequent analysis
+NOTE: 820_7023_7637_AF137736_B_NA_NA is identical to 820_7023_7637_AF137742_B_NA_NA but kept for subsequent analysis
+NOTE: 820_7023_7637_AF137727_B_NA_NA is identical to 820_7023_7637_AF137728_B_NA_NA but kept for subsequent analysis
+NOTE: 820_7023_7637_AF137676_B_NA_NA is identical to 820_7023_7637_AF137694_B_NA_NA but kept for subsequent analysis
+NOTE: 820_7023_7637_AF137675_B_NA_NA is identical to 820_7023_7637_AF137692_B_NA_NA but kept for subsequent analysis
+NOTE: 820_7023_7637_AF137674_B_NA_NA is identical to 820_7023_7637_AF137691_B_NA_NA but kept for subsequent analysis
+NOTE: 820_7023_7637_AF137634_B_NA_NA is identical to 820_7023_7637_AF137643_B_NA_NA but kept for subsequent analysis
+NOTE: 2 identical sequences (see below) will be ignored for subsequent analysis
+NOTE: 820_7023_7637_AF137633_B_NA_NA (identical to 820_7023_7637_AF137643_B_NA_NA) is ignored but added at the end
+NOTE: 820_7023_7637_AF137632_B_NA_NA (identical to 820_7023_7637_AF137643_B_NA_NA) is ignored but added at the end
+Alignment was printed to iqtree_subset/820+1+B.uniqueseq.phy
+
+For your convenience alignment with unique sequences printed to iqtree_subset/820+1+B.uniqueseq.phy
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.015 seconds
+
+NOTE: 4 MB RAM (0 GB) is required!
+Measuring multi-threading efficiency up to 1 CPU cores
+Increase to 10 rounds for branch lengths
+9 trees examined
+Threads: 1 / Time: 1.037 sec / Speedup: 1.000 / Efficiency: 100% / LogL: -9373
+BEST NUMBER OF THREADS: 1
+
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -5145.366
+2. Current log-likelihood: -4962.630
+3. Current log-likelihood: -4958.184
+4. Current log-likelihood: -4956.160
+5. Current log-likelihood: -4887.306
+6. Current log-likelihood: -4830.590
+7. Current log-likelihood: -4806.368
+8. Current log-likelihood: -4805.476
+9. Current log-likelihood: -4804.534
+10. Current log-likelihood: -4803.416
+11. Current log-likelihood: -4802.146
+12. Current log-likelihood: -4801.060
+13. Current log-likelihood: -4800.359
+14. Current log-likelihood: -4799.945
+15. Current log-likelihood: -4799.735
+Optimal log-likelihood: -4799.641
+Rate parameters:  A-C: 2.16635  A-G: 5.46700  A-T: 0.34919  C-G: 0.27311  C-T: 7.71293  G-T: 1.00000
+Base frequencies:  A: 0.402  C: 0.151  G: 0.207  T: 0.239
+Proportion of invariable sites: 0.199
+Site proportion and rates:  (0.337,0.447) (0.314,0.451) (0.130,3.871) (0.020,10.319)
+Parameters optimization took 15 rounds (3.437 sec)
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.127966 secs using 98.99% CPU
+Computing ML distances took 0.128234 sec (of wall-clock time) 0.126951 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 0.000525778 secs using 99.09% CPU
+Computing RapidNJ tree took 0.002038 sec (of wall-clock time) 0.002031 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -4829.481
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 2.084 second
+Computing log-likelihood of 98 initial trees ... 1.596 seconds
+Current best score: -4744.237
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -4716.597
+Iteration 10 / LogL: -4747.330 / Time: 0h:0m:11s
+Iteration 20 / LogL: -4755.214 / Time: 0h:0m:14s
+Finish initializing candidate tree set (20)
+Current best tree score: -4716.597 / CPU time: 10.211
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -4729.436 / Time: 0h:0m:19s (0h:0m:46s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 38: -4715.672
+Iteration 40 / LogL: -4722.420 / Time: 0h:0m:22s (0h:0m:57s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 45: -4715.000
+Iteration 50 / LogL: -4717.679 / Time: 0h:0m:25s (0h:0m:49s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 51: -4714.672
+Iteration 60 / LogL: -4719.769 / Time: 0h:0m:28s (0h:0m:43s left)
+Iteration 70 / LogL: -4723.431 / Time: 0h:0m:31s (0h:0m:36s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 77: -4713.302
+Iteration 80 / LogL: -4716.413 / Time: 0h:0m:34s (0h:0m:41s left)
+Iteration 90 / LogL: -4717.510 / Time: 0h:0m:36s (0h:0m:35s left)
+Iteration 100 / LogL: -4713.557 / Time: 0h:0m:39s (0h:0m:30s left)
+Iteration 110 / LogL: -4751.664 / Time: 0h:0m:42s (0h:0m:26s left)
+Iteration 120 / LogL: -4714.133 / Time: 0h:0m:45s (0h:0m:21s left)
+BETTER TREE FOUND at iteration 130: -4713.301
+Iteration 130 / LogL: -4713.301 / Time: 0h:0m:47s (0h:0m:36s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 140: -4713.124
+Iteration 140 / LogL: -4713.124 / Time: 0h:0m:50s (0h:0m:36s left)
+Iteration 150 / LogL: -4713.535 / Time: 0h:0m:53s (0h:0m:32s left)
+Iteration 160 / LogL: -4720.942 / Time: 0h:0m:55s (0h:0m:28s left)
+BETTER TREE FOUND at iteration 167: -4713.118
+Iteration 170 / LogL: -4713.407 / Time: 0h:0m:58s (0h:0m:33s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 175: -4711.963
+Iteration 180 / LogL: -4719.187 / Time: 0h:1m:1s (0h:0m:32s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 187: -4706.901
+Iteration 190 / LogL: -4710.180 / Time: 0h:1m:4s (0h:0m:32s left)
+Iteration 200 / LogL: -4707.455 / Time: 0h:1m:6s (0h:0m:29s left)
+Iteration 210 / LogL: -4707.035 / Time: 0h:1m:9s (0h:0m:25s left)
+Iteration 220 / LogL: -4706.902 / Time: 0h:1m:11s (0h:0m:21s left)
+Iteration 230 / LogL: -4711.535 / Time: 0h:1m:14s (0h:0m:18s left)
+Iteration 240 / LogL: -4712.467 / Time: 0h:1m:17s (0h:0m:15s left)
+Iteration 250 / LogL: -4712.186 / Time: 0h:1m:19s (0h:0m:11s left)
+Iteration 260 / LogL: -4711.968 / Time: 0h:1m:22s (0h:0m:8s left)
+Iteration 270 / LogL: -4706.902 / Time: 0h:1m:25s (0h:0m:5s left)
+Iteration 280 / LogL: -4706.902 / Time: 0h:1m:30s (0h:0m:2s left)
+BETTER TREE FOUND at iteration 282: -4706.900
+Iteration 290 / LogL: -4709.221 / Time: 0h:1m:34s (0h:0m:29s left)
+Iteration 300 / LogL: -4706.901 / Time: 0h:1m:37s (0h:0m:26s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 304: -4706.805
+Iteration 310 / LogL: -4711.449 / Time: 0h:1m:42s (0h:0m:31s left)
+Iteration 320 / LogL: -4706.966 / Time: 0h:1m:46s (0h:0m:27s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 324: -4703.745
+Iteration 330 / LogL: -4708.521 / Time: 0h:1m:50s (0h:0m:31s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 337: -4703.705
+Iteration 340 / LogL: -4704.987 / Time: 0h:1m:54s (0h:0m:32s left)
+Iteration 350 / LogL: -4704.356 / Time: 0h:1m:58s (0h:0m:29s left)
+Iteration 360 / LogL: -4703.706 / Time: 0h:2m:2s (0h:0m:26s left)
+Iteration 370 / LogL: -4706.433 / Time: 0h:2m:6s (0h:0m:22s left)
+BETTER TREE FOUND at iteration 372: -4703.705
+Iteration 380 / LogL: -4703.705 / Time: 0h:2m:10s (0h:0m:31s left)
+Iteration 390 / LogL: -4704.071 / Time: 0h:2m:14s (0h:0m:28s left)
+Iteration 400 / LogL: -4705.604 / Time: 0h:2m:18s (0h:0m:25s left)
+Iteration 410 / LogL: -4703.706 / Time: 0h:2m:22s (0h:0m:21s left)
+BETTER TREE FOUND at iteration 414: -4703.704
+Iteration 420 / LogL: -4714.474 / Time: 0h:2m:26s (0h:0m:32s left)
+Iteration 430 / LogL: -4703.705 / Time: 0h:2m:31s (0h:0m:29s left)
+Iteration 440 / LogL: -4745.630 / Time: 0h:2m:35s (0h:0m:26s left)
+Iteration 450 / LogL: -4711.661 / Time: 0h:2m:39s (0h:0m:22s left)
+BETTER TREE FOUND at iteration 454: -4703.704
+Iteration 460 / LogL: -4710.106 / Time: 0h:2m:43s (0h:0m:33s left)
+Iteration 470 / LogL: -4706.029 / Time: 0h:2m:48s (0h:0m:30s left)
+BETTER TREE FOUND at iteration 478: -4703.704
+Iteration 480 / LogL: -4704.076 / Time: 0h:2m:52s (0h:0m:35s left)
+Iteration 490 / LogL: -4703.705 / Time: 0h:2m:56s (0h:0m:31s left)
+Iteration 500 / LogL: -4704.881 / Time: 0h:3m:0s (0h:0m:28s left)
+Iteration 510 / LogL: -4703.704 / Time: 0h:3m:4s (0h:0m:24s left)
+Iteration 520 / LogL: -4704.160 / Time: 0h:3m:8s (0h:0m:21s left)
+Iteration 530 / LogL: -4703.705 / Time: 0h:3m:12s (0h:0m:17s left)
+Iteration 540 / LogL: -4707.176 / Time: 0h:3m:16s (0h:0m:13s left)
+Iteration 550 / LogL: -4703.753 / Time: 0h:3m:21s (0h:0m:10s left)
+Iteration 560 / LogL: -4706.620 / Time: 0h:3m:25s (0h:0m:6s left)
+Iteration 570 / LogL: -4711.700 / Time: 0h:3m:29s (0h:0m:2s left)
+TREE SEARCH COMPLETED AFTER 579 ITERATIONS / Time: 0h:3m:32s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -4703.704
+Optimal log-likelihood: -4703.703
+Rate parameters:  A-C: 2.51854  A-G: 6.69107  A-T: 0.31779  C-G: 0.16513  C-T: 8.78279  G-T: 1.00000
+Base frequencies:  A: 0.402  C: 0.151  G: 0.207  T: 0.239
+Proportion of invariable sites: 0.195
+Site proportion and rates:  (0.339,0.460) (0.316,0.464) (0.142,4.161) (0.007,14.900)
+Parameters optimization took 1 rounds (0.156 sec)
+BEST SCORE FOUND : -4703.703
+Empirical proportions for each category: 0.841 0.000 0.153 0.006
+Site rates printed to iqtree_subset/820+1+B.rate
+
+Testing tree branches by SH-like aLRT with 1000 replicates...
+2.390 sec.
+Total tree length: 1.138
+
+Total number of iterations: 579
+CPU time used for tree search: 202.787 sec (0h:3m:22s)
+Wall-clock time used for tree search: 208.234 sec (0h:3m:28s)
+Total CPU time used: 210.012 sec (0h:3m:30s)
+Total wall-clock time used: 215.521 sec (0h:3m:35s)
+
+Analysis results written to: 
+  IQ-TREE report:                iqtree_subset/820+1+B.iqtree
+  Maximum-likelihood tree:       iqtree_subset/820+1+B.treefile
+  Likelihood distances:          iqtree_subset/820+1+B.mldist
+  Site-specific rates:           iqtree_subset/820+1+B.rate
+  Screen log file:               iqtree_subset/820+1+B.log
+
+Date and Time: Tue Feb 11 18:04:20 2025

@@ -1,0 +1,127 @@
+import numpy as np
+
+n = list(range(20)) #100
+m = list(range(1))
+ids = ["10137+1+B", "10138+1+B", "105692+197+B", "105693+202+B", "105696+207+B", "105698+280+B", "10586+1+B", "13889+1+B", "820+1+B", "821+1+B", "822+1+B", "824+1+B", "825+1+B"] 
+max_epis = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9] 
+mut_rates = [4e-5] 
+rep_costs = [0.001] 
+
+path_prefix = "output/{id}/simulations/{id}_maxepi{max_epi}_repcost{rep_cost}_mutrate{mut_rate}_run{n}_rep{m}_"
+
+rule all:
+  input:
+    expand(path_prefix + "tr_summary_stats.csv", n=n, m=m, id=ids, max_epi=max_epis, mut_rate=mut_rates, rep_cost=rep_costs)
+
+rule create_individual_fastas:
+  input:
+    "../../within_host_trees/data/Founder_25_mullins.fasta"
+  output:
+    expand("output/{id}/inputs/{id}_original_founder.fasta", id=ids)
+  script:
+    "scripts/separate_seqs.R"
+
+rule create_fasta:
+  input:
+    "data/HIV1_CON_2021_genome_DNA.fasta",
+    "data/founder_one.fasta",
+    "output/{id}/inputs/{id}_original_founder.fasta"
+  output:
+    "output/{id}/inputs/{id}_unaligned.fasta"
+  shell:
+    "Rscript scripts/get_seqs.R {input} {output}"
+
+rule align_seqs:
+  input:
+    rules.create_fasta.output
+  output:
+    "output/{id}/inputs/{id}_aligned.fasta"
+  shell:
+    "ginsi {input} > {output}"
+
+rule get_subsetted_sequence:
+  input:
+    rules.align_seqs.output[0]
+  output:
+    "output/{id}/inputs/{id}_all_aligned.fasta",
+    "output/{id}/inputs/{id}_hxb2_founder_aligned.fasta",
+    "output/{id}/inputs/{id}_founder.fasta",
+    "output/{id}/inputs/{id}_cons_no_founder_gaps.fasta",
+  shell:
+    "Rscript scripts/get_gene.R {input[0]} 6225 7787 output/{wildcards.id}/inputs/{wildcards.id}"
+
+rule get_founder_conserved_sites:
+  input:
+    "data/HIV1_FLT_2022_env_DNA.fasta",
+    rules.get_subsetted_sequence.output[1]
+  output:
+    "output/{id}/inputs/{id}_founder_conserved_sites.csv"
+  script:
+    "scripts/get_founder_conserved_sites.R"
+
+rule create_founder_epitopes:
+  input:
+    rules.get_subsetted_sequence.output[0],
+  output:
+    "output/{id}/inputs/epitopes/{id}_founder_epitopes_nt_maxepi{max_epi}_{n}.tsv"
+  script:
+    "scripts/create_founder_epitopes.R"
+
+rule make_config_file:
+  input:
+    "config.yaml",
+    "../../within_host_trees/sampling_info/{id}.csv", #rules.create_sampling_file.output[0],
+    rules.get_subsetted_sequence.output[2],
+    rules.create_founder_epitopes.output[0],
+    rules.get_founder_conserved_sites.output[0],
+    rules.get_subsetted_sequence.output[3]
+  params:
+    mut_rate="{mut_rate}",
+    rep_cost="{rep_cost}"
+  output:
+    path_prefix + "config.yaml"
+  shell:
+    "python scripts/update_yaml.py {input} {params} {output}"
+
+rule run_wavess:
+  input:
+    rules.make_config_file.output[0]
+  output:
+    path_prefix + "counts.csv",
+    path_prefix + "fitness.csv",
+    path_prefix + "viral_seqs_active_CD4.fasta"
+  shell:
+    "python run_wavess.py {input[0]} output/{wildcards.id}/simulations/{wildcards.id}_maxepi{wildcards.max_epi}_repcost{wildcards.rep_cost}_mutrate{wildcards.mut_rate}_run{wildcards.n}_rep{wildcards.m}_"
+
+rule slice_to_real_aln:
+  input:
+    rules.run_wavess.output[2],
+    rules.get_subsetted_sequence.output[0],
+    rules.get_subsetted_sequence.output[3]
+  output:
+    path_prefix + "viral_seqs_active_CD4_sliced.fasta"
+    #path_prefix + "aln_w_founder.fasta",
+    #path_prefix + "aln_w_cons.fasta"
+  script:
+    "scripts/slice_to_real_aln.R"
+
+rule make_tree:
+  input:
+    rules.slice_to_real_aln.output[0],
+  output:
+    path_prefix + "viral_seqs_active_CD4_sliced.treefile"
+  shell:
+    "iqtree -s {input[0]} -m GTR+I+R -alrt 1000 --prefix output/{wildcards.id}/simulations/{wildcards.id}_maxepi{wildcards.max_epi}_repcost{wildcards.rep_cost}_mutrate{wildcards.mut_rate}_run{wildcards.n}_rep{wildcards.m}_viral_seqs_active_CD4_sliced --rate -redo"
+
+rule calc_summary_stats:
+  input:
+    "output/{id}/inputs/{id}_original_founder.fasta",
+    #rules.slice_to_real_aln.output[0],
+    rules.make_tree.output[0]
+  output:
+    #path_prefix + "div_metrics.csv",
+    path_prefix + "tr_summary_stats.csv"
+    #path_prefix + "tr.png"
+  script:
+    "scripts/calc_summary_stats.R"
+

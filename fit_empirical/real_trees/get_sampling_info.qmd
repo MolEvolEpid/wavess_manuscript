@@ -1,0 +1,104 @@
+---
+title: "Real within-host trees"
+format: 
+  html:
+    self-contained: true
+execute:
+    echo: false
+    message: false
+    warning: false
+---
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(ape)
+library(ggtree)
+library(treeio)
+library(phytools)
+library(wavess)
+
+theme_set(theme_classic())
+
+refdat <- read_excel('data/metadata/25_mullins_trees_references.xlsx')
+metadat <- read_csv('data/metadata/25_mullins_sample_info.csv')
+
+aln_paths <- list.files('mafft', full.names = TRUE) 
+tr_paths <- list.files('iqtree', pattern = '.treefile', full.names = TRUE) 
+
+env_tr_names <- refdat %>% 
+  filter(gene == 'env') %>% 
+  pull(`Tree id`)
+
+alns <- lapply(aln_paths, read.FASTA)
+names(alns) <- gsub('mafft/|.fasta', '', aln_paths)
+
+trees <- lapply(tr_paths, read.tree)
+names(trees) <- gsub('iqtree/|.treefile', '', tr_paths)
+
+# subset to env
+alns <- alns[names(alns) %in% env_tr_names]
+trees <- trees[names(trees) %in% env_tr_names]
+
+seqs_first_timepoint <- lapply(names(trees), function(x){
+  first_timepoint <- metadat %>% 
+    filter(aln_ids == x) %>% 
+    pull(seq_in_timepoint) %>% 
+    gsub('-.*', '', .) %>% 
+    strsplit('\\+') %>% 
+    unlist()
+})
+names(seqs_first_timepoint) <- names(trees)
+
+trees_rooted <- lapply(names(trees), function(x){
+  tr_sub <- trees[[x]] %>%
+    unroot() 
+  first_timepoint <- seqs_first_timepoint[[x]]
+  og_tiplabs <- sapply(first_timepoint, function(y) tr_sub$tip.label[grepl(y, tr_sub$tip.label)])
+  tr_sub %>% reroot(node = getMRCA(tr_sub, og_tiplabs))
+})
+names(trees_rooted) <- names(trees)
+```
+
+
+### Sampling
+
+Remove time points where treatment appeared to be working based on viral load and CD4 counts (last time points in both cases):
+
+- 10586 last 2 time points
+- 13889 last 3 time points
+
+```{r}
+dir.create('sampling_info')
+tmp <- lapply(names(trees_rooted), function(x){
+  info <- trees_rooted[[x]] %>% 
+    as_tibble() %>%
+    # The sequence headers have seven fields (separated by '+') and they are:
+    # patient_id+hxb2_start+hxb2_end+accession_number+subtype+days-from-infection+days-from-first-sample
+    separate(label, sep = '_', remove = FALSE,
+             into = c('patient_id', 'hxb2_start', 'hxb2_end', 'accession_number', 'subtype', 'days_from_infection', 'days_from_first_sample')) %>%
+    left_join(metadat %>%
+      filter(aln_ids == x) %>%
+      mutate(timepoints = gsub('^-', 'neg', timepoints)) %>%
+      separate_rows(c(timepoints, seq_in_timepoint), sep = '-') %>%
+      separate_rows(seq_in_timepoint, sep = '\\+') %>%
+        mutate(timepoints = factor(as.numeric(gsub('neg', '-', timepoints)))) %>% 
+      # select(timepoints, seq_in_timepoint) %>%
+      rename(timepoint = timepoints, accession_number = seq_in_timepoint)) %>% 
+    filter(!is.na(timepoint)) %>% 
+    # assumes day 0 is infection time (not seroconversion time)
+    # if a timepoint is pre-seroconversion, assume that is day 0
+    mutate(timepoint = as.numeric(as.character(timepoint)),
+           day = case_when(min(timepoint) < 0 ~ round(abs(min(timepoint)) + timepoint),
+                           TRUE ~ round(timepoint))) %>%
+    # remove time points where treatment appeared to be working
+    mutate(to_rm = case_when(aln_ids == '10586+1+B' & timepoint > 4200 ~ 'rm',
+                           aln_ids == '13889+1+B' & timepoint > 4200 ~ 'rm',
+                           TRUE ~ 'keep')) %>% 
+    filter(to_rm == 'keep') %>% 
+    group_by(aln_ids, timepoint, day) %>%
+    tally(name = 'n_sample_active') %>% 
+   write_csv(paste0('sampling_info/', x, '.csv'))
+}) %>% suppressWarnings() %>% suppressMessages()
+```
+

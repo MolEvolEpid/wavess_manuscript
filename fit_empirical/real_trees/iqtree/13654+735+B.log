@@ -1,0 +1,451 @@
+IQ-TREE multicore version 2.3.3 COVID-edition for Linux x86 64-bit built Apr 25 2024
+Developed by Bui Quang Minh, James Barbetti, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams, Ly Trong Nhan, Thomas Wong
+
+Host:    linusblack.lanl.gov (AVX512, FMA3, 754 GB RAM)
+Command: iqtree -s mafft_subset/13654+735+B.fasta -m GTR+I+R -alrt 1000 -T AUTO --prefix iqtree_subset/13654+735+B --rate -redo
+Seed:    89850 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Tue Feb 11 18:00:45 2025
+Kernel:  AVX+FMA - auto-detect threads (1 CPU cores detected)
+
+Reading alignment file mafft_subset/13654+735+B.fasta ... Fasta format detected
+Reading fasta file: done in 0.00298139 secs using 99.05% CPU
+Alignment most likely contains DNA/RNA sequences
+Alignment has 133 sequences with 642 columns, 189 distinct patterns
+68 parsimony-informative, 117 singleton sites, 457 constant sites
+WARNING: Some sequence names are changed as follows:
+13654+2612+3246+DQ853953+B+NA+NA -> 13654_2612_3246_DQ853953_B_NA_NA
+13654+2612+3246+DQ853952+B+NA+NA -> 13654_2612_3246_DQ853952_B_NA_NA
+13654+2612+3246+DQ853951+B+NA+NA -> 13654_2612_3246_DQ853951_B_NA_NA
+13654+2612+3246+DQ853950+B+NA+NA -> 13654_2612_3246_DQ853950_B_NA_NA
+13654+2612+3246+DQ853949+B+NA+NA -> 13654_2612_3246_DQ853949_B_NA_NA
+13654+2612+3246+DQ853948+B+NA+NA -> 13654_2612_3246_DQ853948_B_NA_NA
+13654+2612+3249+DQ853947+B+NA+NA -> 13654_2612_3249_DQ853947_B_NA_NA
+13654+2612+3248+DQ853946+B+NA+NA -> 13654_2612_3248_DQ853946_B_NA_NA
+13654+2612+3248+DQ853945+B+NA+NA -> 13654_2612_3248_DQ853945_B_NA_NA
+13654+2612+3248+DQ853944+B+NA+NA -> 13654_2612_3248_DQ853944_B_NA_NA
+13654+2612+3248+DQ853943+B+NA+NA -> 13654_2612_3248_DQ853943_B_NA_NA
+13654+2612+3248+DQ853942+B+NA+NA -> 13654_2612_3248_DQ853942_B_NA_NA
+13654+2611+3248+DQ853941+B+NA+NA -> 13654_2611_3248_DQ853941_B_NA_NA
+13654+2612+3248+DQ853940+B+NA+NA -> 13654_2612_3248_DQ853940_B_NA_NA
+13654+2612+3246+DQ853939+B+NA+NA -> 13654_2612_3246_DQ853939_B_NA_NA
+13654+2612+3246+DQ853938+B+NA+NA -> 13654_2612_3246_DQ853938_B_NA_NA
+13654+2612+3246+DQ853937+B+NA+NA -> 13654_2612_3246_DQ853937_B_NA_NA
+13654+2612+3246+DQ853936+B+NA+NA -> 13654_2612_3246_DQ853936_B_NA_NA
+13654+2612+3246+DQ853935+B+NA+NA -> 13654_2612_3246_DQ853935_B_NA_NA
+13654+2612+3246+DQ853934+B+NA+NA -> 13654_2612_3246_DQ853934_B_NA_NA
+13654+2612+3246+DQ853933+B+NA+NA -> 13654_2612_3246_DQ853933_B_NA_NA
+13654+2612+3246+DQ853932+B+NA+NA -> 13654_2612_3246_DQ853932_B_NA_NA
+13654+2612+3246+DQ853931+B+NA+NA -> 13654_2612_3246_DQ853931_B_NA_NA
+13654+2612+3246+DQ853930+B+NA+NA -> 13654_2612_3246_DQ853930_B_NA_NA
+13654+2612+3246+DQ853929+B+NA+NA -> 13654_2612_3246_DQ853929_B_NA_NA
+13654+2612+3246+DQ853928+B+NA+NA -> 13654_2612_3246_DQ853928_B_NA_NA
+13654+2612+3246+DQ853927+B+NA+NA -> 13654_2612_3246_DQ853927_B_NA_NA
+13654+2612+3246+DQ853926+B+NA+NA -> 13654_2612_3246_DQ853926_B_NA_NA
+13654+2612+3246+DQ853925+B+NA+NA -> 13654_2612_3246_DQ853925_B_NA_NA
+13654+2612+3246+DQ853924+B+NA+NA -> 13654_2612_3246_DQ853924_B_NA_NA
+13654+2612+3246+DQ853923+B+NA+NA -> 13654_2612_3246_DQ853923_B_NA_NA
+13654+2612+3246+DQ853922+B+NA+NA -> 13654_2612_3246_DQ853922_B_NA_NA
+13654+2612+3246+DQ853921+B+NA+NA -> 13654_2612_3246_DQ853921_B_NA_NA
+13654+2612+3246+DQ853920+B+NA+NA -> 13654_2612_3246_DQ853920_B_NA_NA
+13654+2612+3246+DQ853919+B+NA+NA -> 13654_2612_3246_DQ853919_B_NA_NA
+13654+2612+3246+DQ853918+B+NA+NA -> 13654_2612_3246_DQ853918_B_NA_NA
+13654+2611+3248+DQ853917+B+NA+NA -> 13654_2611_3248_DQ853917_B_NA_NA
+13654+2612+3248+DQ853916+B+NA+NA -> 13654_2612_3248_DQ853916_B_NA_NA
+13654+2611+3248+DQ853915+B+NA+NA -> 13654_2611_3248_DQ853915_B_NA_NA
+13654+2611+3248+DQ853914+B+NA+NA -> 13654_2611_3248_DQ853914_B_NA_NA
+13654+2618+3240+DQ853913+B+NA+NA -> 13654_2618_3240_DQ853913_B_NA_NA
+13654+2612+3248+DQ853912+B+NA+NA -> 13654_2612_3248_DQ853912_B_NA_NA
+13654+2612+3246+DQ853911+B+NA+NA -> 13654_2612_3246_DQ853911_B_NA_NA
+13654+2612+3246+DQ853909+B+NA+NA -> 13654_2612_3246_DQ853909_B_NA_NA
+13654+2612+3246+DQ853908+B+NA+NA -> 13654_2612_3246_DQ853908_B_NA_NA
+13654+2612+3246+DQ853907+B+NA+NA -> 13654_2612_3246_DQ853907_B_NA_NA
+13654+2612+3246+DQ853906+B+NA+NA -> 13654_2612_3246_DQ853906_B_NA_NA
+13654+2612+3246+DQ853905+B+NA+NA -> 13654_2612_3246_DQ853905_B_NA_NA
+13654+2611+3246+DQ853904+B+NA+NA -> 13654_2611_3246_DQ853904_B_NA_NA
+13654+2612+3246+DQ853903+B+NA+NA -> 13654_2612_3246_DQ853903_B_NA_NA
+13654+2612+3246+DQ853902+B+NA+NA -> 13654_2612_3246_DQ853902_B_NA_NA
+13654+2612+3246+DQ853901+B+NA+NA -> 13654_2612_3246_DQ853901_B_NA_NA
+13654+2612+3246+DQ853900+B+NA+NA -> 13654_2612_3246_DQ853900_B_NA_NA
+13654+2612+3246+DQ853899+B+NA+NA -> 13654_2612_3246_DQ853899_B_NA_NA
+13654+2612+3246+DQ853898+B+NA+NA -> 13654_2612_3246_DQ853898_B_NA_NA
+13654+2611+3246+DQ853897+B+NA+NA -> 13654_2611_3246_DQ853897_B_NA_NA
+13654+2612+3246+DQ853896+B+NA+NA -> 13654_2612_3246_DQ853896_B_NA_NA
+13654+2612+3246+DQ853895+B+NA+NA -> 13654_2612_3246_DQ853895_B_NA_NA
+13654+2612+3246+DQ853894+B+NA+NA -> 13654_2612_3246_DQ853894_B_NA_NA
+13654+2612+3246+DQ853893+B+NA+NA -> 13654_2612_3246_DQ853893_B_NA_NA
+13654+2612+3246+DQ853892+B+NA+NA -> 13654_2612_3246_DQ853892_B_NA_NA
+13654+2612+3246+DQ853891+B+NA+NA -> 13654_2612_3246_DQ853891_B_NA_NA
+13654+2612+3246+DQ853890+B+NA+NA -> 13654_2612_3246_DQ853890_B_NA_NA
+13654+2612+3246+DQ853889+B+NA+NA -> 13654_2612_3246_DQ853889_B_NA_NA
+13654+2612+3246+DQ853888+B+NA+NA -> 13654_2612_3246_DQ853888_B_NA_NA
+13654+2612+3246+DQ853887+B+NA+NA -> 13654_2612_3246_DQ853887_B_NA_NA
+13654+2612+3246+DQ853886+B+NA+NA -> 13654_2612_3246_DQ853886_B_NA_NA
+13654+2612+3246+DQ853885+B+NA+NA -> 13654_2612_3246_DQ853885_B_NA_NA
+13654+2612+3246+DQ853884+B+NA+NA -> 13654_2612_3246_DQ853884_B_NA_NA
+13654+2612+3246+DQ853883+B+NA+NA -> 13654_2612_3246_DQ853883_B_NA_NA
+13654+2612+3246+DQ853882+B+NA+NA -> 13654_2612_3246_DQ853882_B_NA_NA
+13654+2612+3246+DQ853881+B+NA+NA -> 13654_2612_3246_DQ853881_B_NA_NA
+13654+2612+3246+DQ853880+B+NA+NA -> 13654_2612_3246_DQ853880_B_NA_NA
+13654+2612+3246+DQ853879+B+NA+NA -> 13654_2612_3246_DQ853879_B_NA_NA
+13654+2612+3246+DQ853878+B+NA+NA -> 13654_2612_3246_DQ853878_B_NA_NA
+13654+2612+3246+DQ853877+B+NA+NA -> 13654_2612_3246_DQ853877_B_NA_NA
+13654+2612+3246+DQ853876+B+NA+NA -> 13654_2612_3246_DQ853876_B_NA_NA
+13654+2612+3246+DQ853875+B+NA+NA -> 13654_2612_3246_DQ853875_B_NA_NA
+13654+2612+3246+DQ853874+B+NA+NA -> 13654_2612_3246_DQ853874_B_NA_NA
+13654+2612+3246+DQ853873+B+NA+NA -> 13654_2612_3246_DQ853873_B_NA_NA
+13654+2612+3246+DQ853872+B+NA+NA -> 13654_2612_3246_DQ853872_B_NA_NA
+13654+2612+3246+DQ853871+B+NA+NA -> 13654_2612_3246_DQ853871_B_NA_NA
+13654+2612+3246+DQ853870+B+NA+NA -> 13654_2612_3246_DQ853870_B_NA_NA
+13654+2612+3246+DQ853869+B+NA+NA -> 13654_2612_3246_DQ853869_B_NA_NA
+13654+2612+3246+DQ853868+B+NA+NA -> 13654_2612_3246_DQ853868_B_NA_NA
+13654+2612+3246+DQ853867+B+NA+NA -> 13654_2612_3246_DQ853867_B_NA_NA
+13654+2612+3246+DQ853866+B+NA+NA -> 13654_2612_3246_DQ853866_B_NA_NA
+13654+2612+3246+DQ853865+B+NA+NA -> 13654_2612_3246_DQ853865_B_NA_NA
+13654+2612+3246+DQ853864+B+NA+NA -> 13654_2612_3246_DQ853864_B_NA_NA
+13654+2612+3246+DQ853863+B+NA+NA -> 13654_2612_3246_DQ853863_B_NA_NA
+13654+2612+3246+DQ853862+B+NA+NA -> 13654_2612_3246_DQ853862_B_NA_NA
+13654+2612+3247+DQ853861+B+NA+NA -> 13654_2612_3247_DQ853861_B_NA_NA
+13654+2612+3246+DQ853860+B+NA+NA -> 13654_2612_3246_DQ853860_B_NA_NA
+13654+2611+3246+DQ853859+B+NA+NA -> 13654_2611_3246_DQ853859_B_NA_NA
+13654+2611+3246+DQ853858+B+NA+NA -> 13654_2611_3246_DQ853858_B_NA_NA
+13654+2611+3246+DQ853857+B+NA+NA -> 13654_2611_3246_DQ853857_B_NA_NA
+13654+2611+3246+DQ853856+B+NA+NA -> 13654_2611_3246_DQ853856_B_NA_NA
+13654+2612+3246+DQ853855+B+NA+NA -> 13654_2612_3246_DQ853855_B_NA_NA
+13654+2611+3246+DQ853854+B+NA+NA -> 13654_2611_3246_DQ853854_B_NA_NA
+13654+2613+3246+DQ853853+B+NA+NA -> 13654_2613_3246_DQ853853_B_NA_NA
+13654+2612+3246+DQ853852+B+NA+NA -> 13654_2612_3246_DQ853852_B_NA_NA
+13654+2612+3246+DQ853851+B+NA+NA -> 13654_2612_3246_DQ853851_B_NA_NA
+13654+2612+3246+DQ853850+B+NA+NA -> 13654_2612_3246_DQ853850_B_NA_NA
+13654+2612+3246+DQ853849+B+NA+NA -> 13654_2612_3246_DQ853849_B_NA_NA
+13654+2612+3246+DQ853848+B+NA+NA -> 13654_2612_3246_DQ853848_B_NA_NA
+13654+2612+3246+DQ853847+B+NA+NA -> 13654_2612_3246_DQ853847_B_NA_NA
+13654+2612+3246+DQ853846+B+NA+NA -> 13654_2612_3246_DQ853846_B_NA_NA
+13654+2612+3246+DQ853845+B+NA+NA -> 13654_2612_3246_DQ853845_B_NA_NA
+13654+2612+3246+DQ853844+B+NA+NA -> 13654_2612_3246_DQ853844_B_NA_NA
+13654+2612+3246+DQ853843+B+NA+NA -> 13654_2612_3246_DQ853843_B_NA_NA
+13654+2612+3246+DQ853842+B+NA+NA -> 13654_2612_3246_DQ853842_B_NA_NA
+13654+2612+3246+DQ853841+B+NA+NA -> 13654_2612_3246_DQ853841_B_NA_NA
+13654+2612+3246+DQ853840+B+NA+NA -> 13654_2612_3246_DQ853840_B_NA_NA
+13654+2612+3246+DQ853839+B+NA+NA -> 13654_2612_3246_DQ853839_B_NA_NA
+13654+2612+3246+DQ853838+B+NA+NA -> 13654_2612_3246_DQ853838_B_NA_NA
+13654+2612+3246+DQ853837+B+NA+NA -> 13654_2612_3246_DQ853837_B_NA_NA
+13654+2612+3246+DQ853836+B+NA+NA -> 13654_2612_3246_DQ853836_B_NA_NA
+13654+2612+3246+DQ853835+B+NA+NA -> 13654_2612_3246_DQ853835_B_NA_NA
+13654+2618+3240+DQ853834+B+NA+NA -> 13654_2618_3240_DQ853834_B_NA_NA
+13654+2618+3240+DQ853833+B+NA+NA -> 13654_2618_3240_DQ853833_B_NA_NA
+13654+2618+3240+DQ853832+B+NA+NA -> 13654_2618_3240_DQ853832_B_NA_NA
+13654+2618+3240+DQ853831+B+NA+NA -> 13654_2618_3240_DQ853831_B_NA_NA
+13654+2618+3240+DQ853830+B+NA+NA -> 13654_2618_3240_DQ853830_B_NA_NA
+13654+2618+3240+DQ853829+B+NA+NA -> 13654_2618_3240_DQ853829_B_NA_NA
+13654+2618+3240+DQ853828+B+NA+NA -> 13654_2618_3240_DQ853828_B_NA_NA
+13654+2618+3240+DQ853827+B+NA+NA -> 13654_2618_3240_DQ853827_B_NA_NA
+13654+2618+3240+DQ853826+B+NA+NA -> 13654_2618_3240_DQ853826_B_NA_NA
+13654+2618+3240+DQ853825+B+NA+NA -> 13654_2618_3240_DQ853825_B_NA_NA
+13654+2618+3240+DQ853824+B+NA+NA -> 13654_2618_3240_DQ853824_B_NA_NA
+13654+2618+3240+DQ853823+B+NA+NA -> 13654_2618_3240_DQ853823_B_NA_NA
+13654+2618+3240+DQ853822+B+NA+NA -> 13654_2618_3240_DQ853822_B_NA_NA
+13654+2618+3240+DQ853821+B+NA+NA -> 13654_2618_3240_DQ853821_B_NA_NA
+13654+2618+3240+DQ853820+B+NA+NA -> 13654_2618_3240_DQ853820_B_NA_NA
+
+                                  Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 8.64668e-05 secs
+   1  13654_2612_3246_DQ853953_B_NA_NA    1.09%    passed     99.52%
+   2  13654_2612_3246_DQ853952_B_NA_NA    1.09%    passed     99.53%
+   3  13654_2612_3246_DQ853951_B_NA_NA    1.09%    passed     99.99%
+   4  13654_2612_3246_DQ853950_B_NA_NA    1.09%    passed     99.97%
+   5  13654_2612_3246_DQ853949_B_NA_NA    0.93%    passed     99.79%
+   6  13654_2612_3246_DQ853948_B_NA_NA    0.93%    passed     99.98%
+   7  13654_2612_3249_DQ853947_B_NA_NA    0.62%    passed     99.92%
+   8  13654_2612_3248_DQ853946_B_NA_NA    0.78%    passed     99.98%
+   9  13654_2612_3248_DQ853945_B_NA_NA    0.62%    passed     99.75%
+  10  13654_2612_3248_DQ853944_B_NA_NA    0.78%    passed     99.88%
+  11  13654_2612_3248_DQ853943_B_NA_NA    0.93%    passed     99.94%
+  12  13654_2612_3248_DQ853942_B_NA_NA    0.78%    passed     99.98%
+  13  13654_2611_3248_DQ853941_B_NA_NA    0.62%    passed     99.83%
+  14  13654_2612_3248_DQ853940_B_NA_NA    0.93%    passed     99.69%
+  15  13654_2612_3246_DQ853939_B_NA_NA    1.09%    passed     99.97%
+  16  13654_2612_3246_DQ853938_B_NA_NA    1.09%    passed     99.82%
+  17  13654_2612_3246_DQ853937_B_NA_NA    1.25%    passed     99.75%
+  18  13654_2612_3246_DQ853936_B_NA_NA    1.09%    passed     99.99%
+  19  13654_2612_3246_DQ853935_B_NA_NA    0.93%    passed     99.99%
+  20  13654_2612_3246_DQ853934_B_NA_NA    1.09%    passed     99.97%
+  21  13654_2612_3246_DQ853933_B_NA_NA    1.09%    passed     99.97%
+  22  13654_2612_3246_DQ853932_B_NA_NA    0.93%    passed     99.52%
+  23  13654_2612_3246_DQ853931_B_NA_NA    1.09%    passed     99.98%
+  24  13654_2612_3246_DQ853930_B_NA_NA    1.09%    passed     99.04%
+  25  13654_2612_3246_DQ853929_B_NA_NA    1.09%    passed     99.97%
+  26  13654_2612_3246_DQ853928_B_NA_NA    1.09%    passed     99.79%
+  27  13654_2612_3246_DQ853927_B_NA_NA    1.09%    passed     99.99%
+  28  13654_2612_3246_DQ853926_B_NA_NA    1.09%    passed     99.97%
+  29  13654_2612_3246_DQ853925_B_NA_NA    0.78%    passed     99.61%
+  30  13654_2612_3246_DQ853924_B_NA_NA    1.09%    passed     99.97%
+  31  13654_2612_3246_DQ853923_B_NA_NA    1.09%    passed     99.97%
+  32  13654_2612_3246_DQ853922_B_NA_NA    1.09%    passed     99.97%
+  33  13654_2612_3246_DQ853921_B_NA_NA    1.09%    passed     99.89%
+  34  13654_2612_3246_DQ853920_B_NA_NA    1.09%    passed     99.98%
+  35  13654_2612_3246_DQ853919_B_NA_NA    1.25%    passed     99.97%
+  36  13654_2612_3246_DQ853918_B_NA_NA    1.09%    passed     99.99%
+  37  13654_2611_3248_DQ853917_B_NA_NA    0.62%    passed     99.94%
+  38  13654_2612_3248_DQ853916_B_NA_NA    0.78%    passed     99.88%
+  39  13654_2611_3248_DQ853915_B_NA_NA    0.78%    passed     99.59%
+  40  13654_2611_3248_DQ853914_B_NA_NA    0.62%    passed     99.95%
+  41  13654_2618_3240_DQ853913_B_NA_NA    2.96%    passed     99.99%
+  42  13654_2612_3248_DQ853912_B_NA_NA    0.78%    passed    100.00%
+  43  13654_2612_3246_DQ853911_B_NA_NA    1.09%    passed     99.67%
+  44  13654_2612_3246_DQ853909_B_NA_NA    1.09%    passed     99.81%
+  45  13654_2612_3246_DQ853908_B_NA_NA    1.09%    passed     99.50%
+  46  13654_2612_3246_DQ853907_B_NA_NA    1.09%    passed     99.50%
+  47  13654_2612_3246_DQ853906_B_NA_NA    1.25%    passed     99.89%
+  48  13654_2612_3246_DQ853905_B_NA_NA    1.09%    passed     99.63%
+  49  13654_2611_3246_DQ853904_B_NA_NA    0.93%    passed     98.74%
+  50  13654_2612_3246_DQ853903_B_NA_NA    1.09%    passed     99.93%
+  51  13654_2612_3246_DQ853902_B_NA_NA    1.09%    passed     99.93%
+  52  13654_2612_3246_DQ853901_B_NA_NA    1.09%    passed     99.53%
+  53  13654_2612_3246_DQ853900_B_NA_NA    1.09%    passed     99.94%
+  54  13654_2612_3246_DQ853899_B_NA_NA    1.09%    passed     98.73%
+  55  13654_2612_3246_DQ853898_B_NA_NA    0.93%    passed     99.94%
+  56  13654_2611_3246_DQ853897_B_NA_NA    0.93%    passed     99.81%
+  57  13654_2612_3246_DQ853896_B_NA_NA    1.09%    passed     97.31%
+  58  13654_2612_3246_DQ853895_B_NA_NA    1.09%    passed     99.12%
+  59  13654_2612_3246_DQ853894_B_NA_NA    1.09%    passed     99.86%
+  60  13654_2612_3246_DQ853893_B_NA_NA    1.09%    passed     99.99%
+  61  13654_2612_3246_DQ853892_B_NA_NA    1.09%    passed     99.53%
+  62  13654_2612_3246_DQ853891_B_NA_NA    1.09%    passed     99.04%
+  63  13654_2612_3246_DQ853890_B_NA_NA    1.09%    passed     99.94%
+  64  13654_2612_3246_DQ853889_B_NA_NA    1.09%    passed     99.68%
+  65  13654_2612_3246_DQ853888_B_NA_NA    1.09%    passed     99.53%
+  66  13654_2612_3246_DQ853887_B_NA_NA    1.09%    passed     99.56%
+  67  13654_2612_3246_DQ853886_B_NA_NA    1.09%    passed     99.68%
+  68  13654_2612_3246_DQ853885_B_NA_NA    1.09%    passed     99.53%
+  69  13654_2612_3246_DQ853884_B_NA_NA    1.09%    passed     98.87%
+  70  13654_2612_3246_DQ853883_B_NA_NA    1.09%    passed     99.80%
+  71  13654_2612_3246_DQ853882_B_NA_NA    1.09%    passed     99.08%
+  72  13654_2612_3246_DQ853881_B_NA_NA    1.09%    passed     99.56%
+  73  13654_2612_3246_DQ853880_B_NA_NA    1.09%    passed     99.13%
+  74  13654_2612_3246_DQ853879_B_NA_NA    1.09%    passed     99.99%
+  75  13654_2612_3246_DQ853878_B_NA_NA    1.40%    passed     98.61%
+  76  13654_2612_3246_DQ853877_B_NA_NA    1.09%    passed     99.79%
+  77  13654_2612_3246_DQ853876_B_NA_NA    1.09%    passed     99.67%
+  78  13654_2612_3246_DQ853875_B_NA_NA    1.40%    passed     98.61%
+  79  13654_2612_3246_DQ853874_B_NA_NA    1.09%    passed     99.99%
+  80  13654_2612_3246_DQ853873_B_NA_NA    1.25%    passed     98.31%
+  81  13654_2612_3246_DQ853872_B_NA_NA    1.09%    passed     99.53%
+  82  13654_2612_3246_DQ853871_B_NA_NA    1.09%    passed     99.81%
+  83  13654_2612_3246_DQ853870_B_NA_NA    1.09%    passed     99.94%
+  84  13654_2612_3246_DQ853869_B_NA_NA    1.09%    passed     99.99%
+  85  13654_2612_3246_DQ853868_B_NA_NA    1.09%    passed     99.98%
+  86  13654_2612_3246_DQ853867_B_NA_NA    1.09%    passed     99.90%
+  87  13654_2612_3246_DQ853866_B_NA_NA    1.09%    passed     99.98%
+  88  13654_2612_3246_DQ853865_B_NA_NA    1.09%    passed     99.76%
+  89  13654_2612_3246_DQ853864_B_NA_NA    1.09%    passed     98.90%
+  90  13654_2612_3246_DQ853863_B_NA_NA    1.09%    passed     99.81%
+  91  13654_2612_3246_DQ853862_B_NA_NA    1.25%    passed     99.78%
+  92  13654_2612_3247_DQ853861_B_NA_NA    0.93%    passed     96.88%
+  93  13654_2612_3246_DQ853860_B_NA_NA    0.93%    passed     99.35%
+  94  13654_2611_3246_DQ853859_B_NA_NA    0.93%    passed     99.98%
+  95  13654_2611_3246_DQ853858_B_NA_NA    0.93%    passed     98.52%
+  96  13654_2611_3246_DQ853857_B_NA_NA    0.93%    passed     99.22%
+  97  13654_2611_3246_DQ853856_B_NA_NA    0.93%    passed     99.03%
+  98  13654_2612_3246_DQ853855_B_NA_NA    1.09%    passed     99.99%
+  99  13654_2611_3246_DQ853854_B_NA_NA    0.93%    passed     99.22%
+ 100  13654_2613_3246_DQ853853_B_NA_NA    1.25%    passed     99.98%
+ 101  13654_2612_3246_DQ853852_B_NA_NA    1.09%    passed     99.89%
+ 102  13654_2612_3246_DQ853851_B_NA_NA    0.93%    passed     99.70%
+ 103  13654_2612_3246_DQ853850_B_NA_NA    1.09%    passed     99.76%
+ 104  13654_2612_3246_DQ853849_B_NA_NA    1.09%    passed     99.50%
+ 105  13654_2612_3246_DQ853848_B_NA_NA    1.09%    passed     99.79%
+ 106  13654_2612_3246_DQ853847_B_NA_NA    1.09%    passed     99.98%
+ 107  13654_2612_3246_DQ853846_B_NA_NA    1.09%    passed     99.97%
+ 108  13654_2612_3246_DQ853845_B_NA_NA    0.93%    passed     99.68%
+ 109  13654_2612_3246_DQ853844_B_NA_NA    1.09%    passed     99.99%
+ 110  13654_2612_3246_DQ853843_B_NA_NA    1.09%    passed     99.76%
+ 111  13654_2612_3246_DQ853842_B_NA_NA    1.09%    passed     99.86%
+ 112  13654_2612_3246_DQ853841_B_NA_NA    1.09%    passed     99.62%
+ 113  13654_2612_3246_DQ853840_B_NA_NA    0.93%    passed     99.94%
+ 114  13654_2612_3246_DQ853839_B_NA_NA    1.09%    passed     98.72%
+ 115  13654_2612_3246_DQ853838_B_NA_NA    1.09%    passed     99.96%
+ 116  13654_2612_3246_DQ853837_B_NA_NA    1.09%    passed     99.80%
+ 117  13654_2612_3246_DQ853836_B_NA_NA    1.09%    passed     99.90%
+ 118  13654_2612_3246_DQ853835_B_NA_NA    1.09%    passed     99.67%
+ 119  13654_2618_3240_DQ853834_B_NA_NA    2.96%    passed     99.53%
+ 120  13654_2618_3240_DQ853833_B_NA_NA    2.96%    passed     99.87%
+ 121  13654_2618_3240_DQ853832_B_NA_NA    2.96%    passed     99.48%
+ 122  13654_2618_3240_DQ853831_B_NA_NA    2.96%    passed     99.51%
+ 123  13654_2618_3240_DQ853830_B_NA_NA    2.96%    passed     98.94%
+ 124  13654_2618_3240_DQ853829_B_NA_NA    2.96%    passed     99.99%
+ 125  13654_2618_3240_DQ853828_B_NA_NA    2.96%    passed     99.45%
+ 126  13654_2618_3240_DQ853827_B_NA_NA    2.96%    passed     93.41%
+ 127  13654_2618_3240_DQ853826_B_NA_NA    2.96%    passed     99.80%
+ 128  13654_2618_3240_DQ853825_B_NA_NA    2.96%    passed     98.31%
+ 129  13654_2618_3240_DQ853824_B_NA_NA    2.96%    passed     99.53%
+ 130  13654_2618_3240_DQ853823_B_NA_NA    2.96%    passed     96.01%
+ 131  13654_2618_3240_DQ853822_B_NA_NA    2.96%    passed     99.62%
+ 132  13654_2618_3240_DQ853821_B_NA_NA    2.96%    passed     99.53%
+ 133  13654_2618_3240_DQ853820_B_NA_NA    2.96%    passed     97.65%
+****  TOTAL                               1.27%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: 13654_2612_3246_DQ853939_B_NA_NA is identical to 13654_2612_3246_DQ853950_B_NA_NA but kept for subsequent analysis
+NOTE: 13654_2612_3246_DQ853902_B_NA_NA is identical to 13654_2612_3246_DQ853903_B_NA_NA but kept for subsequent analysis
+NOTE: 13654_2612_3246_DQ853870_B_NA_NA is identical to 13654_2612_3246_DQ853890_B_NA_NA but kept for subsequent analysis
+NOTE: 13654_2612_3246_DQ853875_B_NA_NA is identical to 13654_2612_3246_DQ853878_B_NA_NA but kept for subsequent analysis
+NOTE: 13654_2611_3246_DQ853854_B_NA_NA is identical to 13654_2611_3246_DQ853857_B_NA_NA but kept for subsequent analysis
+NOTE: 13654_2612_3246_DQ853843_B_NA_NA is identical to 13654_2612_3246_DQ853850_B_NA_NA but kept for subsequent analysis
+NOTE: 13654_2618_3240_DQ853821_B_NA_NA is identical to 13654_2618_3240_DQ853824_B_NA_NA but kept for subsequent analysis
+NOTE: 4 identical sequences (see below) will be ignored for subsequent analysis
+NOTE: 13654_2612_3246_DQ853934_B_NA_NA (identical to 13654_2612_3246_DQ853950_B_NA_NA) is ignored but added at the end
+NOTE: 13654_2612_3246_DQ853924_B_NA_NA (identical to 13654_2612_3246_DQ853950_B_NA_NA) is ignored but added at the end
+NOTE: 13654_2612_3246_DQ853923_B_NA_NA (identical to 13654_2612_3246_DQ853950_B_NA_NA) is ignored but added at the end
+NOTE: 13654_2612_3246_DQ853922_B_NA_NA (identical to 13654_2612_3246_DQ853950_B_NA_NA) is ignored but added at the end
+Alignment was printed to iqtree_subset/13654+735+B.uniqueseq.phy
+
+For your convenience alignment with unique sequences printed to iqtree_subset/13654+735+B.uniqueseq.phy
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.008 seconds
+
+NOTE: 3 MB RAM (0 GB) is required!
+Measuring multi-threading efficiency up to 1 CPU cores
+Increase to 10 rounds for branch lengths
+13 trees examined
+Threads: 1 / Time: 1.039 sec / Speedup: 1.000 / Efficiency: 100% / LogL: -3919
+BEST NUMBER OF THREADS: 1
+
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -3039.209
+2. Current log-likelihood: -2833.168
+3. Current log-likelihood: -2832.658
+4. Current log-likelihood: -2832.346
+5. Current log-likelihood: -2832.155
+6. Current log-likelihood: -2832.035
+Optimal log-likelihood: -2831.955
+Rate parameters:  A-C: 0.53258  A-G: 11.41153  A-T: 0.57581  C-G: 0.62080  C-T: 10.99587  G-T: 1.00000
+Base frequencies:  A: 0.410  C: 0.155  G: 0.198  T: 0.237
+Proportion of invariable sites: 0.314
+Site proportion and rates:  (0.176,0.488) (0.194,0.793) (0.186,1.049) (0.130,4.350)
+Parameters optimization took 6 rounds (1.228 sec)
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.172504 secs using 99.78% CPU
+Computing ML distances took 0.172718 sec (of wall-clock time) 0.172342 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 0.000546499 secs using 99.91% CPU
+Computing RapidNJ tree took 0.002580 sec (of wall-clock time) 0.002573 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -2830.220
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 1.170 second
+Computing log-likelihood of 98 initial trees ... 1.074 seconds
+Current best score: -2815.553
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -2812.351
+Iteration 10 / LogL: -2820.197 / Time: 0h:0m:6s
+Iteration 20 / LogL: -2820.355 / Time: 0h:0m:7s
+Finish initializing candidate tree set (20)
+Current best tree score: -2812.351 / CPU time: 5.334
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -2813.673 / Time: 0h:0m:10s (0h:0m:24s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 31: -2811.689
+Iteration 40 / LogL: -2812.689 / Time: 0h:0m:12s (0h:0m:29s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 45: -2811.004
+Iteration 50 / LogL: -2817.421 / Time: 0h:0m:15s (0h:0m:29s left)
+Iteration 60 / LogL: -2811.015 / Time: 0h:0m:17s (0h:0m:25s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 61: -2808.679
+BETTER TREE FOUND at iteration 70: -2808.674
+Iteration 70 / LogL: -2808.674 / Time: 0h:0m:20s (0h:0m:29s left)
+Iteration 80 / LogL: -2815.478 / Time: 0h:0m:22s (0h:0m:25s left)
+Iteration 90 / LogL: -2811.099 / Time: 0h:0m:24s (0h:0m:22s left)
+Iteration 100 / LogL: -2817.837 / Time: 0h:0m:26s (0h:0m:18s left)
+Iteration 110 / LogL: -2808.679 / Time: 0h:0m:29s (0h:0m:15s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 113: -2808.249
+Iteration 120 / LogL: -2809.360 / Time: 0h:0m:31s (0h:0m:24s left)
+Iteration 130 / LogL: -2819.796 / Time: 0h:0m:33s (0h:0m:21s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 133: -2807.605
+Iteration 140 / LogL: -2811.470 / Time: 0h:0m:35s (0h:0m:24s left)
+BETTER TREE FOUND at iteration 143: -2807.601
+Iteration 150 / LogL: -2810.268 / Time: 0h:0m:38s (0h:0m:23s left)
+Iteration 160 / LogL: -2807.605 / Time: 0h:0m:40s (0h:0m:21s left)
+Iteration 170 / LogL: -2807.606 / Time: 0h:0m:42s (0h:0m:18s left)
+BETTER TREE FOUND at iteration 177: -2807.601
+Iteration 180 / LogL: -2808.393 / Time: 0h:0m:45s (0h:0m:24s left)
+Iteration 190 / LogL: -2813.347 / Time: 0h:0m:47s (0h:0m:21s left)
+Iteration 200 / LogL: -2815.685 / Time: 0h:0m:49s (0h:0m:19s left)
+BETTER TREE FOUND at iteration 201: -2807.601
+Iteration 210 / LogL: -2815.400 / Time: 0h:0m:51s (0h:0m:22s left)
+Iteration 220 / LogL: -2807.602 / Time: 0h:0m:53s (0h:0m:19s left)
+BETTER TREE FOUND at iteration 224: -2807.601
+Iteration 230 / LogL: -2807.601 / Time: 0h:0m:56s (0h:0m:23s left)
+Iteration 240 / LogL: -2809.335 / Time: 0h:0m:58s (0h:0m:20s left)
+Iteration 250 / LogL: -2807.602 / Time: 0h:1m:0s (0h:0m:18s left)
+Iteration 260 / LogL: -2808.537 / Time: 0h:1m:3s (0h:0m:15s left)
+Iteration 270 / LogL: -2808.388 / Time: 0h:1m:5s (0h:0m:13s left)
+Iteration 280 / LogL: -2811.401 / Time: 0h:1m:7s (0h:0m:10s left)
+Iteration 290 / LogL: -2810.264 / Time: 0h:1m:9s (0h:0m:8s left)
+BETTER TREE FOUND at iteration 293: -2807.600
+Iteration 300 / LogL: -2818.300 / Time: 0h:1m:11s (0h:0m:22s left)
+Iteration 310 / LogL: -2811.021 / Time: 0h:1m:14s (0h:0m:19s left)
+Iteration 320 / LogL: -2807.602 / Time: 0h:1m:16s (0h:0m:17s left)
+Iteration 330 / LogL: -2812.291 / Time: 0h:1m:18s (0h:0m:15s left)
+BETTER TREE FOUND at iteration 338: -2807.600
+Iteration 340 / LogL: -2807.601 / Time: 0h:1m:21s (0h:0m:23s left)
+Iteration 350 / LogL: -2808.251 / Time: 0h:1m:23s (0h:0m:20s left)
+Iteration 360 / LogL: -2812.432 / Time: 0h:1m:25s (0h:0m:18s left)
+Iteration 370 / LogL: -2813.258 / Time: 0h:1m:27s (0h:0m:16s left)
+Iteration 380 / LogL: -2807.606 / Time: 0h:1m:29s (0h:0m:13s left)
+Iteration 390 / LogL: -2810.998 / Time: 0h:1m:31s (0h:0m:11s left)
+BETTER TREE FOUND at iteration 400: -2807.600
+Iteration 400 / LogL: -2807.600 / Time: 0h:1m:33s (0h:0m:23s left)
+Iteration 410 / LogL: -2812.436 / Time: 0h:1m:35s (0h:0m:21s left)
+Iteration 420 / LogL: -2816.051 / Time: 0h:1m:37s (0h:0m:18s left)
+Iteration 430 / LogL: -2808.247 / Time: 0h:1m:40s (0h:0m:16s left)
+Iteration 440 / LogL: -2810.120 / Time: 0h:1m:41s (0h:0m:13s left)
+Iteration 450 / LogL: -2811.958 / Time: 0h:1m:43s (0h:0m:11s left)
+Iteration 460 / LogL: -2807.600 / Time: 0h:1m:46s (0h:0m:9s left)
+Iteration 470 / LogL: -2808.389 / Time: 0h:1m:48s (0h:0m:6s left)
+Iteration 480 / LogL: -2808.389 / Time: 0h:1m:50s (0h:0m:4s left)
+Iteration 490 / LogL: -2811.348 / Time: 0h:1m:52s (0h:0m:2s left)
+Iteration 500 / LogL: -2821.894 / Time: 0h:1m:54s (0h:0m:0s left)
+TREE SEARCH COMPLETED AFTER 501 ITERATIONS / Time: 0h:1m:54s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -2807.600
+Optimal log-likelihood: -2807.594
+Rate parameters:  A-C: 0.57263  A-G: 14.42354  A-T: 0.72042  C-G: 0.75956  C-T: 13.37343  G-T: 1.00000
+Base frequencies:  A: 0.410  C: 0.155  G: 0.198  T: 0.237
+Proportion of invariable sites: 0.302
+Site proportion and rates:  (0.174,0.469) (0.191,0.732) (0.182,1.008) (0.151,3.948)
+Parameters optimization took 1 rounds (0.116 sec)
+BEST SCORE FOUND : -2807.594
+Empirical proportions for each category: 0.528 0.184 0.136 0.153
+Site rates printed to iqtree_subset/13654+735+B.rate
+
+Testing tree branches by SH-like aLRT with 1000 replicates...
+2.203 sec.
+Total tree length: 0.487
+
+Total number of iterations: 501
+CPU time used for tree search: 108.528 sec (0h:1m:48s)
+Wall-clock time used for tree search: 112.176 sec (0h:1m:52s)
+Total CPU time used: 113.350 sec (0h:1m:53s)
+Total wall-clock time used: 117.047 sec (0h:1m:57s)
+
+Analysis results written to: 
+  IQ-TREE report:                iqtree_subset/13654+735+B.iqtree
+  Maximum-likelihood tree:       iqtree_subset/13654+735+B.treefile
+  Likelihood distances:          iqtree_subset/13654+735+B.mldist
+  Site-specific rates:           iqtree_subset/13654+735+B.rate
+  Screen log file:               iqtree_subset/13654+735+B.log
+
+Date and Time: Tue Feb 11 18:02:42 2025

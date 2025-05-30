@@ -1,0 +1,328 @@
+---
+title: "Morris sensitivity"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(epiR)
+library(ggpubr)
+library(scales)
+
+theme_set(theme_bw() +
+  theme(strip.background = element_rect(color = NA, fill = NA), 
+        panel.grid.minor = element_blank(), text = element_text(size = 12)
+        ))
+
+param_sets <- read_csv('parameter_sets.csv') %>% 
+  rename(set = i)
+
+tr_stats <- read_csv('summaries/tr_summary_stats.csv') %>% 
+  separate(file, into = c('output', 'traj', 'set', 'rep', 'tr', 'summary', 'stats', 'csv')) %>% 
+  filter(stat_name != 'stat_name') %>% 
+  select(traj, set, rep, stat_name, stat_value) %>% 
+  mutate(traj = as.numeric(gsub('traj', '', traj)),
+         set = as.numeric(gsub('set', '', set)),
+         rep = as.numeric(gsub('rep', '', rep)),
+         stat_value = as.numeric(stat_value)) %>% 
+  mutate(stat_name = factor(
+    case_when(stat_name == 'divergence_slope' ~ 'Mean annual\nchange in divergence',
+                               stat_name == 'diversity_slope' ~ 'Mean annual\nchange in diversity',
+                               stat_name == 'mean_bl' ~ 'Mean branch length',
+                               stat_name == 'transition_score' ~ 'Mean number of\ntransitions per timepoint',
+                               TRUE ~ gsub('_', ' ', str_to_sentence(stat_name))),
+                            levels = c('Mean branch length', 'Mean annual\nchange in diversity', 'Mean annual\nchange in divergence', 'Mean leaf depth', 'Mean number of\ntransitions per timepoint'))) %>% 
+  drop_na() %>% 
+  mutate(stat_value = case_when(grepl('annual', stat_name) ~ stat_value*365.25,
+                                     TRUE ~ stat_value))
+
+stats <- param_sets %>% 
+  group_by(traj) %>% 
+  mutate(which_diff = case_when(generation_time != lag(generation_time) ~ 'generation_time',
+                                mutation_rate != lag(mutation_rate) ~ 'mutation_rate',
+                                recombination_rate != lag(recombination_rate) ~ 'recombination_rate',
+                                conserved_cost != lag(conserved_cost) ~ 'conserved_cost',
+                                replicative_cost != lag(replicative_cost) ~ 'replicative_cost',
+                                immune_cost != lag(immune_cost) ~ 'immune_cost',
+                                immune_response_count != lag(immune_response_count) ~ 'immune_response_count',
+                                days_full_potency != lag(days_full_potency) ~ 'days_full_potency',
+                                active_to_latent != lag(active_to_latent) ~ 'active_to_latent',
+                                latent_proliferate_die != lag(latent_proliferate_die) ~ 'latent_proliferate_die',
+                                starting_pop_size != lag(starting_pop_size) ~ 'starting_pop_size',
+                                max_growth_rate != lag(max_growth_rate) ~ 'max_growth_rate',
+                                effective_pop_size != lag(effective_pop_size) ~ 'effective_pop_size',
+                                epitope_length != lag(epitope_length) ~ 'epitope_length'),
+         diff = case_when(generation_time != lag(generation_time) ~ generation_time - lag(generation_time),
+                                mutation_rate != lag(mutation_rate) ~ mutation_rate - lag(mutation_rate),
+                                recombination_rate != lag(recombination_rate) ~ recombination_rate - lag(recombination_rate),
+                                conserved_cost != lag(conserved_cost) ~ conserved_cost - lag(conserved_cost),
+                                replicative_cost != lag(replicative_cost) ~ replicative_cost - lag(replicative_cost),
+                                immune_cost != lag(immune_cost) ~ immune_cost - lag(immune_cost),
+                                immune_response_count != lag(immune_response_count) ~ immune_response_count - lag(immune_response_count),
+                                days_full_potency != lag(days_full_potency) ~ days_full_potency - lag(days_full_potency),
+                                active_to_latent != lag(active_to_latent) ~ active_to_latent - lag(active_to_latent),
+                                latent_proliferate_die != lag(latent_proliferate_die) ~ latent_proliferate_die - lag(latent_proliferate_die),
+                                starting_pop_size != lag(starting_pop_size) ~ starting_pop_size - lag(starting_pop_size),
+                                max_growth_rate != lag(max_growth_rate) ~ max_growth_rate - lag(max_growth_rate),
+                                effective_pop_size != lag(effective_pop_size) ~ effective_pop_size - lag(effective_pop_size),
+                                epitope_length != lag(epitope_length) ~ epitope_length - lag(epitope_length))) %>% 
+  select(traj, set, which_diff, diff) %>% 
+  full_join(tr_stats) %>% 
+  mutate(stat_value = as.numeric(stat_value)) %>% 
+  filter(!grepl('median|node', stat_name)) 
+
+
+within_set_diff <- stats %>%
+  group_by(traj, set, stat_name) %>%
+  summarise(diff = list(combn(stat_value, 2, FUN = function(x) abs(x[1]-x[2])))) %>%
+  unnest(c(diff))
+
+between_set_diff <- stats %>%
+  group_by(traj, stat_name) %>%
+  summarise(pair = list(combn(set, 2, FUN = function(x) paste(x[1], x[2]))),
+            which_diff = list(combn(which_diff, 2, FUN = function(x) x[2])),
+            diff = list(combn(stat_value, 2, FUN = function(x) abs(x[1]-x[2])))) %>%
+  unnest(c(which_diff, pair, diff)) %>% 
+  separate(pair, into = c('set1', 'set2')) %>%
+  mutate(set1 = as.numeric(set1),
+         set2 = as.numeric(set2)) %>%
+  filter(abs(set1-set2) == 1)
+
+within_diff_summary <- within_set_diff %>%
+  group_by(traj, set, stat_name) %>%
+  summarize(mean_diff_within = mean(diff),
+            sd_diff_within = sd(diff),
+            q025_diff_within = quantile(diff, 0.025),
+            q975_diff_within = quantile(diff, 0.975)) 
+
+ratios <- between_set_diff %>%
+  left_join(param_sets %>% select(traj, set, which_diff, delta)) %>%
+  group_by(traj, set1, set2, which_diff, stat_name) %>%
+  summarize(mean_diff = mean(diff),
+            sd_diff = sd(diff),
+            q025_diff = quantile(diff, 0.025),
+            q975_diff = quantile(diff, 0.975)) %>%
+  left_join(within_diff_summary %>% select(traj, set1=set, stat_name, mean_diff_within_set1=mean_diff_within,
+                                           sd_diff_within, q025_diff_within, q975_diff_within)) %>% 
+  mutate(ratio_mean = mean_diff/mean_diff_within_set1) 
+ratio_summary <- ratios %>%
+  filter(!is.nan(ratio_mean) & !is.infinite(ratio_mean)) %>% 
+  group_by(stat_name, which_diff) %>%
+  summarize(mean_ratio = mean(ratio_mean),
+            sd_diff = sd(mean_diff),
+            mean_diff = mean(mean_diff),
+            sd_diff_within = sd(mean_diff_within_set1),
+            mean_diff_within_set1 = mean(mean_diff_within_set1)) %>% 
+  mutate(which_diff = str_to_sentence(gsub('_', ' ', which_diff)),
+         which_diff = case_when(grepl('Days', which_diff) ~ 'Days to\nmaximum\nimmune cost',
+                                grepl('Immune response', which_diff) ~ 'Threshold\nepitope\ncount',
+                                grepl('length', which_diff) ~ 'Epitope\namino acid\nlength',
+                                grepl('Effective', which_diff) ~ 'Maximum\npopulation\nsize',
+                                grepl('Latent proliferate', which_diff) ~ 'Latent\nproliferation &\ndeath rate',
+                                grepl('Active to latent', which_diff) ~ 'Deposition rate',
+                                grepl('Starting pop', which_diff) ~ 'Starting\npopulation\nsize',
+                                grepl('Max growth', which_diff) ~ 'Maximum\ngrowth rate',
+                                TRUE ~ gsub(' ', '\n', which_diff)))
+
+counts <- read_csv('summaries/counts.csv') %>% 
+  separate(`output/traj10_set0_rep0_counts.csv:generation`, into = c('path', 'generation'), sep = ':') %>% 
+  mutate(path = gsub('output/|_counts.csv|traj|set|rep', '', path)) %>% 
+  separate(path, into = c('traj', 'set', 'rep')) %>% 
+  mutate(traj = as.numeric(traj),
+         set = as.numeric(set),
+         rep = as.numeric(rep),
+         generation = as.numeric(generation)) 
+
+counts_long <- counts %>% 
+  drop_na() %>% 
+  pivot_longer(!c(traj, set, rep, generation)) %>% 
+  group_by(traj, set, generation, name) %>% 
+  summarize(mean_value = mean(value)) %>% 
+  left_join(param_sets) %>% 
+  mutate(name = str_to_sentence(gsub('_', ' ', name)),
+         name = gsub('inf', 'infections', name),
+         name = gsub('Number', 'Number of', name),
+         name = gsub('fitness', 'overall fitness', name),
+         name = gsub('conserved', 'conserved fitness', name),
+         name = gsub('replicative', 'replicative fitness', name),
+         name = gsub('immune', 'immune fitness', name),
+         name = gsub('fitness active', 'fitness', name),
+         name = factor(name, levels = c('Active cell count', 'Latent cell count', 'Active turned latent', 'Latent turned active', 'Latent proliferated', 'Latent died',
+         'Number of mutations', 'Number of dual infections',
+         'Mean conserved fitness', 'Mean replicative fitness', 'Mean immune fitness', 'Mean overall fitness'))) %>% 
+  rowwise() %>% 
+  mutate(mean_fitness_cost = mean(immune_cost,replicative_cost,conserved_cost),
+         pop_latent = effective_pop_size*latent_proliferate_die) %>% 
+  ungroup() %>% 
+  mutate(param_name = case_when(name == 'Active cell count' ~ 'effective_pop_size',
+                                name == 'Active turned latent' ~ 'active_to_latent',
+                                name == 'Latent cell count' ~ 'effective_pop_size',
+                                name == 'Latent died' ~ 'latent_proliferate_die',
+                                name == 'Latent proliferated' ~ 'latent_proliferate_die',
+                                name == 'Latent turned active' ~ 'active_to_latent',
+                                name == 'Mean conserved fitness' ~ 'conserved_cost',
+                                name == 'Mean overall fitness' ~ 'mean_fitness_cost',
+                                name == 'Mean immune fitness' ~ 'immune_cost',
+                                name == 'Mean replicative fitness' ~ 'replicative_cost',
+                                name == 'Number of dual infections' ~ 'recombination_rate',
+                                name == 'Number of mutations' ~ 'mutation_rate'),
+         name_nice = case_when(name == 'Number of dual infections' ~ 'Cells with a\nrecombination event',
+                               name == 'Number of mutations' ~ '\nMutation events',
+                               name == 'Latent died' ~ 'Latent\ndeath events',
+                               name == 'Latent proliferated' ~ 'Latent\nproliferation events',
+                               name == 'Latent turned active' ~ 'Latent turned\nactive events',
+                               name == 'Active turned latent' ~ 'Active turned\nlatent events',
+                               grepl('fitness', name) ~ gsub('fitness', '\nfitness', name),
+                               # grepl('^M', name) ~ paste0('\n',name),
+                               TRUE ~ paste0('\n',name))) 
+
+prcc <- lapply(unique(ratios$stat_name), function(x){
+  stats %>% 
+    filter(set == 0 & stat_name == x) %>% 
+    group_by(traj, stat_name) %>% 
+    summarize(stat_value = mean(stat_value)) %>% 
+  left_join(param_sets) %>% 
+  pivot_wider(names_from = stat_name, values_from = stat_value) %>% 
+  ungroup() %>% 
+    select(-c(traj, set, which_diff, delta)) %>% epi.prcc() %>% 
+  arrange(-p.value) %>% 
+    mutate(stat_name = x)
+}) %>% bind_rows() %>% 
+  rename(which_diff = var) %>% 
+  mutate(which_diff = str_to_sentence(gsub('_', ' ', which_diff)),
+         which_diff = case_when(grepl('Days', which_diff) ~ 'Days to\nmaximum\nimmune cost', 
+                                grepl('Immune response', which_diff) ~ 'Threshold\nepitope\ncount',
+                                grepl('length', which_diff) ~ 'Epitope\namino acid\nlength',
+                                grepl('Effective', which_diff) ~ 'Maximum\npopulation\nsize',
+                                grepl('Latent proliferate', which_diff) ~ 'Latent\nproliferation &\ndeath rate',
+                                grepl('Active to latent', which_diff) ~ 'Deposition rate',
+                                grepl('Starting pop', which_diff) ~ 'Starting\npopulation\nsize',
+                                grepl('Max growth', which_diff) ~ 'Maximum\ngrowth rate',
+                                TRUE ~ gsub(' ', '\n', which_diff)))
+
+```
+
+```{r,, fig.width=16, fig.height=10}
+opt <- 'G'
+coldir <- -1
+counts_fig <- cowplot::plot_grid(lapply(c("effective_pop_size", "active_to_latent", "latent_proliferate_die"), function(x){
+  p <- counts_long %>%
+    filter(set == 0 & param_name == x) %>% 
+  ggplot(aes(x = generation, y = mean_value, group = paste(traj, set))) +
+  facet_wrap(~name_nice, scales = 'free') +
+  geom_line(aes_string(col = x), alpha = 1) +
+    scale_color_viridis_c(option = opt, direction = coldir, begin = 0.1, end = 0.9, breaks = breaks_pretty(n = 4)) +
+    guides(color = guide_colorbar(title.position="top", title.hjust = 0.5)) +
+  labs(x = 'Generation',# y = 'Mean per-generation value\nacross 10 replicates', 
+       col = str_to_sentence(
+         gsub('_', ' ', 
+              gsub('to_latent', 'to latent rate', 
+                gsub('proliferate_die', 'proliferation & death rate', 
+                     gsub('effective_pop', 'maximum population', x)
+                     )
+                )
+              )
+         )
+       ) +
+    theme(strip.text = element_text(size = 12),
+                 legend.position = 'top', legend.key.width = unit(0.8, "cm"),
+          axis.title.x = element_blank(), legend.text = element_text(size = 8)) + theme(axis.title.y = element_blank())
+  p 
+}) %>% cowplot::plot_grid(plotlist = ., nrow = 1),
+
+lapply(c("mutation_rate", "recombination_rate", "conserved_cost", "replicative_cost", "immune_cost", "mean_fitness_cost"), function(x){
+  p <- counts_long %>%
+    filter(set == 0 & param_name == x) %>% 
+  ggplot(aes(x = generation, y = mean_value, group = paste(traj, set))) +
+  facet_wrap(~name_nice, scales = 'free') +
+  geom_line(aes_string(col = x), alpha = 1) +
+    scale_color_viridis_c(option = opt, direction = coldir, begin = 0.1, end = 0.9, breaks = breaks_pretty(n = 4)) +
+  labs(x = 'Generation', y = '', col = gsub('_', ' ', str_to_sentence(x))) +
+    guides(color = guide_colorbar(title.position="top", title.hjust = 0.5)) +
+    theme(strip.text = element_text(size = 12),
+          legend.position = 'bottom', legend.key.width = unit(0.8, "cm"),
+          legend.text = element_text(size = 8)) + theme(axis.title.y = element_blank())
+  p
+}) %>% cowplot::plot_grid(plotlist = ., nrow = 1), nrow = 2, ncol = 1, rel_heights = c(1, 1.1), aligh = 'h', axis = 'lr') %>% 
+  annotate_figure(left = text_grob('Mean per-generation value across 10 replicates', rot = 90, size = 14))
+
+ratio_fig <- ratio_summary %>% 
+  left_join(prcc) %>% 
+  mutate(
+         which_diff = case_when(grepl('Days', which_diff) ~ 'Days to\nmaximum\nimmune cost', 
+                                grepl('Latent\nproliferat', which_diff) ~ 'Latent\nproliferation &\ndeath rate',
+                                grepl('Active to', which_diff) ~ 'Deposition rate',
+                                grepl('Maximum\ngrowth', which_diff) ~ 'Maximum\ngrowth rate',
+                                grepl('length', which_diff) ~ 'Epitope\namino acid\nlength',
+                                TRUE ~ gsub(' ', '\n', which_diff))) %>%
+  ggplot(aes(y = stat_name, x = fct_reorder(which_diff, mean_ratio, function(x) mean(abs(x)), .desc = TRUE), fill = mean_ratio, 
+  label = paste0(round(mean_ratio, 1), '\n(', round(est, 2), ')'))) +
+  geom_tile() +
+  geom_text(col = 'white', lineheight = 0.9, size = 4) +
+  scale_fill_viridis_c(option = opt, direction = coldir, begin = 0.1, end = 0.9, breaks = breaks_pretty(n = 4), limits = c(0.9, 5.5), trans = 'log10') +
+  labs(y = 'Phylogenetic summary statistic', x = 'Parameter', fill = expression('Normalized mean\nelementary effect ('*mu*'**'*')')) +
+  theme(axis.title = element_text(size = 14), axis.text.y = element_text(size = 12), legend.text = element_text(size = 12))
+
+sens_fig <- cowplot::plot_grid(cowplot::plot_grid(NULL, counts_fig, NULL, nrow = 1, rel_widths = c(0.7, 6, 0.95)), 
+                               ratio_fig, rel_heights = c(1.6, 1), labels = 'AUTO', ncol = 1)
+
+sens_fig
+
+ggsave('figures/sensitivity_analysis.pdf', sens_fig, width = 16, height = 10)
+```
+
+
+
+
+
+
+
+```{r, fig.width=12, fig.height=10}
+compare_diffs_fig <- ggarrange(ratio_summary %>% 
+  # filter(stat_name %in% c("mean_leaf_depth", "divergence_slope", "diversity_slope", "transition_score", 'mean_bl')) %>%
+  left_join(prcc) %>% 
+  ggplot(aes(x = mean_diff_within_set1, y = mean_diff)) +
+  facet_wrap(~stat_name, scales = 'free', nrow = 1) +
+  geom_point(aes(col = which_diff)) +
+  geom_abline() +
+    stat_cor(method = 'pearson', cor.coef.name = 'R') +
+  stat_cor(method = 'spearman', cor.coef.name = 'rho', vjust = 3) +
+  scale_x_continuous(breaks = breaks_pretty(n = 3)) +
+  scale_y_continuous(breaks = breaks_pretty(n = 3)) +
+    guides(color = guide_legend(nrow = 2)) +
+  scale_color_manual(values = c('#000075','#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#008080', '#9a6324', '#800000', '#aaffc3', '#808000', '#ffd8b1',  '#808080', '#ffffff', '#000000', '#ffe119','#e6beff','#fabebe', '#fffac8')) +
+    labs(x = 'Mean within-point difference\n[across replicates]', y = 'Mean between-point difference\n[with parameter perturbation]', col = 'Parameter'),
+
+
+ratio_summary %>% 
+  left_join(prcc) %>% 
+  ggplot(aes(x = mean_ratio, y = mean_diff)) +
+  facet_wrap(~stat_name, scales = 'free', nrow = 1) +
+  geom_point(aes(col = which_diff)) +
+  stat_cor(method = 'pearson', cor.coef.name = 'R') +
+  stat_cor(method = 'spearman', cor.coef.name = 'rho', vjust = 3) +
+  scale_x_continuous(breaks = breaks_pretty(n = 3)) +
+  scale_y_continuous(breaks = breaks_pretty(n = 3)) +
+  guides(color = guide_legend(nrow = 2)) +
+  scale_color_manual(values = c('#000075','#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#008080', '#9a6324', '#800000', '#aaffc3', '#808000', '#ffd8b1',  '#808080', '#ffffff', '#000000', '#ffe119','#e6beff','#fabebe', '#fffac8')) +
+    labs(x = 'Normalized mean elementary effect', y = 'Mean between-point difference\n[with parameter perturbation]', col = 'Parameter'),
+
+ratio_summary %>% 
+  left_join(prcc) %>% 
+  ggplot(aes(x = mean_ratio, y = abs(est))) +
+  facet_wrap(~stat_name, scales = 'free', nrow = 1) +
+  geom_point(aes(col = which_diff)) +
+  stat_cor(method = 'pearson', cor.coef.name = 'R') +
+  stat_cor(method = 'spearman', cor.coef.name = 'rho', vjust = 3) +
+  scale_x_continuous(breaks = breaks_pretty(n = 3)) +
+  scale_y_continuous(breaks = breaks_pretty(n = 3)) +
+  scale_color_manual(values = c('#000075','#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#008080', '#9a6324', '#800000', '#aaffc3', '#808000', '#ffd8b1',  '#808080', '#ffffff', '#000000', '#ffe119','#e6beff','#fabebe', '#fffac8')) +
+  guides(color = guide_legend(nrow = 2)) +
+    labs(x = 'Normalized mean elementary effect', y = '|Partial rank\ncorrelation coefficient|', col = 'Parameter'), 
+
+ncol = 1, common.legend = TRUE, labels = 'AUTO', align = 'hv')
+
+compare_diffs_fig
+ggsave('figures/compare_diffs.pdf', compare_diffs_fig, width = 15, height = 10)
+```
+

@@ -1,0 +1,165 @@
+---
+title: "Model description"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(ggtext)
+library(scales)
+library(ggpubr)
+library(wavess)
+
+theme_set(theme_classic() +
+  theme(strip.background = element_rect(color = NA, fill = NA), 
+        panel.grid = element_blank(), text = element_text(size = 12)
+        ))
+```
+
+```{r, fig.width=12, fig.height=3}
+costs <- c(0, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 0.99)
+n_muts <- 0:100
+ref_comp_plot <- tibble(n_mut = sort(rep(n_muts, length(costs))), cost = rep(costs, length(n_muts))) %>%
+  mutate(fitness = (1 - cost)**n_mut) %>%
+  ggplot(aes(x = n_mut, y = fitness, col = factor(cost), group = cost)) +
+  geom_line() +
+  geom_point(size = 0.5) +
+  scale_color_brewer(palette = "Spectral") +
+  labs(x = "Number of mutations (*n*)", y = "Fitness by comparison to\nreference sequence", col = "Cost per<br>mutation (*c*)") +
+  theme(legend.title = element_markdown(),
+        axis.title.x = element_markdown())
+
+# Parameters
+max_time <- 150   # Maximum time
+flat_time <- 30   # Time at which the flat period ends
+plateau_time <- flat_time + 90   # Time at which the plateau starts
+max_cost <- 0.4    # Maximum immune cost (scaled to 0.4)
+
+imm_mat_plot <- tibble(time = 0:max_time, immune_cost = ifelse(time <= flat_time, 
+                      0,  # Flat period at 0
+                      ifelse(time <= plateau_time, 
+                             max_cost * (time - flat_time) / (plateau_time - flat_time),  # Linear increase to max_cost
+                             max_cost)) # Plateau at max_cost
+               ) %>%
+ggplot(aes(x = time, y = immune_cost)) +
+  geom_line() +
+   # Arrow pointing to immune recognition
+  annotate("segment", x = flat_time - 10, xend = flat_time, y = 0.12, yend = 0.01,
+           arrow = arrow(length = unit(0.2, "cm")), color = "black") +
+  annotate("text", x = flat_time - 10, y = 0.2, label = "Immune", color = "black", vjust = 0) +
+  annotate("text", x = flat_time - 10, y = 0.14, label = "recognition", color = "black", vjust = 0) +
+  
+  # Arrow pointing to max immune cost
+  annotate("segment", x = plateau_time + 10, xend = plateau_time, y = 0.3, yend = 0.39,
+           arrow = arrow(length = unit(0.2, "cm")), color = "black") +
+  annotate("text", x = plateau_time + 10, y = 0.29, label = "Maximum", color = "black", vjust = 1) +
+  annotate("text", x = plateau_time + 10, y = 0.23, label = "immune cost", color = "black", vjust = 1) +
+  annotate("text", x = plateau_time + 10, y = 0.17, label = "reached", color = "black", vjust = 1) +
+  
+  # Label for increasing phase
+  annotate("text", x = (flat_time + plateau_time) / 2 - 5, y = 0.3, label = "Increasing", angle = 29) +
+  annotate("text", x = (flat_time + plateau_time) / 2, y = 0.25, label = "immune strength", angle = 29) +
+  labs(x = "Time", y = "Epitope immune cost (*c<sub>i</sub>*)") +
+  theme(
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    axis.title.y = element_markdown(),
+  ) +
+  scale_y_continuous(limits = c(0, 1), breaks = breaks_pretty())  
+
+
+edit_dist_plot <- lapply(1:6, function(x) {
+  tibble(
+    n_muts = factor(x),
+    quantile = seq(0, 1, 1 / 1000),
+    val = dbeta(quantile, 1, x^2)
+  )
+}) |>
+  bind_rows() |>
+  ggplot(aes(x = quantile, y = val, col = n_muts)) +
+  geom_line() +
+  scale_color_brewer(palette = "Spectral") +
+  # theme_classic() +
+  labs(x = "Reduction in immune cost (*d*)", y = "Density", col = "Edit distance (*h*)") +
+  theme(legend.title = element_markdown(),
+        axis.title.x = element_markdown(),
+        legend.position = c(0.8, 0.5))
+
+
+model_desc_plot <- ggarrange(ref_comp_plot, imm_mat_plot, edit_dist_plot, nrow = 1, widths = c(1.4,1,1), labels = 'AUTO', align = 'h')
+model_desc_plot
+
+ggsave(plot = model_desc_plot, filename = 'figures/fitness_components.pdf', width = 12, height = 3)
+```
+
+
+
+```{r}
+
+
+inf_pop_size <- define_growth_curve() 
+
+# set parameters to get latent curve
+to_latent <- 0.001
+to_active <- 0.01
+proliferation <- 0.01
+death <- 0.01
+
+# get latent cell count for each generation
+latent <- 0
+active_latent_counts <- lapply(inf_pop_size$active_cell_count, function(x) {
+  n_to_latent <- rbinom(1, x, prob = to_latent)
+  to_active <- rbinom(latent, 1, prob = to_active)
+  to_proliferate <- rbinom(latent, 1, prob = proliferation)
+  to_die <- rbinom(latent, 1, prob = death)
+  n_to_active <- sum(to_active == 1)
+  n_to_die <- sum((to_die - to_active) == 1)
+  n_to_proliferate <- sum((to_proliferate - to_die - to_active) == 1)
+  counts <- tibble(
+    Active = x, Latent = latent, n_to_latent, n_to_active,
+    n_to_proliferate, n_to_die
+  )
+  latent <<- latent + n_to_latent - n_to_active + n_to_proliferate - n_to_die
+  return(counts)
+}) |>
+  bind_rows() |>
+  mutate(gen = row_number())
+```
+
+
+```{r, fig.width=8, fig.height=3.5}
+# Plot (latent) cell counts
+growth_curve_plot <- active_latent_counts |>
+  filter(gen <= 300) %>%
+  pivot_longer(c(Active, Latent)) |>
+  ggplot(aes(x = gen, y = value, col = name)) +
+  geom_line() +
+  scale_color_manual(values = c("grey30", "grey70")) +
+  labs(x = "Generation", y = "Number of infected cells", col = "Type of cell") +
+  theme(legend.position = c(0.75, 0.5))
+
+conserved_plot <- founder_conserved_sites %>% 
+  enframe() %>% 
+  ggplot(aes(x = as.numeric(name))) +
+  geom_histogram(binwidth = 1) +
+  scale_fill_manual(values = 'grey50') +
+  labs(x = 'Conserved founder gp120 nucleotide position') +
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(), 
+        axis.title.y = element_blank(), 
+        axis.line.y = element_blank()) +
+  coord_cartesian(xlim = c(0, max(env_features$Position)*3))
+
+epi_probs_plot <- get_epitope_frequencies(env_features$Position) %>%
+  ggplot(aes(x = aa_position, y = epitope_probability)) +
+  geom_col() +
+  labs(x = "HXB2 gp120 amino acid position", y = "Epitope probability") +
+  coord_cartesian(xlim = c(0, max(env_features$Position)))
+
+example_inputs <- ggarrange(growth_curve_plot + theme(plot.margin = margin(t = 20, r = 5, b = 5, l = 5)), 
+                            ggarrange(conserved_plot + theme(plot.margin = margin(t = 20, r = 5, b = 5, l = 5)), 
+                                      epi_probs_plot + theme(plot.margin = margin(t = 20, r = 5, b = 5, l = 5)), ncol = 1, heights = c(1.25, 3), align = 'v', labels = c('B', 'C')), nrow = 1, labels = c('A', ''), label.y = c(1,1))
+
+ggsave(plot = example_inputs, filename = 'figures/example_inputs.pdf', width = 8, height = 3.5)
+```
+
