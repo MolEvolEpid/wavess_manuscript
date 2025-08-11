@@ -80,7 +80,7 @@ edit_dist_plot <- lapply(1:6, function(x) {
   geom_line() +
   scale_color_brewer(palette = "Spectral") +
   # theme_classic() +
-  labs(x = "Reduction in immune cost (*d*)", y = "Density", col = "Edit distance (*h*)") +
+  labs(x = "Cross-reactivity factor (*d*)", y = "Density", col = "Edit distance (*h*)") +
   theme(legend.title = element_markdown(),
         axis.title.x = element_markdown(),
         legend.position = c(0.8, 0.5))
@@ -90,6 +90,16 @@ model_desc_plot <- ggarrange(ref_comp_plot, imm_mat_plot, edit_dist_plot, nrow =
 model_desc_plot
 
 ggsave(plot = model_desc_plot, filename = 'figures/fitness_components.pdf', width = 12, height = 3)
+```
+
+```{r}
+lapply(1:10, function(x) {
+  tibble(
+    n_muts = factor(x),
+    mean(rbeta(1000, 1, x)),
+    mean(rbeta(1000, 1, x^2))
+  )
+}) %>% bind_rows()
 ```
 
 

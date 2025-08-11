@@ -136,9 +136,9 @@ tr_indices_real <- lapply(names(trees_rooted), function(x){
     case_when(stat_name == 'divergence_slope' ~ 'Mean annual\nchange in divergence',
                                stat_name == 'diversity_slope' ~ 'Mean annual\nchange in diversity',
                                stat_name == 'mean_bl' ~ 'Mean branch length',
-                               stat_name == 'transition_score' ~ 'Mean number of\ntransitions per timepoint',
+                               stat_name == 'mean_ltt' ~ 'Mean number of\nlineages through time',
                                TRUE ~ gsub('_', ' ', str_to_sentence(stat_name))),
-                            levels = c('Mean branch length', 'Mean annual\nchange in diversity', 'Mean annual\nchange in divergence', 'Mean leaf depth', 'Mean number of\ntransitions per timepoint'))) %>% 
+                            levels = c('Mean branch length', 'Mean annual\nchange in diversity', 'Mean annual\nchange in divergence', 'Mean leaf depth', 'Mean number of\nlineages through time'))) %>% 
   drop_na() %>% 
   mutate(stat_value_real = case_when(grepl('annual', stat_name) ~ stat_value_real*365.25,
                                      TRUE ~ stat_value_real))
@@ -176,9 +176,9 @@ tr_summary_stats <- read_csv('output/summaries/tr_summary_stats.csv') %>%
     case_when(stat_name == 'divergence_slope' ~ 'Mean annual\nchange in divergence',
                                stat_name == 'diversity_slope' ~ 'Mean annual\nchange in diversity',
                                stat_name == 'mean_bl' ~ 'Mean branch length',
-                               stat_name == 'transition_score' ~ 'Mean number of\ntransitions per timepoint',
+                               stat_name == 'transition_score' ~ 'Mean number of\nlineages through time',
                                TRUE ~ gsub('_', ' ', str_to_sentence(stat_name))),
-                            levels = c('Mean branch length', 'Mean annual\nchange in diversity', 'Mean annual\nchange in divergence', 'Mean leaf depth', 'Mean number of\ntransitions per timepoint'))) %>% 
+                            levels = c('Mean branch length', 'Mean annual\nchange in diversity', 'Mean annual\nchange in divergence', 'Mean leaf depth', 'Mean number of\nlineages through time'))) %>% 
   drop_na() %>% 
   mutate(stat_value = case_when(grepl('annual', stat_name) ~ stat_value*365.25,
                                      TRUE ~ stat_value))
@@ -276,7 +276,7 @@ ggsave('figures/immune_costs.pdf', immune_cost_fig, width = 13, height = 5)
 ```{r, fig.width=17, fig.height=9}
 stats_supp <- all_stats %>% 
   mutate(type = case_when(grepl('ivergence|leaf', stat_name) ~ 'I+/S+',
-                          grepl('iversity|bl|Transition', stat_name) ~ 'I+/S-',
+                          grepl('iversity|bl|lineages', stat_name) ~ 'I+/S-',
                           # grepl('leaf', stat_name) ~ 'Mean leaf depth',
                           TRUE ~ 'Other')) %>%
   group_by(id, immune_cost, stat_name) %>% 
@@ -360,7 +360,6 @@ top05_fig
 ggsave('figures/top_5pct.pdf', top05_fig, width = 10, height = 5)
 ```
 
-
 ```{r}
 errors_summary %>%
   filter(immune_cost %in% c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6)) %>%
@@ -368,24 +367,37 @@ errors_summary %>%
   group_by(id) %>%
 inner_join(all_stats)  %>% 
   group_by(id, stat_name, stat_value_real) %>% 
-  summarize(min_sim = min(stat_value),
-            max_sim = max(stat_value)) %>% 
-  mutate(in_range = stat_value_real >= min_sim & stat_value_real <= max_sim) %>% 
-  group_by(stat_name, in_range) %>%
-  group_by(in_range) %>%
-  tally() %>% 
-  pivot_wider(names_from = in_range, values_from = n)
+  summarize(#min_sim = min(stat_value),
+            #max_sim = max(stat_value),
+            mean_sim = mean(stat_value),
+            sd_sim = sd(stat_value)) %>% 
+  mutate(sd_away = abs(mean_sim - stat_value_real)/sd_sim) %>% 
+  group_by(stat_name) %>% 
+  summarize(sd_away_lt1 = sum(sd_away <= 1),
+            sd_away_gt1 = sum(sd_away > 1),
+            mean_sd_away = mean(sd_away),
+            median_sd_away = median(sd_away),
+            min_sd_away = min(sd_away),
+            max_sd_away = max(sd_away))
 
-top05 %>% 
+errors_summary %>%
+  filter(immune_cost %in% c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6)) %>%
+  filter(immune_cost > 0 & immune_cost < 0.7) %>%
+  group_by(id) %>%
+inner_join(all_stats)  %>% 
   group_by(id, stat_name, stat_value_real) %>% 
-  summarize(min_sim = min(stat_value),
-            max_sim = max(stat_value)) %>% 
-  mutate(in_range = stat_value_real >= min_sim & stat_value_real <= max_sim) %>% 
-  group_by(stat_name, in_range) %>%
-  group_by(in_range) %>%
-  tally() %>% 
-  pivot_wider(names_from = in_range, values_from = n) %>% 
-  mutate(tot = `TRUE`+`FALSE`, prop = `TRUE`/(`TRUE`+`FALSE`))
+  summarize(#min_sim = min(stat_value),
+            #max_sim = max(stat_value),
+            mean_sim = mean(stat_value),
+            sd_sim = sd(stat_value)) %>% 
+  mutate(sd_away = abs(mean_sim - stat_value_real)/sd_sim) %>% 
+  ungroup() %>% 
+  summarize(sd_away_lt1 = sum(sd_away <= 1),
+            sd_away_gt1 = sum(sd_away > 1),
+            mean_sd_away = mean(sd_away),
+            median_sd_away = median(sd_away),
+            min_sd_away = min(sd_away),
+            max_sd_away = max(sd_away))
 ```
 
 
@@ -396,7 +408,7 @@ stat_names <- c("Mean branch length",
 "Mean annual\nchange in diversity",
 "Mean annual\nchange in divergence",
 "Mean leaf depth",
-"Mean number of\ntransitions per timepoint"#,
+"Mean number of\nlineages through time"#,
 )
 
 tr_plots <- lapply(unique(all_stats$id), function(id2){
@@ -549,7 +561,7 @@ rates_fig <- rates_all %>%
   facet_grid(type~id, scales = 'free_y', space = 'free_y') +
   geom_histogram(bins = 50) +
   labs(y = 'Number of sites', fill = 'Individual') +
-  scale_x_log10()
+  scale_x_log10(labels = label_number(accuracy = 1))
 
 rates_fig
 ggsave('figures/rates.pdf', rates_fig, width = 18, height = 7)

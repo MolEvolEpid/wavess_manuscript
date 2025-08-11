@@ -29,9 +29,9 @@ tr_stats <- read_csv('summaries/tr_summary_stats.csv') %>%
     case_when(stat_name == 'divergence_slope' ~ 'Mean annual\nchange in divergence',
                                stat_name == 'diversity_slope' ~ 'Mean annual\nchange in diversity',
                                stat_name == 'mean_bl' ~ 'Mean branch length',
-                               stat_name == 'transition_score' ~ 'Mean number of\ntransitions per timepoint',
+                               stat_name == 'transition_score' ~ 'Mean number of\nlineages through time',
                                TRUE ~ gsub('_', ' ', str_to_sentence(stat_name))),
-                            levels = c('Mean branch length', 'Mean annual\nchange in diversity', 'Mean annual\nchange in divergence', 'Mean leaf depth', 'Mean number of\ntransitions per timepoint'))) %>% 
+                            levels = c('Mean branch length', 'Mean annual\nchange in diversity', 'Mean annual\nchange in divergence', 'Mean leaf depth', 'Mean number of\nlineages through time'))) %>% 
   drop_na() %>% 
   mutate(stat_value = case_when(grepl('annual', stat_name) ~ stat_value*365.25,
                                      TRUE ~ stat_value))
@@ -202,7 +202,7 @@ prcc <- lapply(unique(ratios$stat_name), function(x){
 
 ```
 
-```{r,, fig.width=16, fig.height=10}
+```{r,, fig.width=17, fig.height=12}
 opt <- 'G'
 coldir <- -1
 counts_fig <- cowplot::plot_grid(lapply(c("effective_pop_size", "active_to_latent", "latent_proliferate_die"), function(x){
@@ -224,9 +224,14 @@ counts_fig <- cowplot::plot_grid(lapply(c("effective_pop_size", "active_to_laten
               )
          )
        ) +
-    theme(strip.text = element_text(size = 12),
-                 legend.position = 'top', legend.key.width = unit(0.8, "cm"),
-          axis.title.x = element_blank(), legend.text = element_text(size = 8)) + theme(axis.title.y = element_blank())
+    theme(strip.text = element_text(size = 14),
+          legend.position = 'top', 
+          legend.key.width = unit(1, "cm"),
+          axis.title.x = element_blank(), 
+          legend.text = element_text(size = 10),
+          axis.title.y = element_blank(),
+          axis.text = element_text(size = 13), 
+          legend.title = element_text(size = 14))
   p 
 }) %>% cowplot::plot_grid(plotlist = ., nrow = 1),
 
@@ -239,16 +244,26 @@ lapply(c("mutation_rate", "recombination_rate", "conserved_cost", "replicative_c
     scale_color_viridis_c(option = opt, direction = coldir, begin = 0.1, end = 0.9, breaks = breaks_pretty(n = 4)) +
   labs(x = 'Generation', y = '', col = gsub('_', ' ', str_to_sentence(x))) +
     guides(color = guide_colorbar(title.position="top", title.hjust = 0.5)) +
-    theme(strip.text = element_text(size = 12),
-          legend.position = 'bottom', legend.key.width = unit(0.8, "cm"),
-          legend.text = element_text(size = 8)) + theme(axis.title.y = element_blank())
+    theme(strip.text = element_text(size = 14),
+          legend.position = 'bottom', 
+          legend.key.width = unit(1, "cm"),
+          legend.text = element_text(size = 10),
+          axis.title.y = element_blank(),
+          axis.title.x = element_text(size = 14),
+          axis.text = element_text(size = 13), 
+          legend.title = element_text(size = 14))
   p
 }) %>% cowplot::plot_grid(plotlist = ., nrow = 1), nrow = 2, ncol = 1, rel_heights = c(1, 1.1), aligh = 'h', axis = 'lr') %>% 
-  annotate_figure(left = text_grob('Mean per-generation value across 10 replicates', rot = 90, size = 14))
+  annotate_figure(left = text_grob('Mean per-generation value across 10 replicates', rot = 90, size = 15))
 
 ratio_fig <- ratio_summary %>% 
   left_join(prcc) %>% 
-  mutate(
+  mutate(stat_name = case_when(grepl('transitions', stat_name) ~ 'Mean number\nof lineages\nthrough time',
+                               grepl('diversity', stat_name) ~ 'Mean annual\nchange in\ndiversity',
+                               grepl('divergence', stat_name) ~ 'Mean annual\nchange in\ndivergence',
+                               grepl('branch', stat_name) ~ 'Mean branch\nlength',
+                               grepl('leaf', stat_name) ~ 'Mean leaf\ndepth',
+                               TRUE ~ stat_name),
          which_diff = case_when(grepl('Days', which_diff) ~ 'Days to\nmaximum\nimmune cost', 
                                 grepl('Latent\nproliferat', which_diff) ~ 'Latent\nproliferation &\ndeath rate',
                                 grepl('Active to', which_diff) ~ 'Deposition rate',
@@ -258,17 +273,22 @@ ratio_fig <- ratio_summary %>%
   ggplot(aes(y = stat_name, x = fct_reorder(which_diff, mean_ratio, function(x) mean(abs(x)), .desc = TRUE), fill = mean_ratio, 
   label = paste0(round(mean_ratio, 1), '\n(', round(est, 2), ')'))) +
   geom_tile() +
-  geom_text(col = 'white', lineheight = 0.9, size = 4) +
+  geom_text(col = 'white', lineheight = 0.9, size = 5) +
   scale_fill_viridis_c(option = opt, direction = coldir, begin = 0.1, end = 0.9, breaks = breaks_pretty(n = 4), limits = c(0.9, 5.5), trans = 'log10') +
   labs(y = 'Phylogenetic summary statistic', x = 'Parameter', fill = expression('Normalized mean\nelementary effect ('*mu*'**'*')')) +
-  theme(axis.title = element_text(size = 14), axis.text.y = element_text(size = 12), legend.text = element_text(size = 12))
+  theme(legend.position = 'bottom',
+        axis.title = element_text(size = 15),
+        axis.text = element_text(size = 13), 
+        legend.text = element_text(size = 13),
+        legend.title = element_text(size = 14)
+        )
 
-sens_fig <- cowplot::plot_grid(cowplot::plot_grid(NULL, counts_fig, NULL, nrow = 1, rel_widths = c(0.7, 6, 0.95)), 
-                               ratio_fig, rel_heights = c(1.6, 1), labels = 'AUTO', ncol = 1)
+sens_fig <- cowplot::plot_grid(cowplot::plot_grid(NULL, counts_fig, nrow = 1, rel_widths = c(0.05, 1)), 
+                               ratio_fig, rel_heights = c(1.25, 1), labels = 'AUTO', ncol = 1, label_y = c(1, 1.05), label_size = 15)
 
 sens_fig
 
-ggsave('figures/sensitivity_analysis.pdf', sens_fig, width = 16, height = 10)
+ggsave('figures/sensitivity_analysis.pdf', sens_fig, width = 17, height = 12)
 ```
 
 
